@@ -77,11 +77,11 @@
 
             <!-- CARTES DE L'UTILISATEUR -->
             <article class="userCharacters">
-                <h2>Alliés</h2>
+                <h2 class="titleCardPart">Alliés</h2>
 
                 <!-- CARTES NORMALES DE L'UTILISATEUR -->
                 <div class="userCards">
-                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowUp"></i>
+                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowUserUp"></i>
 
                     <div class="normalCards">
                         <div class="containImg">
@@ -116,12 +116,13 @@
                         </div>
                     </div>
 
-                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowDown"></i>
+                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowUserDown"></i>
                 </div>
 
-                <h2>Spécial</h2>
+                <!-- CARTES SPECIALES DE L'UTILISATEUR -->
+                <h2 class="titleCardPart">Spécial</h2>
                 <div class="userSpecialCards">
-                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowUp"></i>
+                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowSpecialUserUp"></i>
                     <div class="specialCards containImg"><img src="./public/assets/img/Austère.jpg" alt="Austère"
                             id="austere">
                         <h3>Austère</h3>
@@ -138,12 +139,11 @@
                             alt="Hontoscope" id="hontoscope">
                         <h3>Hontoscope</h2>
                     </div>
-                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowDown"></i>
+                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowSpecialUserDown"></i>
                 </div>
 
                 <div>
-                    <a href="./allies.html" title="En savoir plus sur les personnages" class="more">En savoir
-                        plus</a>
+                    <a href="./allies.html"><button type="button" title="En savoir plus sur les personnages" class="more">En savoir plus</button></a>
                 </div>
             </article>
 
@@ -221,10 +221,10 @@
 
             <!-- CARTES DE L'ORDINATEUR -->
             <article class="iaCharacters">
-                <h2>Adversaires</h2>
+                <h2 class="titleCardPart">Adversaires</h2>
                 <!-- CARTES NORMALES DE L'ORDINATEUR -->
                 <div class="iaCards">
-                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowUp"></i>
+                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowIaUp"></i>
 
                     <div class="normalCards">
                         <div class="containImg"><img src="./public/assets/img/Homard.jpg" alt="Boulb" id="homard">
@@ -259,23 +259,33 @@
                         </div>
                     </div>
 
-                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowDown"></i>
+                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowIaDown"></i>
                 </div>
 
-                <div><a href="./adversaires.html" title="En savoir plus sur les personnages"
-                    class="more">En savoir plus</a></div>
-
                 <!-- CARTES SPECIALES DE L'ORDINATEUR -->
-                <!-- <div class="iaSpecialCards hide">
-                    <div class="containImg"><img src="./public/assets/img/Austère.jpg" alt="Austère" id="austere">
-                        <h3>Austère</h3></div>
-                    <div class="containImg"><img src="./public/assets/img/Abomine.jpg" alt="Abomine" id="abomine">
-                        <h3>Abomine</h2></div>
-                    <div class="containImg"><img src="./public/assets/img/Barbegarde.jpg"  alt="Barbegarde" id="barbegarde">
-                        <h3>Barbegarde</h2></div>
-                    <div class="containImg"><img src="./public/assets/img/Hontoscope.jpg" alt="Hontoscope" id="hontoscope">
-                        <h3>Hontoscope</h2></div>
-                </div> -->
+                <h2 class="titleCardPart">Spécial</h2>
+                <div class="iaSpecialCards">
+                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowSpecialIaUp"></i>
+                    <div class="specialCards containImg"><img src="./public/assets/img/Austère.jpg" alt="Austère"
+                            id="austere">
+                        <h3>Austère</h3>
+                    </div>
+                    <div class="specialCards containImg hide"><img src="./public/assets/img/Charmignon.jpg"
+                            alt="Charmignon" id="charmignon">
+                        <h3>Charmignon</h2>
+                    </div>
+                    <div class="specialCards containImg hide"><img src="./public/assets/img/Barbegarde.jpg"
+                            alt="Barbegarde" id="barbegarde">
+                        <h3>Barbegarde</h2>
+                    </div>
+                    <div class="specialCards containImg hide"><img src="./public/assets/img/Hontoscope.jpg"
+                            alt="Hontoscope" id="hontoscope">
+                        <h3>Hontoscope</h2>
+                    </div>
+                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowSpecialIaDown"></i>
+                </div>
+
+                <div><a href="./adversaires.html"><button type="button" title="En savoir plus sur les personnages" class="more">En savoir plus</button></a></div>
             </article>
 
         </section>

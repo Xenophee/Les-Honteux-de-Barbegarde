@@ -29,20 +29,45 @@ body {
     align-items: center;
 }
 
+/* .principal {
+    height: 90vh;
+} */
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
 
 /* PERSONNAGES */
 
-.userCards {
+.userCards, .iaCards, .userSpecialCards, .iaSpecialCards {
+    padding: 20px 0;
+}
+
+.userCards, .iaCards {
     background-color: aqua;
 }
 
-.userSpecialCards {
+.userSpecialCards, .iaSpecialCards {
     background-color: blue;
 }
 
 .containImg img {
     width: 80%;
 }
+
+.titleCardPart {
+    background-color: blueviolet;
+    padding: 10px;
+}
+
+.more {
+    width: 100%;
+    padding: 15px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
 
 /* COMBAT */
 
@@ -52,12 +77,16 @@ body {
 }
 
 
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
 /* MODAL */
 
 #rules::backdrop {
     background-color: green;
 }
 
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
 
 /* SPECIAL */
 
