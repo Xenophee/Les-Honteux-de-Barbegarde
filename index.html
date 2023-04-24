@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Tiro+Tamil&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/82073d0261.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./public/assets/css/style.css">
+    <link rel="stylesheet" href="./public/assets/css/media.css">
+    <title>Les Honteux de Barbegarde - Chifoumi</title>
+</head>
+
+<body>
+
+    <!-- HEADER AVEC REGLES DU JEU ET STATISTIQUES -->
+    <header>
+        <nav class="aroundElements">
+            <!-- BOUTON STATISTIQUES -->
+            <a href="./statistiques.html"><button type="button" title="Voir les statistiques"
+                    id="statistical">Statistiques</button></a>
+
+            <!-- ZONE AUDIO POUR CONTROLER LA MUSIQUE PRINCIPALE -->
+            <figure>
+                <figcaption>Listen to the T-Rex:</figcaption>
+                <audio controls src="./public/assets/audio/Jeu.mp3"><a href="/media/cc0-audio/t-rex-roar.mp3">Download
+                        audio</a></audio>
+            </figure>
+
+            <!-- BOUTON ET MODAL POUR LES REGLES DU JEU -->
+            <button type="button" title="Ouvrir les règles du jeu" id="openRules">Règles du jeu</button>
+            <dialog id="rules">
+                <div>
+                    <h2>Règles du jeu</h2>
+                    <p>Choisissez un personnage parmi les six proposés à chaque manche, et l’ordinateur vous fournira un
+                        adversaire parmi son propre choix de six.</p>
+                    <p>Lorsque l’un des deux camps obtient 10 points, la partie s’achève.</p>
+                    <p>Voici les rapports de force de chaque personnage :</p>
+                    <p>Yvette = Boulb <br>
+                        Yvette > Jean-Fonce & Pétroncle <br>
+                        Yvette < Licorne & Abomine </p> <p>Jean-Hardi = Jean-Fonce <br>
+                            Jean-Hardi > Licorne & Abomine <br>
+                            Jean-Hardi < Boulb & Furoncle </p> <p>Hutin = Furoncle <br>
+                                Hutin > Jean-Fonce & Pétroncle <br>
+                                Hutin < Licorne & Abomine </p> <p>Alavare = Pétroncle <br>
+                                    Alavare > Licorne & Abomine <br>
+                                    Alavare < Boulb & Furoncle </p> <p>Yvres = Licorne <br>
+                                        Yvres > Boulb & Furoncle <br>
+                                        Yvres < Jean-Fonce & Pétroncle </p> <p>Géhonte = Abomine <br>
+                                            Géhonte > Boulb & Furoncle <br>
+                                            Géhonte < Jean-Fonce & Pétroncle </p> <button type="button" id="closeRules">
+                                                Fermer</button>
+                </div>
+            </dialog>
+        </nav>
+    </header>
+
+
+    <main>
+        <!-- TITRE ET PRESENTATION -->
+        <section class="context">
+            <h1>Les Honteux de Barbegarde - Chifoumi</h1>
+
+            <p>La contrée de Barbegarde est en plein remouds en ce moment. Fort de ses nouveaux alliés en quittant la
+                prison des nains,
+                Pétroncle le Barbeux revient en découdre avec l'équipe de Géhonte et ses fidèles bras cassés.
+                Cet affront ne restera pas impuni ! Les combattants sont en place ! Ils attendent vos ordres !</p>
+        </section>
+
+
+        <section class="principal aroundElements">
+            <!-- PARTIE CARTES -->
+
+            <!-- CARTES DE L'UTILISATEUR -->
+            <article class="userCharacters">
+                <h2>Alliés</h2>
+
+                <!-- CARTES NORMALES DE L'UTILISATEUR -->
+                <div class="userCards">
+                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowUp"></i>
+
+                    <div class="normalCards">
+                        <div class="containImg">
+                            <img src="./public/assets/img/Yvette.jpg" alt="Yvette" id="yvettes">
+                            <h3>Yvette</h3>
+                        </div>
+
+                        <div class="containImg">
+                            <img src="./public/assets/img/Jean-Hardi.jpg" alt="Jean-Hardi" id="jeanHardi">
+                            <h3>Jean-Hardi</h2>
+                        </div>
+                    </div>
+
+                    <div class="normalCards hide">
+                        <div class="containImg">
+                            <img src="./public/assets/img/Hutin.jpg" alt="Hutin" id="hutin">
+                            <h3>Hutin</h2>
+                        </div>
+
+                        <div class="containImg"><img src="./public/assets/img/Alavare.jpg" alt="Alavare" id="alavare">
+                            <h3>Alavare</h2>
+                        </div>
+                    </div>
+
+                    <div class="normalCards hide">
+                        <div class="containImg"><img src="./public/assets/img/Yvres.jpg" alt="Yvres" id="yvres">
+                            <h3>Yvres</h2>
+                        </div>
+
+                        <div class="containImg"><img src="./public/assets/img/Géhonte.jpg" alt="Géhonte" id="gehonte">
+                            <h3>Géhonte</h2>
+                        </div>
+                    </div>
+
+                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowDown"></i>
+                </div>
+
+                <h2>Spécial</h2>
+                <div class="userSpecialCards">
+                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowUp"></i>
+                    <div class="specialCards containImg"><img src="./public/assets/img/Austère.jpg" alt="Austère"
+                            id="austere">
+                        <h3>Austère</h3>
+                    </div>
+                    <div class="specialCards containImg hide"><img src="./public/assets/img/Charmignon.jpg"
+                            alt="Charmignon" id="charmignon">
+                        <h3>Charmignon</h2>
+                    </div>
+                    <div class="specialCards containImg hide"><img src="./public/assets/img/Barbegarde.jpg"
+                            alt="Barbegarde" id="barbegarde">
+                        <h3>Barbegarde</h2>
+                    </div>
+                    <div class="specialCards containImg hide"><img src="./public/assets/img/Hontoscope.jpg"
+                            alt="Hontoscope" id="hontoscope">
+                        <h3>Hontoscope</h2>
+                    </div>
+                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowDown"></i>
+                </div>
+
+                <div>
+                    <a href="./allies.html" title="En savoir plus sur les personnages" class="more">En savoir
+                        plus</a>
+                </div>
+            </article>
+
+
+            <!-- PARTIE AFFRONTEMENT -->
+            <article class="fightZone">
+                <div class="fight">
+                    <h2>Affrontement</h2>
+                    <!-- AFFICHE LE SCORE ET LES PROTAGONISTES -->
+                    <div class="show">
+                        <div id="choice">
+                            <h3>Score</h3>
+                            <p>0</p>
+                            <img src="" alt="" class="frameImg">
+                        </div>
+                        <div id="vs">
+                            <p>VS</p>
+                        </div>
+                        <div id="random">
+                            <h3>Score</h3>
+                            <p>0</p>
+                            <img src="" alt="" class="frameImg">
+                        </div>
+                    </div>
+                    <!-- AFFICHE UNE PHRASE ET LE RESULTAT DE LA MANCHE -->
+                    <div class="showText">
+                        <p>...</p>
+                        <h4>!...!</h4>
+                    </div>
+
+
+                    <h3 class="hide">Cheater !</h3>
+                    <!-- PARTIE CHEATING -->
+                    <div class="cheating">
+                        <!-- MORCEAU POUR CHOISIR UNE CARTE DE TRICHE -->
+                        <div class="chooseCard hide">
+                            <div class="containImg"><img src="./public/assets/img/Austère.jpg" alt="Austère"
+                                    title="Confère une victoire" id="austereCheat">
+                                <h3>Austère</h3>
+                            </div>
+                            <div class="containImg"><img src="./public/assets/img/Charmignon.jpg" alt="Charmignon"
+                                    title="Confère une victoire en moins à l'ordinateur" id="charmignonCheat">
+                                <h3>Charmignon</h2>
+                            </div>
+                            <div class="containImg"><img src="./public/assets/img/Barbegarde.jpg" alt="Barbegarde"
+                                    title="Divise les scores par deux" id="barbegardeCheat">
+                                <h3>Barbegarde</h2>
+                            </div>
+                            <div class="containImg"><img src="./public/assets/img/Hontoscope.jpg" alt="Hontoscope"
+                                    title="Une chance sur deux de retirer deux points à l'un ou l'autre"
+                                    id="hontoscopeCheat">
+                                <h3>Hontoscope</h2>
+                            </div>
+                        </div>
+                        <!-- MORCEAU POUR CHOISIR LA FIN DE LA PARTIE -->
+                        <div class="chooseResult hide">
+                            <button type="button" id="victory">Victoire</button>
+                            <button type="button" id="null">Egalité</button>
+                            <button type="button" id="defeat">Défaite</button>
+                        </div>
+                        <!-- MORCEAU POUR ENTRER DANS LA SECTION DE TRICHE -->
+                        <button type="button" title="Entrer dans la section triche" id="cheat">Cheat</button>
+                        <div class="hide">
+                            <p>Tu n'as pas honte ?</p>
+                            <input type="password" name="password" id="password">
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div><button type="reset" title="Recommence la partie" id="surrend">Abandonner</button></div>
+            </article>
+
+
+            <!-- CARTES DE L'ORDINATEUR -->
+            <article class="iaCharacters">
+                <h2>Adversaires</h2>
+                <!-- CARTES NORMALES DE L'ORDINATEUR -->
+                <div class="iaCards">
+                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowUp"></i>
+
+                    <div class="normalCards">
+                        <div class="containImg"><img src="./public/assets/img/Homard.jpg" alt="Boulb" id="homard">
+                            <h3>Boulb</h3>
+                        </div>
+
+                        <div class="containImg"><img src="./public/assets/img/Jean-Fonce.jpg" alt="Escobar"
+                                id="escobar">
+                            <h3>Jean-Fonce</h2>
+                        </div>
+                    </div>
+
+                    <div class="normalCards hide">
+                        <div class="containImg"><img src="./public/assets/img/Furoncle.jpg" alt="Furoncle"
+                                id="furoncle">
+                            <h3>Furoncle</h2>
+                        </div>
+
+                        <div class="containImg"><img src="./public/assets/img/Pétroncle.jpg" alt="Pétroncle"
+                                id="petroncle">
+                            <h3>Pétroncle</h2>
+                        </div>
+                    </div>
+
+                    <div class="normalCards hide">
+                        <div class="containImg"><img src="./public/assets/img/Licorne.jpg" alt="Yvres" id="licorne">
+                            <h3>Inclusive</h2>
+                        </div>
+
+                        <div class="containImg"><img src="./public/assets/img/Abomine.jpg" alt="Abomine" id="vouivre">
+                            <h3>Abomine</h2>
+                        </div>
+                    </div>
+
+                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowDown"></i>
+                </div>
+
+                <div><a href="./adversaires.html" title="En savoir plus sur les personnages"
+                    class="more">En savoir plus</a></div>
+
+                <!-- CARTES SPECIALES DE L'ORDINATEUR -->
+                <!-- <div class="iaSpecialCards hide">
+                    <div class="containImg"><img src="./public/assets/img/Austère.jpg" alt="Austère" id="austere">
+                        <h3>Austère</h3></div>
+                    <div class="containImg"><img src="./public/assets/img/Abomine.jpg" alt="Abomine" id="abomine">
+                        <h3>Abomine</h2></div>
+                    <div class="containImg"><img src="./public/assets/img/Barbegarde.jpg"  alt="Barbegarde" id="barbegarde">
+                        <h3>Barbegarde</h2></div>
+                    <div class="containImg"><img src="./public/assets/img/Hontoscope.jpg" alt="Hontoscope" id="hontoscope">
+                        <h3>Hontoscope</h2></div>
+                </div> -->
+            </article>
+
+        </section>
+
+
+
+
+
+
+        <!-- PARTIE RESULTAT DE LA PARTIE -->
+        <section class="result">
+
+            <!-- BANNIERE VICTOIRE -->
+            <div class="victory hide">
+                <h3>Victoire !</h3>
+                <button type="button" id="reward">Récupérer la récompense</button>
+            </div>
+
+            <!-- PARTIE RECOMPENSE EN CAS DE VICTOIRE -->
+            <div class="reward hide">
+                <p>Ce chifoumi provient d'une histoire loufoque dont je vous laisse découvrir le résumé ci dessous :</p>
+                <div class="presentation">
+                    <a href="https://www.atelierdesauteurs.com/text/494804679/les-honteux-de-barbegarde"
+                        target="_blank"><img src="./public/assets/img/Les Honteux de Barbegarde2.jpg"
+                            alt="Les Honteux de Barbegarde"></a>
+                    <div class="presentationText">
+                        <h3>Les Honteux de Barbegarde</h3>
+                        <p>Au merveilleux pays de Barbegarde, la quiétude règne sans partage entre les différentes
+                            communautés
+                            jusqu’à ce qu’un sinistre pendard vienne semer la discorde en distribuant des brevets de
+                            honte par
+                            la propagation intempestive des secrets de ses habitants…</p>
+                        <p>Pour lire cette histoire, cliquez sur l'image. </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BANNIERE EGALITE ET DEFAITE -->
+            <div class="null hide">
+                <h3>Egalité</h3>
+                <p></p>
+            </div>
+            <div class="defeat hide">
+                <h3>Défaite</h3>
+            </div>
+
+        </section>
+    </main>
+    <script src="./public/assets/js/script.js"></script>
+    <script src="./public/assets/js/game.js"></script>
+</body>
+
+</html>

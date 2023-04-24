@@ -1,0 +1,196 @@
+* {box-sizing:border-box}
+
+body {
+    background-color:#ce8d73;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    width: 50%;
+
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+display: none;
+}
+
+/* .mySlides img {
+    width: 30%;
+} */
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+/* -------------------------------------------------- */
+
+.usercards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.slideshow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #516d61;
+    color: wheat;
+    /* width: 20%; */
+}
+
+.charactersImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+    background-color:#805b2d;
+}
+
+.userCharacters img, .iaCharacters img{
+    box-shadow: #805b2d 0px 20px 30px -10px;
+    transition: 1.5s;
+    filter: sepia(100);
+    border-style: double;
+    border-color: #C1A677;
+    border-radius: 50px;
+    border-width: 7px;
+    
+}
+
+.charactersImg img {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    box-shadow: #805b2d 0px 20px 30px -10px;
+    transition: 1.5s;
+    filter: sepia(100);
+    border-style: double;
+    border-color: #C1A677;
+    border-radius: 50px;
+    border-width: 7px;
+}
+
+.charactersImg img:hover {
+    transition: 1.5s;
+    filter: sepia(0);
+    transform: scale(1.1);
+}
+
+.charactersImg img:hover {
+    cursor: pointer;
+}
+
+.charactersImg h3 {
+    text-align: center;
+}
+
+#up, #down {
+    width: 15%;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 2%;
+}
+
+.page {
+    background-color: #805b2d;
+    color: wheat;
+    border-radius: 10px;
+    margin: 5px;
+    margin-left: 50px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.page:hover {
+    cursor: pointer;
+    background-color: #C1A677;
+}
+
+.hide {
+    display: none;
+}

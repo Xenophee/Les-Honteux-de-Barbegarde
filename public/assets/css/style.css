@@ -1,0 +1,66 @@
+@import url('variables.css');
+
+* {
+    font-family: var(--main-font);
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--special-font);
+}
+
+i {
+    font-size: 2rem;
+}
+
+body {
+    background-color: bisque;
+}
+
+.centerElements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aroundElements {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/* PERSONNAGES */
+
+.userCards {
+    background-color: aqua;
+}
+
+.userSpecialCards {
+    background-color: blue;
+}
+
+.containImg img {
+    width: 80%;
+}
+
+/* COMBAT */
+
+.fightZone {
+    border: var(--border-brown-double);
+    width: 60%;
+}
+
+
+/* MODAL */
+
+#rules::backdrop {
+    background-color: green;
+}
+
+
+/* SPECIAL */
+
+.hide {
+    display: none;
+}

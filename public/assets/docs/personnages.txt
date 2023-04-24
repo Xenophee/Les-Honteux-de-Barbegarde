@@ -1,0 +1,60 @@
+1 Yvettes = Homard
+2 Jean-Hardi = Jean-Fonce
+3 Hutin = Furoncle
+4 Alavare = Pétroncle
+5 Yvres = Licorne
+6 Géhonte = 
+
+
+
+1 = 1 / 1 > 2 / 1 = 3 / 1 > 4 / 1 < 5 / 1 < 6
+
+2 < 1 / 2 = 2 / 2 < 3 / 2 = 4 / 2 > 5 / 2 > 6
+
+3 = 1 / 3 > 2 / 3 = 3 / 3 > 4 / 3 < 5 / 3 < 6
+
+4 < 1 / 4 = 2 / 4 < 3 / 4 = 4 / 4 > 5 / 4 > 6
+
+5 > 1 / 5 < 2 / 5 > 3 / 5 < 4 / 5 = 5 / 5 = 6
+
+6 > 1 / 6 < 2 / 6 > 3 / 6 < 4 / 6 = 5 / 6 = 6
+
+
+
+bouton reset qui apparait seulement après le premier lancé
+
+bouton cheat pour activer les différentes fins et les différentes cartes
+    ajouter le son lapin crétin à l'activation du code & image de hontoscope si possible
+
+bouton stat avec nombre de fin total et nombre d'affrontement
+
+ajout d'une barre de progression de coupage de barbe
+
+
+Carte spéciales :
+
+Barbegarde : reset le score à 0
+Austère : donne une victoire auto
+Charmignon : retire une défaite auto
+Abomine : 
+Hontoscope : obtention après deux échecs d'affilé, une fois sur deux efface une défaite ou donne une victoire à l'adversaire
+
+
+Faire en sorte que les cartes cheat soient aussi désactivées quand une fin est lancée
+
+
+Pour victoire : son religieux
+Pour défaite : son SDA nain "pas ma barbe !"
+Pour égalité :
+
+
+
+box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            0 0 2.8rem #bc13fe,
+            inset 0 0 1.3rem #bc13fe; 
+
+
+scream.loop = true;
