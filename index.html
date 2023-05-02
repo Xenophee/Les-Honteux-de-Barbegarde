@@ -19,18 +19,7 @@
 
     <!-- HEADER AVEC REGLES DU JEU ET STATISTIQUES -->
     <header>
-        <nav class="aroundElements">
-            <!-- BOUTON STATISTIQUES -->
-            <a href="./statistiques.html"><button type="button" title="Voir les statistiques"
-                    id="statistical">Statistiques</button></a>
-
-            <!-- ZONE AUDIO POUR CONTROLER LA MUSIQUE PRINCIPALE -->
-            <figure>
-                <figcaption>Listen to the T-Rex:</figcaption>
-                <audio controls src="./public/assets/audio/Jeu.mp3"><a href="/media/cc0-audio/t-rex-roar.mp3">Download
-                        audio</a></audio>
-            </figure>
-
+        <nav>
             <!-- BOUTON ET MODAL POUR LES REGLES DU JEU -->
             <button type="button" title="Ouvrir les règles du jeu" id="openRules">Règles du jeu</button>
             <dialog id="rules">
@@ -72,110 +61,196 @@
         </section>
 
 
-        <section class="principal aroundElements">
+        <section class="principal">
             <!-- PARTIE CARTES -->
 
             <!-- CARTES DE L'UTILISATEUR -->
-            <article class="userCharacters">
-                <h2 class="titleCardPart">Alliés</h2>
+            <div class="userStat">
+                <h2 class="titleStat">Vous</h2>
 
-                <!-- CARTES NORMALES DE L'UTILISATEUR -->
-                <div class="userCards">
-                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowUserUp"></i>
-
-                    <div class="normalCards">
-                        <div class="containImg">
-                            <img src="./public/assets/img/Yvette.jpg" alt="Yvette" id="yvettes">
-                            <h3>Yvette</h3>
-                        </div>
-
-                        <div class="containImg">
-                            <img src="./public/assets/img/Jean-Hardi.jpg" alt="Jean-Hardi" id="jeanHardi">
-                            <h3>Jean-Hardi</h2>
-                        </div>
+                <div class="userGlobalStat">
+                    <div>
+                        <!-- https://www.flaticon.com/fr/icone-gratuite/trophee_9828706?term=victory&page=1&position=54&origin=search&related_id=9828706
+                        https://game-icons.net/1x1/lorc/trophy.html -->
+                        <img src="./public/assets/img/icon/trophy.png" alt="icône de trophée" class="iconStat">
+                        <div>Nombre de victoires</div>
+                        <div>0</div>
+                        <hr>
                     </div>
 
-                    <div class="normalCards hide">
-                        <div class="containImg">
-                            <img src="./public/assets/img/Hutin.jpg" alt="Hutin" id="hutin">
-                            <h3>Hutin</h2>
-                        </div>
-
-                        <div class="containImg"><img src="./public/assets/img/Alavare.jpg" alt="Alavare" id="alavare">
-                            <h3>Alavare</h2>
-                        </div>
+                    <div>
+                        <!-- https://game-icons.net/1x1/lorc/surrounded-shield.html -->
+                        <img src="./public/assets/img/icon/surrounded-shield.png"
+                            alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
+                        <div>Nombre de matchs nuls</div>
+                        <div>0</div>
+                        <hr>
                     </div>
 
-                    <div class="normalCards hide">
-                        <div class="containImg"><img src="./public/assets/img/Yvres.jpg" alt="Yvres" id="yvres">
-                            <h3>Yvres</h2>
-                        </div>
-
-                        <div class="containImg"><img src="./public/assets/img/Géhonte.jpg" alt="Géhonte" id="gehonte">
-                            <h3>Géhonte</h2>
-                        </div>
+                    <div>
+                        <!-- https://game-icons.net/1x1/delapouite/grave-flowers.html -->
+                        <img src="./public/assets/img/icon/grave-flowers.png" alt="icône de pierre tombale"
+                            class="iconStat">
+                        <div>Nombre de défaites</div>
+                        <div>0</div>
                     </div>
-
-                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowUserDown"></i>
                 </div>
 
                 <!-- CARTES SPECIALES DE L'UTILISATEUR -->
-                <h2 class="titleCardPart">Spécial</h2>
-                <div class="userSpecialCards">
-                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowSpecialUserUp"></i>
-                    <div class="specialCards containImg"><img src="./public/assets/img/Austère.jpg" alt="Austère"
-                            id="austere">
-                        <h3>Austère</h3>
+                <h2 class="titleStat">Partie en cours</h2>
+                <div class="userGameStat">
+                    <div>
+                        <!-- https://game-icons.net/1x1/delapouite/sun-priest.html -->
+                        <img src="./public/assets/img/icon/sun-priest.png" alt="icône de magicien triomphant"
+                            class="iconStat">
+                        <div>Manches gagnées</div>
+                        <div>0</div>
+                        <hr>
                     </div>
-                    <div class="specialCards containImg hide"><img src="./public/assets/img/Charmignon.jpg"
-                            alt="Charmignon" id="charmignon">
-                        <h3>Charmignon</h2>
+                    <div>
+                        <!-- https://game-icons.net/1x1/delapouite/shield-bash.html -->
+                        <img src="./public/assets/img/icon/shield-bash.png"
+                            alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
+                        <div>Manches égalités</div>
+                        <div>0</div>
+                        <hr>
                     </div>
-                    <div class="specialCards containImg hide"><img src="./public/assets/img/Barbegarde.jpg"
-                            alt="Barbegarde" id="barbegarde">
-                        <h3>Barbegarde</h2>
+                    <div>
+                        <!-- https://game-icons.net/1x1/lorc/arrowed.html -->
+                        <img src="./public/assets/img/icon/arrowed.png" alt="icône de personnage percé de flèches"
+                            class="iconStat">
+                        <div>Manches perdues</div>
+                        <div>0</div>
                     </div>
-                    <div class="specialCards containImg hide"><img src="./public/assets/img/Hontoscope.jpg"
-                            alt="Hontoscope" id="hontoscope">
-                        <h3>Hontoscope</h2>
-                    </div>
-                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowSpecialUserDown"></i>
                 </div>
 
-                <div>
-                    <a href="./allies.html"><button type="button" title="En savoir plus sur les personnages" class="more">En savoir plus</button></a>
+                <div class="moreInfo">
+                    <a href="./allies.html"><button type="button" title="En savoir plus sur les personnages"
+                            class="more">En savoir plus<br>sur les personnages</button></a>
                 </div>
-            </article>
+            </div>
 
+            <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+            <!-- AFFICHAGE DE DEPART -->
+            <div class="fightZone noGameStart hide" id="noGameStart">
+                <button type="button" id="start">Commencer</button>
+            </div>
+
+            <!-- AFFICHADE DU RESULTAT -->
+            <div class="fightZone resultGame hide" id="resultGame">
+
+                <!-- AFFICHAGE DE LA BANNIERE -->
+                <div class="banner">
+                    <img src="./public/assets/img/banniere.png" alt="">
+                    <h4>Victoire</h4>
+                </div>
+
+                <!-- AFFICHAGE DE LA RECOMPENSE -->
+                <div class="reward hide">
+                    <p>Ce mini-jeu provient d'une histoire loufoque dont je vous laisse découvrir le résumé ci dessous :</p>
+                    <div class="presentation">
+                        <a href="https://www.atelierdesauteurs.com/text/494804679/les-honteux-de-barbegarde"
+                            target="_blank"><img src="./public/assets/img/Les Honteux de Barbegarde2.jpg"
+                                alt="Les Honteux de Barbegarde"></a>
+                        <div class="presentationText">
+                            <h3>Les Honteux de Barbegarde</h3>
+                            <p>Au merveilleux pays de Barbegarde, la quiétude règne sans partage entre les différentes
+                                communautés
+                                jusqu’à ce qu’un sinistre pendard vienne semer la discorde en distribuant des brevets de
+                                honte par
+                                la propagation intempestive des secrets de ses habitants…</p>
+                            <p>Pour lire cette histoire, cliquez sur l'image. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOUTON DE RECOMPENSE EN CAS DE VICTOIRE ET REDEMERRAGE D'UNE PARTIE -->
+                <button type="button" id="takeReward">Recupérer la récompense</button>
+                <button type="button" id="restart">Recommencer</button>
+            </div>
+
+            <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
 
             <!-- PARTIE AFFRONTEMENT -->
-            <article class="fightZone">
+            <div class="fightZone" id="fightZone">
+
+                <!-- RECAPITULATIF DU NOMBRE DE PARTIES -->
+                <div class="gameNumber">
+                    <h2>Nombre de parties</h2>
+                    <div id="gameNumber">0</div>
+                </div>
+
                 <div class="fight">
                     <h2>Affrontement</h2>
+                    <h3>Nombre de manches</h3>
+                    <div id="roundNumber">0</div>
                     <!-- AFFICHE LE SCORE ET LES PROTAGONISTES -->
                     <div class="show">
                         <div id="choice">
                             <h3>Score</h3>
-                            <p>0</p>
-                            <img src="" alt="" class="frameImg">
+                            <div class="score" id="userScore">0</div>
+                            <img src="./public/assets/img/ImageFrame/HutinFrame.png" alt="" class="frameImg">
                         </div>
                         <div id="vs">
                             <p>VS</p>
                         </div>
                         <div id="random">
                             <h3>Score</h3>
-                            <p>0</p>
-                            <img src="" alt="" class="frameImg">
+                            <div class="score" id="iaScore">0</div>
+                            <img src="./public/assets/img/ImageFrame/AbomineFrame.png" alt="" class="frameImg">
                         </div>
                     </div>
                     <!-- AFFICHE UNE PHRASE ET LE RESULTAT DE LA MANCHE -->
                     <div class="showText">
-                        <p>...</p>
-                        <h4>!...!</h4>
+                        <p id="explainEvent">Abomine lance un sort et Yvres se retrouve au sol comme une merde.</p>
+                        <h4 id="roundResult">Echec !</h4>
                     </div>
 
 
-                    <h3 class="hide">Cheater !</h3>
+                    <h3 class="hide">Tricheur !</h3>
+
+                    <div class="userCharacters">
+
+                        <!-- PERSONNAGES NORMAUX -->
+                        <div class="normalCharacters">
+                            <div class="character">
+                                <img src="./public/assets/img/Abomine3.jpg" alt="">
+                            </div>
+                            <div class="character">
+                                <img src="./public/assets/img/Abomine3.jpg" alt="">
+                            </div>
+                            <div class="character">
+                                <img src="./public/assets/img/Abomine3.jpg" alt="">
+                            </div>
+                            <div class="character">
+                                <img src="./public/assets/img/Abomine3.jpg" alt="">
+                            </div>
+                            <div class="character">
+                                <img src="./public/assets/img/Abomine3.jpg" alt="">
+                            </div>
+                            <div class="character">
+                                <img src="./public/assets/img/Abomine3.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <!-- PERSONNAGES SPECIAUX -->
+                        <div class="specialCharacters">
+                            <div class="character" title="test bien sur">
+                                <img src="./public/assets/img/Abomine3.jpg" alt="">
+                            </div>
+                            <div class="character">
+                                <img src="./public/assets/img/Abomine3.jpg" alt="">
+                            </div>
+                            <div class="character">
+                                <img src="./public/assets/img/Abomine3.jpg" alt="">
+                            </div>
+                            <div class="character">
+                                <img src="./public/assets/img/Abomine3.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- PARTIE CHEATING -->
                     <div class="cheating">
                         <!-- MORCEAU POUR CHOISIR UNE CARTE DE TRICHE -->
@@ -205,9 +280,9 @@
                             <button type="button" id="defeat">Défaite</button>
                         </div>
                         <!-- MORCEAU POUR ENTRER DANS LA SECTION DE TRICHE -->
-                        <button type="button" title="Entrer dans la section triche" id="cheat">Cheat</button>
+                        <button type="button" title="Entrer dans la section triche" id="cheat">Triche</button>
                         <div class="hide">
-                            <p>Tu n'as pas honte ?</p>
+                            <p>C'est honteux !</p>
                             <input type="password" name="password" id="password">
                         </div>
 
@@ -215,78 +290,75 @@
                 </div>
 
 
-                <div><button type="reset" title="Recommence la partie" id="surrend">Abandonner</button></div>
-            </article>
+                <div class="surrend"><button type="reset" title="Recommence la partie" id="surrend">Abandonner</button>
+                </div>
+            </div>
 
 
             <!-- CARTES DE L'ORDINATEUR -->
-            <article class="iaCharacters">
-                <h2 class="titleCardPart">Adversaires</h2>
+            <div class="iaStat">
+                <h2 class="titleStat">Adversaire</h2>
                 <!-- CARTES NORMALES DE L'ORDINATEUR -->
-                <div class="iaCards">
-                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowIaUp"></i>
-
-                    <div class="normalCards">
-                        <div class="containImg"><img src="./public/assets/img/Homard.jpg" alt="Boulb" id="homard">
-                            <h3>Boulb</h3>
-                        </div>
-
-                        <div class="containImg"><img src="./public/assets/img/Jean-Fonce.jpg" alt="Escobar"
-                                id="escobar">
-                            <h3>Jean-Fonce</h2>
-                        </div>
+                <div class="iaGlobalStat">
+                    <div>
+                        <!-- https://www.flaticon.com/fr/icone-gratuite/trophee_9828706?term=victory&page=1&position=54&origin=search&related_id=9828706
+                        https://game-icons.net/1x1/lorc/trophy.html -->
+                        <img src="./public/assets/img/icon/trophy.png" alt="icône de trophée" class="iconStat">
+                        <div>Nombre de victoires</div>
+                        <div>0</div>
+                        <hr>
                     </div>
 
-                    <div class="normalCards hide">
-                        <div class="containImg"><img src="./public/assets/img/Furoncle.jpg" alt="Furoncle"
-                                id="furoncle">
-                            <h3>Furoncle</h2>
-                        </div>
-
-                        <div class="containImg"><img src="./public/assets/img/Pétroncle.jpg" alt="Pétroncle"
-                                id="petroncle">
-                            <h3>Pétroncle</h2>
-                        </div>
+                    <div>
+                        <!-- https://game-icons.net/1x1/lorc/surrounded-shield.html -->
+                        <img src="./public/assets/img/icon/surrounded-shield.png"
+                            alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
+                        <div>Nombre de matchs nuls</div>
+                        <div>0</div>
+                        <hr>
                     </div>
 
-                    <div class="normalCards hide">
-                        <div class="containImg"><img src="./public/assets/img/Licorne.jpg" alt="Yvres" id="licorne">
-                            <h3>Inclusive</h2>
-                        </div>
-
-                        <div class="containImg"><img src="./public/assets/img/Abomine.jpg" alt="Abomine" id="vouivre">
-                            <h3>Abomine</h2>
-                        </div>
+                    <div>
+                        <!-- https://game-icons.net/1x1/delapouite/grave-flowers.html -->
+                        <img src="./public/assets/img/icon/grave-flowers.png" alt="icône de pierre tombale"
+                            class="iconStat">
+                        <div>Nombre de défaites</div>
+                        <div>0</div>
                     </div>
-
-                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowIaDown"></i>
                 </div>
 
                 <!-- CARTES SPECIALES DE L'ORDINATEUR -->
-                <h2 class="titleCardPart">Spécial</h2>
-                <div class="iaSpecialCards">
-                    <i class="fa-sharp fa-solid fa-chevron-up" title="Personnages précédents" id="arrowSpecialIaUp"></i>
-                    <div class="specialCards containImg"><img src="./public/assets/img/Austère.jpg" alt="Austère"
-                            id="austere">
-                        <h3>Austère</h3>
+                <h2 class="titleStat">Partie en cours</h2>
+                <div class="iaGameStat">
+                    <div>
+                        <!-- https://game-icons.net/1x1/delapouite/sun-priest.html -->
+                        <img src="./public/assets/img/icon/sun-priest.png" alt="icône de magicien triomphant"
+                            class="iconStat">
+                        <div>Manches gagnées</div>
+                        <div>0</div>
+                        <hr>
                     </div>
-                    <div class="specialCards containImg hide"><img src="./public/assets/img/Charmignon.jpg"
-                            alt="Charmignon" id="charmignon">
-                        <h3>Charmignon</h2>
+                    <div>
+                        <!-- https://game-icons.net/1x1/delapouite/shield-bash.html -->
+                        <img src="./public/assets/img/icon/shield-bash.png"
+                            alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
+                        <div>Manches égalités</div>
+                        <div>0</div>
+                        <hr>
                     </div>
-                    <div class="specialCards containImg hide"><img src="./public/assets/img/Barbegarde.jpg"
-                            alt="Barbegarde" id="barbegarde">
-                        <h3>Barbegarde</h2>
+                    <div>
+                        <!-- https://game-icons.net/1x1/lorc/arrowed.html -->
+                        <img src="./public/assets/img/icon/arrowed.png" alt="icône de personnage percé de flèches"
+                            class="iconStat">
+                        <div>Manches perdues</div>
+                        <div>0</div>
                     </div>
-                    <div class="specialCards containImg hide"><img src="./public/assets/img/Hontoscope.jpg"
-                            alt="Hontoscope" id="hontoscope">
-                        <h3>Hontoscope</h2>
-                    </div>
-                    <i class="fa-sharp fa-solid fa-chevron-down" title="Personnages suivants" id="arrowSpecialIaDown"></i>
                 </div>
 
-                <div><a href="./adversaires.html"><button type="button" title="En savoir plus sur les personnages" class="more">En savoir plus</button></a></div>
-            </article>
+                <div class="moreInfo"><a href="./adversaires.html"><button type="button"
+                            title="En savoir plus sur les personnages" class="more">En savoir plus<br>sur les
+                            personnages</button></a></div>
+            </div>
 
         </section>
 
@@ -297,12 +369,6 @@
 
         <!-- PARTIE RESULTAT DE LA PARTIE -->
         <section class="result">
-
-            <!-- BANNIERE VICTOIRE -->
-            <div class="victory hide">
-                <h3>Victoire !</h3>
-                <button type="button" id="reward">Récupérer la récompense</button>
-            </div>
 
             <!-- PARTIE RECOMPENSE EN CAS DE VICTOIRE -->
             <div class="reward hide">
@@ -321,15 +387,6 @@
                         <p>Pour lire cette histoire, cliquez sur l'image. </p>
                     </div>
                 </div>
-            </div>
-
-            <!-- BANNIERE EGALITE ET DEFAITE -->
-            <div class="null hide">
-                <h3>Egalité</h3>
-                <p></p>
-            </div>
-            <div class="defeat hide">
-                <h3>Défaite</h3>
             </div>
 
         </section>

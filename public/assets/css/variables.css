@@ -7,6 +7,9 @@
 
     --special-font: 'Permanent Marker', cursive;
     --main-font: 'Tiro Tamil', serif;
+    --font-normal-size: 1rem;
+    --font-medium-size: 1.5rem;
+    --font-tall-size: 2rem;
 
     --border-brown-double: double 7px var(--brown-color);
     --border-green-double: double 7px var(--green-color);

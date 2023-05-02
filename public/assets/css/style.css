@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 i {
-    font-size: 2rem;
+    font-size: var(--font-tall-size);
 }
 
 body {
@@ -23,58 +23,307 @@ body {
     align-items: center;
 }
 
-.aroundElements {
+nav {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: end;
 }
 
-/* .principal {
-    height: 90vh;
-} */
-
-
-
+#openRules {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
+    width: 15%;
+    padding: 15px 0 15px;
+}
 
 
 /* ------------------------------------------------------------------------------------------------------------------------- */
 
 /* PERSONNAGES */
 
-.userCards, .iaCards, .userSpecialCards, .iaSpecialCards {
+.context {
+    background-color: brown;
+    padding: 20px 200px 20px 200px;
+    margin: 50px 0 50px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.context p {
+    font-size: var(--font-medium-size);
+}
+
+.principal {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* PERSONNAGES */
+
+.iaStat, .userStat {
+    width: 15%;
+}
+
+.userGameStat, .iaGameStat, .userGlobalStat, .iaGlobalStat {
     padding: 20px 0;
 }
 
-.userCards, .iaCards {
+.userGlobalStat, .iaGlobalStat {
     background-color: aqua;
 }
 
-.userSpecialCards, .iaSpecialCards {
+.userGameStat, .iaGameStat {
     background-color: blue;
 }
 
-.containImg img {
-    width: 80%;
-}
-
-.titleCardPart {
+.titleStat {
     background-color: blueviolet;
     padding: 10px;
 }
 
+.iconStat {
+    width: 15%;
+}
+
+.moreInfo {
+    margin-top: 20px;
+}
+
 .more {
+    font-family: var(--special-font);
+    font-size: var(--font-normal-size);
     width: 100%;
     padding: 15px;
 }
+
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* PARTIE AVANT PARTIE */
+
+.noGameStart {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    border: var(--border-brown-double);
+}
+
+#start, #restart {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
+    min-width: 30%;
+    padding: 20px 0 20px;
+    margin-bottom: 150px;
+}
+
+.resultGame {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    border: var(--border-brown-double);
+}
+
+.banner {
+    position: relative;
+}
+
+.resultGame h4 {
+    font-size: 5rem;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.reward {
+    font-size: 1.2rem;
+}
+
+.presentation {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px 0 50px;
+}
+
+.presentationText {
+    width: 60%;
+}
+
+#takeReward {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
+    min-width: 30%;
+    padding: 10px 0 10px;
+    margin: 50px 0 50px;
+}
+
 
 /* ------------------------------------------------------------------------------------------------------------------------- */
 
 /* COMBAT */
 
 .fightZone {
-    border: var(--border-brown-double);
     width: 60%;
 }
+
+.gameNumber {
+    background-color: crimson;
+    /* width: 30%; */
+    padding: 30px 0 20px;
+    margin-bottom: 30px;
+}
+
+.gameNumber h2 {
+    font-size: var(--font-medium-size);
+    margin-top: 0;
+}
+
+#gameNumber {
+    font-size: var(--font-medium-size);
+}
+
+.fight {
+    border: var(--border-brown-double);
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.fight h2, #roundResult {
+    font-size: var(--font-tall-size);
+}
+
+#roundNumber, .score {
+    font-size: var(--font-medium-size);
+}
+
+.show {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: auto;
+}
+
+.frameImg {
+    margin: 20px 0 20px;
+}
+
+#vs p {
+    font-family: var(--special-font);
+    font-size: var(--font-tall-size);
+}
+
+#explainEvent {
+    font-size: 1.2rem;
+}
+
+.userCharacters {
+    background-color: darkgreen;
+    min-height: 20%;
+    margin-top: auto;
+}
+
+.normalCharacters {
+    background-color: aquamarine;
+}
+
+.specialCharacters {
+    background-color: aqua;
+}
+
+.normalCharacters, .specialCharacters {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0 10px;
+}
+
+.character {
+    display: flex;
+}
+
+.character img {
+    width: 70px;
+    border-radius: 50%;
+    border: var(--border-beige-double);
+}
+
+.character:hover::after {
+    /* width: 50px;
+    height: 50px; */
+    content: attr(title);
+    padding: 4px;
+    color: white;
+    background-color: black;
+    position: absolute;
+    z-index: 99999;
+    border-radius: 3px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* PARTIE CHEAT */
+
+.cheating {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: chartreuse;
+    padding: 20px 0 20px;
+}
+
+.chooseCard {
+    display: flex;
+    justify-content: space-around;
+}
+
+.containImg img {
+    width: 50%;
+}
+
+.chooseResult {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 20px 0 20px;
+}
+
+.chooseResult button {
+    width: 15%;
+    font-family: var(--special-font);
+    font-size: var(--font-normal-size);
+    padding: 9px 0 9px;
+}
+
+#cheat {
+    font-family: var(--special-font);
+    font-size: var(--font-normal-size);
+    width: 15%;
+    height: 50%;
+    padding: 5px 0 5px;
+}
+
+#surrend {
+    font-family: var(--special-font);
+    font-size: 1.5rem;
+    width: 25%;
+    height: 60px;
+    margin: 30px 0 30px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* PARTIE RESULTAT FINAL */
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------------- */
