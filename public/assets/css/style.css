@@ -13,6 +13,10 @@ i {
     font-size: var(--font-tall-size);
 }
 
+button {
+    cursor: pointer;
+}
+
 body {
     background-color: bisque;
 }
@@ -246,19 +250,23 @@ h1 {
 
 .character {
     display: flex;
+    position: relative;
 }
 
-.character img {
+.character img, .character input {
     width: 70px;
     border-radius: 50%;
     border: var(--border-beige-double);
 }
 
 .character:hover::after {
-    /* width: 50px;
-    height: 50px; */
+    width: auto;
+    /* height: 50px; */
+    transform: translate(-50%, -50%);
+    top: -50%;
+    left: 150%;
     content: attr(title);
-    padding: 4px;
+    padding: 10px;
     color: white;
     background-color: black;
     position: absolute;
@@ -278,6 +286,26 @@ h1 {
     align-items: center;
     background-color: chartreuse;
     padding: 20px 0 20px;
+}
+
+.cheatingEnter {
+    width: 100%;
+}
+
+.choosingCheat {
+    width: 100%;
+}
+
+.closeCheat {
+display: flex;
+justify-content: end;
+padding-bottom: 20px;
+}
+
+#closeCheat {
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
 }
 
 .chooseCard {

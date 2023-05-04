@@ -33,11 +33,21 @@ ajout d'une barre de progression de coupage de barbe
 
 Carte spéciales :
 
-Barbegarde : reset le score à 0
-Austère : donne une victoire auto
-Charmignon : retire une défaite auto
-Abomine : 
-Hontoscope : obtention après deux échecs d'affilé, une fois sur deux efface une défaite ou donne une victoire à l'adversaire
+
+donne une victoire à l'utilisateur
+retire une victoire à l'ia
+Hontoscope : obtention après deux échecs d'affilé, une fois sur deux efface 2 défaite ou donne 2 victoire à l'adversaire
+
+
+Evènement :
+
+Dieu : donne un match nul. Une chance sur 20.
+Barbegarde : divise les scores par 2.
+Sarcophage : tous les points passent en négatifs.
+
+Passif :
+
+en cas de défaite, l'autre ne gagne pas de point quand même
 
 
 Faire en sorte que les cartes cheat soient aussi désactivées quand une fin est lancée
