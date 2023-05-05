@@ -1,4 +1,7 @@
 
+// MUSIQUE PRINCIPALE
+let mainMusic = new Audio("./public/assets/audio/Jeu.mp3");
+
 const userCharacters = [
     { name: 'Yvette la Crevette', src: 'public/assets/img/ImageFrame/YvetteFrame.png', alt: ''},
     { name: 'Jean-Hardi l\'Emphatique', src: 'public/assets/img/ImageFrame/JeanHardiFrame.png', alt: ''},
@@ -19,13 +22,18 @@ const iaCharacters = [
 
 
 const roundResults = [
-    { title: 'Egalité !', class: 'equal'},
+    { title: 'Echec !', class: 'fail'},
     { title: 'Succès !', class: 'success'},
-    { title: 'Echec !', class: 'fail'}
+    { title: 'Egalité !', class: 'equal'}
 ];
 
-const iconsSelect = document.querySelectorAll('.normalCharacters .character');
+const gameOver = [
+    { title: 'Défaite', banner: './public/assets/img/banniereD.png', audio: new Audio("./public/assets/audio/Defeat.mp3")},
+    { title: 'Victoire', banner: './public/assets/img/banniereV.png', audio: new Audio("./public/assets/audio/Victory.mp3")},
+    { title: 'Egalité', banner: './public/assets/img/banniereE.png', audio: new Audio("./public/assets/audio/Egalite.mp3")}
+]
 
+const iconsSelect = document.querySelectorAll('.normalCharacters .character input');
 
 
 
@@ -43,11 +51,10 @@ function randomCalc () {
 
 // EFFECTUE LES TEST POUR CONNAITRE LE GAGNANT D'UN AFFRONTEMENT
 function fight (element) {
-    // fightSelect.classList.remove('success');
-    // fightSelect.classList.remove('fail');
-    // fightSelect.classList.remove('equal');
+
     let userChoice = element.target.value;
     let iaChoice = randomCalc();
+    let result;
     console.log(userChoice);
     console.log(`voici le résultat de la fonction ${iaChoice}`);
 
@@ -55,76 +62,122 @@ function fight (element) {
     choice.title = userCharacters[userChoice].name;
     choice.alt = userCharacters[userChoice].alt;
 
-    if (element.target == yvette) {
-        console.log('yvette');
-    } else if (element.target == jeanHardi) {
-        console.log('jeanHardi');
-    } else if (element.target == hutin) {
-        console.log('hutin');
-    } else if (element.target == alavare) {
-        console.log('alavare');
-    } else if (element.target == yvres) {
-        console.log('yvres');
-    } else if(element.target == gehonte) {
-        console.log('gehonte');
-    }
-
     switch (userChoice) {
         // POUR YVETTE
-        case 0 :
-            userPoint = 1;
-            iaPoint = 0;
-            resultTry.textContent = 'Succès !';
-            fightSelect.classList.add('success');
+        case '0' :
+            if (iaChoice == 1 || iaChoice == 3) {
+                result = 1;
+            } else if (iaChoice == 4 || iaChoice == 5) {
+                result = 0;
+            } else {
+                result = 2;
+            }
             break;
         // POUR JEAN HARDI
-        case 1 :
-            userPoint = 0;
-            iaPoint = 1;
-            resultTry.textContent = 'Echec !';
-            fightSelect.classList.add('fail');
+        case '1' :
+            if (iaChoice == 4 || iaChoice == 5) {
+                result = 1;
+            } else if (iaChoice == 0 || iaChoice == 2) {
+                result = 0;
+            } else {
+                result = 2;
+            }
             break;
         // POUR HUTIN
-        case 2 :
-            userPoint = 1;
-            iaPoint = 0;
-            resultTry.textContent = 'Succès !';
-            fightSelect.classList.add('success');
+        case '2' :
+            if (iaChoice == 1 || iaChoice == 3) {
+                result = 1;
+            } else if (iaChoice == 4 || iaChoice == 5) {
+                result = 0;
+            } else {
+                result = 2;
+            }
             break;
         // POUR ALAVARE
-        case 3 :
-            userPoint = 0;
-            iaPoint = 1;
-            resultTry.textContent = 'Echec !';
-            fightSelect.classList.add('fail');
+        case '3' :
+            if (iaChoice == 4 || iaChoice == 5) {
+                result = 1;
+            } else if (iaChoice == 0 || iaChoice == 2) {
+                result = 0;
+            } else {
+                result = 2;
+            }
             break;
         // POUR YVRES
-        case 4 :
-            userPoint = 0;
-            iaPoint = 1;
-            resultTry.textContent = 'Echec !';
-            fightSelect.classList.add('fail');
+        case '4' :
+            if (iaChoice == 0 || iaChoice == 2) {
+                result = 1;
+            } else if (iaChoice == 1 || iaChoice == 3) {
+                result = 0;
+            } else {
+                result = 2;
+            }
             break;
         // POUR GEHONTE
-        case 5 :
-            userPoint = 0;
-            iaPoint = 1;
-            resultTry.textContent = 'Echec !';
-            fightSelect.classList.add('fail');
+        case '5' :
+            if (iaChoice == 0 || iaChoice == 2) {
+                result = 1;
+            } else if (iaChoice == 1 || iaChoice == 3) {
+                result = 0;
+            } else {
+                result = 2;
+            }
             break;
         default :
-            userPoint = 0;
-            iaPoint = 0;
-            resultTry.textContent = 'Egalité !';
-            fightSelect.classList.add('equal');
+        result = 'non';
     }
 
-    // totalScore();
+    console.log(result);
+    score(result);
 }
 
 
+// MET A JOUR LE SCORE DE LA PARTIE
+function score (result) {
 
-surrend.addEventListener('click', randomCalc);
+    // En fonction des tests effectués dans la fonction précédente, on ajoute un point à l'utilisateur ou à l'ordinateur
+    switch (result) {
+        case 1 :
+            userScore.textContent = Number(userScore.textContent) + 1;
+            break;
+        case 0 :
+            iaScore.textContent = Number(iaScore.textContent) + 1;
+            break;
+    }
+
+    // Affichage du texte pour signaler le résultat de la manche
+    roundResult.textContent = roundResults[result].title;
+
+    // Création d'un tableau avec toutes les classes de fond de la partie affrontement
+    const classes = roundResults.map(result => result.class);
+
+    // Retire toutes les classes qui change le fond de la partie affrontement
+    classes.forEach(element => {
+        fightZone.classList.remove(element);
+    });
+
+    // Ajout de la classe pour le fond de la partie affrontement
+    fightZone.classList.add(roundResults[result].class);
+
+    console.log(`Le score user est ${userScore.textContent} et le score ia est ${iaScore.textContent}`);
+
+    // Termine la partie dès qu'un score atteint 10
+    if (userScore.textContent == 10 || iaScore.textContent == 10) {
+
+        mainMusic.pause();
+        let result = (userScore.textContent == 10) ? 1 : 0;
+
+        // Changement de scène avec affichage du résultat de la partie
+        resultGame.classList.remove('hide');
+        fightZone.classList.add('hide');
+
+        banner.src = gameOver[result].banner;
+        gameResult.textContent = gameOver[result].title;
+        gameOver[result].audio.play();
+    }
+}
+
+
 
 // PERMET DE DECLENCHER L'AFFRONTEMENT
 iconsSelect.forEach(element => {

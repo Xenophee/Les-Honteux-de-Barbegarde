@@ -370,3 +370,22 @@ padding-bottom: 20px;
 .hide {
     display: none;
 }
+
+.inactive {
+    filter: grayscale(100) !important;
+    transform: scale(1) !important;
+    cursor: default !important;
+    box-shadow: none !important;
+}
+
+.fail {
+    background-color: red;
+}
+
+.success {
+    background-color: green;
+}
+
+.equal {
+    background-color: blue;
+}
