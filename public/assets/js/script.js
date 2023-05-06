@@ -11,6 +11,13 @@ closeRules.addEventListener('click', () => {
     rules.close();
 });
 
+// AFFICHE LA RECOMPENSE EN CAS DE VICTOIRE
+takeReward.addEventListener('click', () => {
+    takeReward.classList.add('hide');
+    gameResultBloc.classList.add('hide');
+    reward.classList.remove('hide');
+})
+
 
 // AFFICHE L'INPUT POUR LE MOT DE PASSE
 cheat.addEventListener('click', () => {

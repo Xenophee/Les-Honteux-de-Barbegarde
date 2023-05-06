@@ -74,7 +74,7 @@
                         https://game-icons.net/1x1/lorc/trophy.html -->
                         <img src="./public/assets/img/icon/trophy.png" alt="icône de trophée" class="iconStat">
                         <div>Nombre de victoires</div>
-                        <div>0</div>
+                        <div id="victoriesNumber"></div>
                         <hr>
                     </div>
 
@@ -83,7 +83,7 @@
                         <img src="./public/assets/img/icon/surrounded-shield.png"
                             alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
                         <div>Nombre de matchs nuls</div>
-                        <div>0</div>
+                        <div id="equalitiessNumber"></div>
                         <hr>
                     </div>
 
@@ -92,7 +92,7 @@
                         <img src="./public/assets/img/icon/grave-flowers.png" alt="icône de pierre tombale"
                             class="iconStat">
                         <div>Nombre de défaites</div>
-                        <div>0</div>
+                        <div id="defeatsNumber"></div>
                     </div>
                 </div>
 
@@ -104,7 +104,7 @@
                         <img src="./public/assets/img/icon/sun-priest.png" alt="icône de magicien triomphant"
                             class="iconStat">
                         <div>Manches gagnées</div>
-                        <div>0</div>
+                        <div id="sucessNumber"></div>
                         <hr>
                     </div>
                     <div>
@@ -112,7 +112,7 @@
                         <img src="./public/assets/img/icon/shield-bash.png"
                             alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
                         <div>Manches égalités</div>
-                        <div>0</div>
+                        <div id="equalNumber"></div>
                         <hr>
                     </div>
                     <div>
@@ -120,7 +120,7 @@
                         <img src="./public/assets/img/icon/arrowed.png" alt="icône de personnage percé de flèches"
                             class="iconStat">
                         <div>Manches perdues</div>
-                        <div>0</div>
+                        <div id="failNumber"></div>
                     </div>
                 </div>
 
@@ -141,13 +141,13 @@
             <div class="fightZone resultGame hide" id="resultGame">
 
                 <!-- AFFICHAGE DE LA BANNIERE -->
-                <div class="banner">
+                <div class="banner" id="gameResultBloc">
                     <img src="./public/assets/img/banniereV.png" alt="" id="banner">
                     <h4 id="gameResult">Victoire</h4>
                 </div>
 
                 <!-- AFFICHAGE DE LA RECOMPENSE -->
-                <div class="reward hide">
+                <div class="reward hide" id="reward">
                     <p>Ce mini-jeu provient d'une histoire loufoque dont je vous laisse découvrir le résumé ci dessous :
                     </p>
                     <div class="presentation">
@@ -167,7 +167,7 @@
                 </div>
 
                 <!-- BOUTON DE RECOMPENSE EN CAS DE VICTOIRE ET REDEMERRAGE D'UNE PARTIE -->
-                <button type="button" id="takeReward">Recupérer la récompense</button>
+                <button type="button" class="hide" id="takeReward">Recupérer la récompense</button>
                 <button type="button" id="restart">Recommencer</button>
             </div>
 
@@ -175,15 +175,15 @@
 
             <!-- PARTIE AFFRONTEMENT -->
 
-            <div class="fightZone">
+            <div class="fightZone" id="fightZone">
 
                 <!-- RECAPITULATIF DU NOMBRE DE PARTIES -->
-                <div class="gameNumber">
+                <div class="gamesNumber">
                     <h2>Nombre de parties</h2>
-                    <div id="gameNumber">0</div>
+                    <div id="gamesNumber"></div>
                 </div>
 
-                <div class="fight" id="fightZone">
+                <div class="fight" id="fight">
                     <h2>Affrontement</h2>
                     <h3>Nombre de manches</h3>
                     <div id="roundNumber">0</div>

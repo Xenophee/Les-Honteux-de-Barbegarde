@@ -177,19 +177,19 @@ h1 {
     width: 60%;
 }
 
-.gameNumber {
+.gamesNumber {
     background-color: crimson;
     /* width: 30%; */
     padding: 30px 0 20px;
     margin-bottom: 30px;
 }
 
-.gameNumber h2 {
+.gamesNumber h2 {
     font-size: var(--font-medium-size);
     margin-top: 0;
 }
 
-#gameNumber {
+#gamesNumber {
     font-size: var(--font-medium-size);
 }
 

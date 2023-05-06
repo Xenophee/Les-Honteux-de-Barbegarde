@@ -1,4 +1,10 @@
 
+// RECUPERATION DES INFORMATIONS DES SCORES DE L'UTILISATEUR DANS LE LOCAL STORAGE OU CREATION DE L'OBJET
+let games = localStorage.getItem('games') ? JSON.parse(localStorage.getItem('games')) : {
+    games: { matches: 0, victories: 0, defeats: 0, equalities: 0},
+    rounds: { rounds: 0, success: 0, fail: 0, equal: 0}
+};
+
 // MUSIQUE PRINCIPALE
 let mainMusic = new Audio("./public/assets/audio/Jeu.mp3");
 
@@ -36,9 +42,21 @@ const gameOver = [
 const iconsSelect = document.querySelectorAll('.normalCharacters .character input');
 
 
+let displayGameStat = () => {
+    gamesNumber.textContent = games.games.matches;
+    victoriesNumber.textContent = games.games.victories;
+    equalitiessNumber.textContent = games.games.equalities;
+    defeatsNumber.textContent = games.games.defeats;
+
+    sucessNumber.textContent = games.rounds.success;
+    equalNumber.textContent = games.rounds.equal;
+    failNumber.textContent = games.rounds.fail;
+}
+
+displayGameStat();
 
 // DONNE L'ADVERSAIRE ALEATOIRE ET AFFICHE SON PORTRAIT
-function randomCalc () {
+let randomCalc = () => {
     let calc = Math.floor(Math.random()*(iconsSelect.length));
     console.log(`Le chiffre random est ${calc}`);
     random.src = iaCharacters[calc].src;
@@ -50,7 +68,7 @@ function randomCalc () {
 
 
 // EFFECTUE LES TEST POUR CONNAITRE LE GAGNANT D'UN AFFRONTEMENT
-function fight (element) {
+let battle = (element) => {
 
     let userChoice = element.target.value;
     let iaChoice = randomCalc();
@@ -133,7 +151,7 @@ function fight (element) {
 
 
 // MET A JOUR LE SCORE DE LA PARTIE
-function score (result) {
+let score = (result) => {
 
     // En fonction des tests effectués dans la fonction précédente, on ajoute un point à l'utilisateur ou à l'ordinateur
     switch (result) {
@@ -153,11 +171,11 @@ function score (result) {
 
     // Retire toutes les classes qui change le fond de la partie affrontement
     classes.forEach(element => {
-        fightZone.classList.remove(element);
+        fight.classList.remove(element);
     });
 
     // Ajout de la classe pour le fond de la partie affrontement
-    fightZone.classList.add(roundResults[result].class);
+    fight.classList.add(roundResults[result].class);
 
     console.log(`Le score user est ${userScore.textContent} et le score ia est ${iaScore.textContent}`);
 
@@ -174,6 +192,11 @@ function score (result) {
         banner.src = gameOver[result].banner;
         gameResult.textContent = gameOver[result].title;
         gameOver[result].audio.play();
+
+        // Débloque le bouton pour la récompense en cas de victoire
+        if (result == 1) {
+            takeReward.classList.remove('hide');
+        }
     }
 }
 
@@ -181,5 +204,5 @@ function score (result) {
 
 // PERMET DE DECLENCHER L'AFFRONTEMENT
 iconsSelect.forEach(element => {
-    element.addEventListener('click', fight)
+    element.addEventListener('click', battle)
 });
