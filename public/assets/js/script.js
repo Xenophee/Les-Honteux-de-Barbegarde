@@ -18,6 +18,12 @@ takeReward.addEventListener('click', () => {
     reward.classList.remove('hide');
 })
 
+// 
+restart.addEventListener('click', () => {
+    resultGame.classList.add('hide');
+    fightZone.classList.remove('hide');
+});
+
 
 // AFFICHE L'INPUT POUR LE MOT DE PASSE
 cheat.addEventListener('click', () => {

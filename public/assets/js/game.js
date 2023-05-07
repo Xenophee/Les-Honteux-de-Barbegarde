@@ -1,9 +1,14 @@
 
-// RECUPERATION DES INFORMATIONS DES SCORES DE L'UTILISATEUR DANS LE LOCAL STORAGE OU CREATION DE L'OBJET
-let games = localStorage.getItem('games') ? JSON.parse(localStorage.getItem('games')) : {
+// CREATION ET ENREGISTREMENT DU SCORE DE DEPART DANS LE LOCAL STORAGE
+let statistics = {
     games: { matches: 0, victories: 0, defeats: 0, equalities: 0},
-    rounds: { rounds: 0, success: 0, fail: 0, equal: 0}
+    rounds: { rounds: 0, success: 0, fail: 0, equal: 0},
+    scores: { user: 0, ia: 0}
 };
+
+// RECUPERATION DES INFORMATIONS DES SCORES DE L'UTILISATEUR DANS LE LOCAL STORAGE
+let games = localStorage.getItem('games') ? JSON.parse(localStorage.getItem('games')) : statistics;
+
 
 // MUSIQUE PRINCIPALE
 let mainMusic = new Audio("./public/assets/audio/Jeu.mp3");
@@ -42,8 +47,17 @@ const gameOver = [
 const iconsSelect = document.querySelectorAll('.normalCharacters .character input');
 
 
+
+
+
+
+// GERE L'AFFICHAGE DES SCORES DU JEU
 let displayGameStat = () => {
+
     gamesNumber.textContent = games.games.matches;
+    roundNumber.textContent = games.rounds.rounds;
+
+    // Affiche les scores de l'utilisateur
     victoriesNumber.textContent = games.games.victories;
     equalitiessNumber.textContent = games.games.equalities;
     defeatsNumber.textContent = games.games.defeats;
@@ -51,9 +65,62 @@ let displayGameStat = () => {
     sucessNumber.textContent = games.rounds.success;
     equalNumber.textContent = games.rounds.equal;
     failNumber.textContent = games.rounds.fail;
+
+    // Affiche les scores de l'ia
+    iaVictories.textContent = games.games.defeats;
+    iaEqualities.textContent = games.games.equalities;
+    iaDefeats.textContent = games.games.victories;
+
+    iaSuccess.textContent = games.rounds.fail;
+    iaEqual.textContent = games.rounds.equal;
+    iaFail.textContent = games.rounds.success;
+
+
+    userScore.textContent = games.scores.user;
+    iaScore.textContent = games.scores.ia;
+
 }
 
 displayGameStat();
+
+
+// EFFECTUE UNE SAUVEGARDE DES SCORES DANS LE LOCAL STORAGE
+let saveToLocalStorage = () => {
+
+    // Conversion de l'objet en chaine avant de procéder à l'enregistrement
+    let updateGames = JSON.stringify(games);
+
+    // Enregistrement de la mise à jour des scores dans le localStorage
+    localStorage.setItem('games', updateGames);
+
+    // Rappel de la fonction d'affichage des scores sur le jeu
+    displayGameStat();
+}
+
+// RÉINITIALISE LES SCORES DE LA DERNIERE PARTIE POUR EN COMMENCER UNE NOUVELLE
+let startNewGame = () => {
+
+    games.scores.user = 0;
+    games.scores.ia = 0;
+    games.rounds.rounds = 0;
+
+    saveToLocalStorage();
+}
+
+
+// RÉINITIALISE TOUS LES SCORES À ZÉRO
+let cleanLocalStorage = () => {
+
+    // Conversion de l'objet de départ avec les scores à 0
+    let clean = JSON.stringify(statistics);
+
+    // Enregistrement du nettoyage
+    localStorage.setItem('games', clean);
+
+    // Rappel de la fonction d'affichage des scores sur le jeu
+    displayGameStat();
+}
+
 
 // DONNE L'ADVERSAIRE ALEATOIRE ET AFFICHE SON PORTRAIT
 let randomCalc = () => {
@@ -156,12 +223,21 @@ let score = (result) => {
     // En fonction des tests effectués dans la fonction précédente, on ajoute un point à l'utilisateur ou à l'ordinateur
     switch (result) {
         case 1 :
-            userScore.textContent = Number(userScore.textContent) + 1;
+            // userScore.textContent = Number(userScore.textContent) + 1;
+            games.scores.user += 1;
+            games.rounds.success += 1;
             break;
         case 0 :
-            iaScore.textContent = Number(iaScore.textContent) + 1;
+            // iaScore.textContent = Number(iaScore.textContent) + 1;
+            games.scores.ia += 1;
+            games.rounds.fail += 1;
             break;
+        default :
+            games.rounds.equal += 1;
     }
+
+    games.rounds.rounds += 1;
+    saveToLocalStorage();
 
     // Affichage du texte pour signaler le résultat de la manche
     roundResult.textContent = roundResults[result].title;
@@ -193,13 +269,25 @@ let score = (result) => {
         gameResult.textContent = gameOver[result].title;
         gameOver[result].audio.play();
 
-        // Débloque le bouton pour la récompense en cas de victoire
+        // Débloque le bouton pour la récompense en cas de victoire et met à jour les scores globaux
         if (result == 1) {
             takeReward.classList.remove('hide');
+            games.games.victories += 1;
+        } else {
+            games.games.defeats += 1;
         }
+
+        games.games.matches += 1;
+
+        // Appel de la fonction de sauvegarde dans le local storage
+        saveToLocalStorage();
     }
 }
 
+
+
+cleanScores.addEventListener('click', cleanLocalStorage);
+restart.addEventListener('click', startNewGame);
 
 
 // PERMET DE DECLENCHER L'AFFRONTEMENT

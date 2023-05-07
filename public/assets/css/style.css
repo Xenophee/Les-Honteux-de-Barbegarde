@@ -29,10 +29,10 @@ body {
 
 nav {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 }
 
-#openRules {
+#openRules, #cleanScores {
     font-family: var(--special-font);
     font-size: var(--font-medium-size);
     width: 15%;

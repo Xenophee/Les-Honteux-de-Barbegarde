@@ -20,6 +20,7 @@
     <!-- HEADER AVEC REGLES DU JEU ET STATISTIQUES -->
     <header>
         <nav>
+            <button type="button" title="Réinitialise les scores" id="cleanScores">Reset</button>
             <!-- BOUTON ET MODAL POUR LES REGLES DU JEU -->
             <button type="button" title="Ouvrir les règles du jeu" id="openRules">Règles du jeu</button>
             <dialog id="rules">
@@ -186,12 +187,12 @@
                 <div class="fight" id="fight">
                     <h2>Affrontement</h2>
                     <h3>Nombre de manches</h3>
-                    <div id="roundNumber">0</div>
+                    <div id="roundNumber"></div>
                     <!-- AFFICHE LE SCORE ET LES PROTAGONISTES -->
                     <div class="show">
                         <div>
                             <h3>Score</h3>
-                            <div class="score" id="userScore">0</div>
+                            <div class="score" id="userScore"></div>
                             <img src="./public/assets/img/ImageFrame/HutinFrame.png" alt="" class="frameImg" id="choice">
                         </div>
                         <div id="vs">
@@ -199,7 +200,7 @@
                         </div>
                         <div>
                             <h3>Score</h3>
-                            <div class="score" id="iaScore">0</div>
+                            <div class="score" id="iaScore"></div>
                             <img src="./public/assets/img/ImageFrame/AbomineFrame.png" alt="" class="frameImg" id="random">
                         </div>
                     </div>
@@ -327,7 +328,7 @@
                         https://game-icons.net/1x1/lorc/trophy.html -->
                         <img src="./public/assets/img/icon/trophy.png" alt="icône de trophée" class="iconStat">
                         <div>Nombre de victoires</div>
-                        <div>0</div>
+                        <div id="iaVictories"></div>
                         <hr>
                     </div>
 
@@ -336,7 +337,7 @@
                         <img src="./public/assets/img/icon/surrounded-shield.png"
                             alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
                         <div>Nombre de matchs nuls</div>
-                        <div>0</div>
+                        <div id="iaEqualities"></div>
                         <hr>
                     </div>
 
@@ -345,7 +346,7 @@
                         <img src="./public/assets/img/icon/grave-flowers.png" alt="icône de pierre tombale"
                             class="iconStat">
                         <div>Nombre de défaites</div>
-                        <div>0</div>
+                        <div id="iaDefeats"></div>
                     </div>
                 </div>
 
@@ -357,7 +358,7 @@
                         <img src="./public/assets/img/icon/sun-priest.png" alt="icône de magicien triomphant"
                             class="iconStat">
                         <div>Manches gagnées</div>
-                        <div>0</div>
+                        <div id="iaSuccess"></div>
                         <hr>
                     </div>
                     <div>
@@ -365,7 +366,7 @@
                         <img src="./public/assets/img/icon/shield-bash.png"
                             alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
                         <div>Manches égalités</div>
-                        <div>0</div>
+                        <div id="iaEqual"></div>
                         <hr>
                     </div>
                     <div>
@@ -373,7 +374,7 @@
                         <img src="./public/assets/img/icon/arrowed.png" alt="icône de personnage percé de flèches"
                             class="iconStat">
                         <div>Manches perdues</div>
-                        <div>0</div>
+                        <div id="iaFail"></div>
                     </div>
                 </div>
 
