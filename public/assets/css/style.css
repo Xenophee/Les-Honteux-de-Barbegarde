@@ -116,7 +116,7 @@ h1 {
     border: var(--border-brown-double);
 }
 
-#startGame, #restart {
+#startGame, #restart, #following {
     font-family: var(--special-font);
     font-size: var(--font-medium-size);
     min-width: 30%;
@@ -127,13 +127,15 @@ h1 {
 .resultGame {
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    /* justify-content: space-around; */
     align-items: center;
+    padding: 100px 0 0px;
     border: var(--border-brown-double);
 }
 
 .banner {
     position: relative;
+    margin: 100px 0 100px;
 }
 
 .resultGame h4 {
@@ -168,6 +170,22 @@ h1 {
     padding: 10px 0 10px;
     margin: 50px 0 50px;
 }
+
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* SCENE EVENEMENT */
+
+.eventGameDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80%;
+    border: var(--border-brown-double);
+}
+
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------------- */

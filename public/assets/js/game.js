@@ -4,7 +4,8 @@ let saves = {
     games: { matches: 0, victories: 0, defeats: 0, equalities: 0},
     rounds: { rounds: 0, success: 0, fail: 0, equal: 0},
     scores: { user: 0, ia: 0},
-    lastCharacters: { user: '', ia: ''}
+    lastCharacters: { user: null, ia: null},
+    event: false
 };
 
 // RECUPERATION DES INFORMATIONS DES SCORES DE L'UTILISATEUR DANS LE LOCAL STORAGE
@@ -32,6 +33,12 @@ const iaCharacters = [
     { name: 'Abomine la Sorcière', src: 'public/assets/img/ImageFrame/AbomineFrame.png', alt: ''}
 ];
 
+const gameEvent = [
+    { name: 'Créateur', src: 'public/assets/img/ImageFrame/event/createur.png', alt: '', text: 'Le créateur intervient', effect: ''},
+    { name: 'Barbegarde', src: 'public/assets/img/ImageFrame/event/barbegarde.png', alt: '', text: 'Barbegarde intervient', effect: 'Les scores sont divisés par deux !'},
+    { name: 'Sarcophage le Nécromancien', src: 'public/assets/img/ImageFrame/event/sarcophage.png', alt: '', text: 'Sarcophage intervient', effect: 'Les scores deviennent négatifs !'}
+];
+
 
 const roundResults = [
     { title: 'Echec !', class: 'fail'},
@@ -52,21 +59,21 @@ const iconsSelect = document.querySelectorAll('.normalCharacters .character inpu
 if (games.rounds.rounds > 0) {
     noGameStart.classList.add('hide');
     fightZone.classList.remove('hide');
-
 }
-
 
 // GERE L'AFFICHAGE DES SCORES DU JEU
 let displayGameStat = () => {
 
-    // Affiche les images des personnages sélectionnés
-    userSelection.src = userCharacters[games.lastCharacters.user].src;
-    userSelection.title = userCharacters[games.lastCharacters.user].name;
-    userSelection.alt = userCharacters[games.lastCharacters.user].alt;
+    if (games.lastCharacters.user != null) {
+        // Affiche les images des personnages sélectionnés
+        userSelection.src = userCharacters[games.lastCharacters.user].src;
+        userSelection.title = userCharacters[games.lastCharacters.user].name;
+        userSelection.alt = userCharacters[games.lastCharacters.user].alt;
 
-    iaSelection.src = iaCharacters[games.lastCharacters.ia].src;
-    iaSelection.title = iaCharacters[games.lastCharacters.ia].name;
-    iaSelection.alt = iaCharacters[games.lastCharacters.ia].alt;
+        iaSelection.src = iaCharacters[games.lastCharacters.ia].src;
+        iaSelection.title = iaCharacters[games.lastCharacters.ia].name;
+        iaSelection.alt = iaCharacters[games.lastCharacters.ia].alt;
+    }
 
     // Affiche le nombre de parties et de manches globales
     gamesNumber.textContent = games.games.matches;
@@ -123,6 +130,9 @@ let startNewGame = () => {
     games.rounds.equal = 0;
     games.rounds.fail = 0;
 
+    games.lastCharacters.user = null;
+    games.lastCharacters.ia = null;
+
     saveToLocalStorage();
 }
 
@@ -137,17 +147,61 @@ let cleanLocalStorage = () => {
     // Enregistrement du nettoyage
     localStorage.setItem('games', clean);
 
-    // Rappel de la fonction d'affichage des scores sur le jeu
-    displayGameStat();
+    // Relancement de la page pour repartir de la base
+    location.reload();
 }
 
 
-// DONNE L'ADVERSAIRE ALEATOIRE ET AFFICHE SON PORTRAIT
-let randomCalc = () => {
-    let calc = Math.floor(Math.random()*(iconsSelect.length));
-    console.log(`Le chiffre random est ${calc}`);
+// DONNE UN NOMBRE ALEATOIRE SELON LES BESOINS DU JEU
+let randomCalc = (calcType) => {
+
+    let calc;
+
+    if (calcType == false) {
+
+        calc = Math.floor(Math.random()*(iconsSelect.length));
+        console.log(`Le chiffre random est ${calc}`);
+
+    } else {
+
+        calc = Math.floor(Math.random() * 100) + 1;
+        console.log(`Le chiffre random event est ${calc}`);
+        
+        if (calc <= 20) {
+            calc = Math.floor(Math.random() * 3);
+            eventGame(calc);
+        }
+    }
 
     return calc;
+}
+
+
+let eventGame = (eventType) => {
+    
+    eventGameDisplay.classList.remove('hide');
+    fightZone.classList.add('hide');
+
+    eventImg.title = gameEvent[eventType].name;
+    eventImg.src = gameEvent[eventType].src;
+    eventImg.alt = gameEvent[eventType].alt;
+    eventText.textContent = gameEvent[eventType].text;
+    eventEffect.textContent = gameEvent[eventType].effect;
+
+    switch(eventType) {
+        case 1:
+            games.scores.user = Math.round(games.scores.user /2);
+            games.scores.ia = Math.round(games.scores.ia /2);
+            break;
+        case 2:
+            games.scores.user = -games.scores.user;
+            games.scores.ia = -games.scores.ia;
+            break;
+        default:
+            
+    }
+
+    saveToLocalStorage();
 }
 
 
@@ -155,10 +209,8 @@ let randomCalc = () => {
 let battle = (element) => {
 
     games.lastCharacters.user = element.target.value;
-    games.lastCharacters.ia = randomCalc();
+    games.lastCharacters.ia = randomCalc(false);
     let result;
-    console.log(games.lastCharacters.user);
-    console.log(`voici le résultat de la fonction ${games.lastCharacters.ia}`);
     
     switch (games.lastCharacters.user) {
         // POUR YVETTE
@@ -225,7 +277,9 @@ let battle = (element) => {
         result = 'non';
     }
 
-    console.log(result);
+    randomCalc();
+
+    console.log('Le résultat du combat est ' + result);
     score(result);
 }
 
@@ -284,10 +338,13 @@ let score = (result) => {
         if (result == 1) {
             takeReward.classList.remove('hide');
             games.games.victories += 1;
+            resultSentence.textContent = `Félicitation ! Vous avez remporté cette partie avec un score de ${games.scores.user} contre ${games.scores.ia} pour l'ordinateur.`;
         } else {
             games.games.defeats += 1;
+            resultSentence.textContent = `Dommage ! Vous avez été battu par l'ordinateur avec un score de ${games.scores.ia} contre ${games.scores.user} pour vous.`;
         }
 
+        resultSentence.textContent += `La partie s'est déroulée en ${games.rounds.rounds} manches.`;
         games.games.matches += 1;
 
         // Appel de la fonction de sauvegarde dans le local storage
