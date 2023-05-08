@@ -1,13 +1,14 @@
 
 // CREATION ET ENREGISTREMENT DU SCORE DE DEPART DANS LE LOCAL STORAGE
-let statistics = {
+let saves = {
     games: { matches: 0, victories: 0, defeats: 0, equalities: 0},
     rounds: { rounds: 0, success: 0, fail: 0, equal: 0},
-    scores: { user: 0, ia: 0}
+    scores: { user: 0, ia: 0},
+    lastCharacters: { user: '', ia: ''}
 };
 
 // RECUPERATION DES INFORMATIONS DES SCORES DE L'UTILISATEUR DANS LE LOCAL STORAGE
-let games = localStorage.getItem('games') ? JSON.parse(localStorage.getItem('games')) : statistics;
+let games = localStorage.getItem('games') ? JSON.parse(localStorage.getItem('games')) : saves;
 
 
 // MUSIQUE PRINCIPALE
@@ -48,12 +49,26 @@ const iconsSelect = document.querySelectorAll('.normalCharacters .character inpu
 
 
 
+if (games.rounds.rounds > 0) {
+    noGameStart.classList.add('hide');
+    fightZone.classList.remove('hide');
 
+}
 
 
 // GERE L'AFFICHAGE DES SCORES DU JEU
 let displayGameStat = () => {
 
+    // Affiche les images des personnages sélectionnés
+    userSelection.src = userCharacters[games.lastCharacters.user].src;
+    userSelection.title = userCharacters[games.lastCharacters.user].name;
+    userSelection.alt = userCharacters[games.lastCharacters.user].alt;
+
+    iaSelection.src = iaCharacters[games.lastCharacters.ia].src;
+    iaSelection.title = iaCharacters[games.lastCharacters.ia].name;
+    iaSelection.alt = iaCharacters[games.lastCharacters.ia].alt;
+
+    // Affiche le nombre de parties et de manches globales
     gamesNumber.textContent = games.games.matches;
     roundNumber.textContent = games.rounds.rounds;
 
@@ -75,7 +90,7 @@ let displayGameStat = () => {
     iaEqual.textContent = games.rounds.equal;
     iaFail.textContent = games.rounds.success;
 
-
+    // Affiche le score de la partie en cours
     userScore.textContent = games.scores.user;
     iaScore.textContent = games.scores.ia;
 
@@ -104,6 +119,10 @@ let startNewGame = () => {
     games.scores.ia = 0;
     games.rounds.rounds = 0;
 
+    games.rounds.success = 0;
+    games.rounds.equal = 0;
+    games.rounds.fail = 0;
+
     saveToLocalStorage();
 }
 
@@ -112,7 +131,8 @@ let startNewGame = () => {
 let cleanLocalStorage = () => {
 
     // Conversion de l'objet de départ avec les scores à 0
-    let clean = JSON.stringify(statistics);
+    games = saves;
+    let clean = JSON.stringify(games);
 
     // Enregistrement du nettoyage
     localStorage.setItem('games', clean);
@@ -126,9 +146,6 @@ let cleanLocalStorage = () => {
 let randomCalc = () => {
     let calc = Math.floor(Math.random()*(iconsSelect.length));
     console.log(`Le chiffre random est ${calc}`);
-    random.src = iaCharacters[calc].src;
-    random.title = iaCharacters[calc].name;
-    random.alt = iaCharacters[calc].alt;
 
     return calc;
 }
@@ -137,22 +154,18 @@ let randomCalc = () => {
 // EFFECTUE LES TEST POUR CONNAITRE LE GAGNANT D'UN AFFRONTEMENT
 let battle = (element) => {
 
-    let userChoice = element.target.value;
-    let iaChoice = randomCalc();
+    games.lastCharacters.user = element.target.value;
+    games.lastCharacters.ia = randomCalc();
     let result;
-    console.log(userChoice);
-    console.log(`voici le résultat de la fonction ${iaChoice}`);
-
-    choice.src = userCharacters[userChoice].src;
-    choice.title = userCharacters[userChoice].name;
-    choice.alt = userCharacters[userChoice].alt;
-
-    switch (userChoice) {
+    console.log(games.lastCharacters.user);
+    console.log(`voici le résultat de la fonction ${games.lastCharacters.ia}`);
+    
+    switch (games.lastCharacters.user) {
         // POUR YVETTE
         case '0' :
-            if (iaChoice == 1 || iaChoice == 3) {
+            if (games.lastCharacters.ia == 1 || games.lastCharacters.ia == 3) {
                 result = 1;
-            } else if (iaChoice == 4 || iaChoice == 5) {
+            } else if (games.lastCharacters.ia == 4 || games.lastCharacters.ia == 5) {
                 result = 0;
             } else {
                 result = 2;
@@ -160,9 +173,9 @@ let battle = (element) => {
             break;
         // POUR JEAN HARDI
         case '1' :
-            if (iaChoice == 4 || iaChoice == 5) {
+            if (games.lastCharacters.ia == 4 || games.lastCharacters.ia == 5) {
                 result = 1;
-            } else if (iaChoice == 0 || iaChoice == 2) {
+            } else if (games.lastCharacters.ia == 0 || games.lastCharacters.ia == 2) {
                 result = 0;
             } else {
                 result = 2;
@@ -170,9 +183,9 @@ let battle = (element) => {
             break;
         // POUR HUTIN
         case '2' :
-            if (iaChoice == 1 || iaChoice == 3) {
+            if (games.lastCharacters.ia == 1 || games.lastCharacters.ia == 3) {
                 result = 1;
-            } else if (iaChoice == 4 || iaChoice == 5) {
+            } else if (games.lastCharacters.ia == 4 || games.lastCharacters.ia == 5) {
                 result = 0;
             } else {
                 result = 2;
@@ -180,9 +193,9 @@ let battle = (element) => {
             break;
         // POUR ALAVARE
         case '3' :
-            if (iaChoice == 4 || iaChoice == 5) {
+            if (games.lastCharacters.ia == 4 || games.lastCharacters.ia == 5) {
                 result = 1;
-            } else if (iaChoice == 0 || iaChoice == 2) {
+            } else if (games.lastCharacters.ia == 0 || games.lastCharacters.ia == 2) {
                 result = 0;
             } else {
                 result = 2;
@@ -190,9 +203,9 @@ let battle = (element) => {
             break;
         // POUR YVRES
         case '4' :
-            if (iaChoice == 0 || iaChoice == 2) {
+            if (games.lastCharacters.ia == 0 || games.lastCharacters.ia == 2) {
                 result = 1;
-            } else if (iaChoice == 1 || iaChoice == 3) {
+            } else if (games.lastCharacters.ia == 1 || games.lastCharacters.ia == 3) {
                 result = 0;
             } else {
                 result = 2;
@@ -200,9 +213,9 @@ let battle = (element) => {
             break;
         // POUR GEHONTE
         case '5' :
-            if (iaChoice == 0 || iaChoice == 2) {
+            if (games.lastCharacters.ia == 0 || games.lastCharacters.ia == 2) {
                 result = 1;
-            } else if (iaChoice == 1 || iaChoice == 3) {
+            } else if (games.lastCharacters.ia == 1 || games.lastCharacters.ia == 3) {
                 result = 0;
             } else {
                 result = 2;
@@ -223,12 +236,10 @@ let score = (result) => {
     // En fonction des tests effectués dans la fonction précédente, on ajoute un point à l'utilisateur ou à l'ordinateur
     switch (result) {
         case 1 :
-            // userScore.textContent = Number(userScore.textContent) + 1;
             games.scores.user += 1;
             games.rounds.success += 1;
             break;
         case 0 :
-            // iaScore.textContent = Number(iaScore.textContent) + 1;
             games.scores.ia += 1;
             games.rounds.fail += 1;
             break;
@@ -293,4 +304,14 @@ restart.addEventListener('click', startNewGame);
 // PERMET DE DECLENCHER L'AFFRONTEMENT
 iconsSelect.forEach(element => {
     element.addEventListener('click', battle)
+});
+
+
+// RÉINITIALISE LES SCORES DE LA DERNIÈRE PARTIE À ZÉRO EN CAS DE FERMETURE DE LA PAGE EN FIN DE PARTIE
+window.addEventListener('beforeunload', (event) => {
+
+    if (userScore.textContent == 10 || iaScore.textContent == 10) {
+        startNewGame();
+    }
+
 });

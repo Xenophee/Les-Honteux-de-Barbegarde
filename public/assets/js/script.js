@@ -11,6 +11,12 @@ closeRules.addEventListener('click', () => {
     rules.close();
 });
 
+// AFFICHAGE DE L'ARENE POUR DEMARRER UNE PARTIE
+startGame.addEventListener('click', () => {
+    noGameStart.classList.add('hide');
+    fightZone.classList.remove('hide');
+})
+
 // AFFICHE LA RECOMPENSE EN CAS DE VICTOIRE
 takeReward.addEventListener('click', () => {
     takeReward.classList.add('hide');
@@ -18,7 +24,7 @@ takeReward.addEventListener('click', () => {
     reward.classList.remove('hide');
 })
 
-// 
+// REAFFICHAGE DE L'ARENE POUR REFAIRE UNE PARTIE
 restart.addEventListener('click', () => {
     resultGame.classList.add('hide');
     fightZone.classList.remove('hide');

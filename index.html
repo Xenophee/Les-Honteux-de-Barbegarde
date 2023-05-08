@@ -133,187 +133,195 @@
 
             <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
 
-            <!-- AFFICHAGE DE DEPART -->
-            <div class="fightZone noGameStart hide" id="noGameStart">
-                <button type="button" id="start">Commencer</button>
-            </div>
-
-            <!-- AFFICHADE DU RESULTAT -->
-            <div class="fightZone resultGame hide" id="resultGame">
-
-                <!-- AFFICHAGE DE LA BANNIERE -->
-                <div class="banner" id="gameResultBloc">
-                    <img src="./public/assets/img/banniereV.png" alt="" id="banner">
-                    <h4 id="gameResult">Victoire</h4>
-                </div>
-
-                <!-- AFFICHAGE DE LA RECOMPENSE -->
-                <div class="reward hide" id="reward">
-                    <p>Ce mini-jeu provient d'une histoire loufoque dont je vous laisse découvrir le résumé ci dessous :
-                    </p>
-                    <div class="presentation">
-                        <a href="https://www.atelierdesauteurs.com/text/494804679/les-honteux-de-barbegarde"
-                            target="_blank"><img src="./public/assets/img/Les Honteux de Barbegarde2.jpg"
-                                alt="Les Honteux de Barbegarde"></a>
-                        <div class="presentationText">
-                            <h3>Les Honteux de Barbegarde</h3>
-                            <p>Au merveilleux pays de Barbegarde, la quiétude règne sans partage entre les différentes
-                                communautés
-                                jusqu’à ce qu’un sinistre pendard vienne semer la discorde en distribuant des brevets de
-                                honte par
-                                la propagation intempestive des secrets de ses habitants…</p>
-                            <p>Pour lire cette histoire, cliquez sur l'image. </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BOUTON DE RECOMPENSE EN CAS DE VICTOIRE ET REDEMERRAGE D'UNE PARTIE -->
-                <button type="button" class="hide" id="takeReward">Recupérer la récompense</button>
-                <button type="button" id="restart">Recommencer</button>
-            </div>
-
-            <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
-
-            <!-- PARTIE AFFRONTEMENT -->
-
-            <div class="fightZone" id="fightZone">
-
+            <div id="mainPart">
                 <!-- RECAPITULATIF DU NOMBRE DE PARTIES -->
                 <div class="gamesNumber">
                     <h2>Nombre de parties</h2>
                     <div id="gamesNumber"></div>
                 </div>
 
-                <div class="fight" id="fight">
-                    <h2>Affrontement</h2>
-                    <h3>Nombre de manches</h3>
-                    <div id="roundNumber"></div>
-                    <!-- AFFICHE LE SCORE ET LES PROTAGONISTES -->
-                    <div class="show">
-                        <div>
-                            <h3>Score</h3>
-                            <div class="score" id="userScore"></div>
-                            <img src="./public/assets/img/ImageFrame/HutinFrame.png" alt="" class="frameImg" id="choice">
-                        </div>
-                        <div id="vs">
-                            <p>VS</p>
-                        </div>
-                        <div>
-                            <h3>Score</h3>
-                            <div class="score" id="iaScore"></div>
-                            <img src="./public/assets/img/ImageFrame/AbomineFrame.png" alt="" class="frameImg" id="random">
-                        </div>
-                    </div>
-                    <!-- AFFICHE UNE PHRASE ET LE RESULTAT DE LA MANCHE -->
-                    <div class="showText">
-                        <p id="explainEvent">Abomine lance un sort et Yvres se retrouve au sol comme une merde.</p>
-                        <h4 id="roundResult">Echec !</h4>
-                    </div>
-
-
-                    <h3 class="hide">Tricheur !</h3>
-
-                    <div class="userCharacters">
-
-                        <!-- PERSONNAGES NORMAUX -->
-                        <div class="normalCharacters">
-                            <div class="character" title="Yvette la crevette">
-                                <input type="image" src="./public/assets/img/userCharacters/Yvette.jpg" value="0" id="yvette" alt="">
-                                <!-- <img src="./public/assets/img/userCharacters/Yvette.jpg" alt="" id="yvette"> -->
-                            </div>
-                            <div class="character">
-                                <input type="image" src="./public/assets/img/Jean-Hardi2.jpg" value="1" id="jeanHardi" alt="">
-                                <!-- <img src="./public/assets/img/Jean-Hardi2.jpg" alt="" id="jeanHardi"> -->
-                            </div>
-                            <div class="character">
-                                <input type="image" src="./public/assets/img/Hutin2.jpg" value="2" id="hutin" alt="">
-                                <!-- <img src="./public/assets/img/Hutin2.jpg" alt="" id="hutin"> -->
-                            </div>
-                            <div class="character">
-                                <input type="image" src="./public/assets/img/Alavare2.jpg" value="3" id="alavare" alt="">
-                                <!-- <img src="./public/assets/img/Alavare2.jpg" alt="" id="alavare"> -->
-                            </div>
-                            <div class="character">
-                                <input type="image" src="./public/assets/img/Yvres2.jpg" value="4" id="yvres" alt="">
-                                <!-- <img src="./public/assets/img/Yvres2.jpg" alt="" id="yvres"> -->
-                            </div>
-                            <div class="character">
-                                <input type="image" src="./public/assets/img/Géhonte2.jpg" value="5" id="gehonte" alt="">
-                                <!-- <img src="./public/assets/img/Géhonte2.jpg" alt="" id="gehonte"> -->
-                            </div>
-                        </div>
-
-                        <!-- PERSONNAGES SPECIAUX -->
-                        <div class="specialCharacters">
-                            <div class="character" title="test bien sur">
-                                <input type="image" src="./public/assets/img/Austère2.jpg" value="1" id="austere" alt="">
-                                <!-- <img src="./public/assets/img/Austère2.jpg" alt=""> -->
-                            </div>
-                            <div class="character">
-                                <input type="image" src="./public/assets/img/Abomine3.jpg" value="1" id="" alt="">
-                                <!-- <img src="./public/assets/img/Abomine3.jpg" alt=""> -->
-                            </div>
-                            <div class="character">
-                                <input type="image" src="./public/assets/img/Abomine3.jpg" value="1" id="" alt="">
-                                <!-- <img src="./public/assets/img/Abomine3.jpg" alt=""> -->
-                            </div>
-                            <div class="character">
-                                <input type="image" src="./public/assets/img/userCharacters/Hontoscope.jpg" value="1" id="hontoscope" alt="">
-                                <!-- <img src="./public/assets/img/userCharacters/Hontoscope.jpg" alt=""> -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PARTIE CHEATING -->
-                    <div class="cheating">
-                        <div class="choosingCheat hide" id="choosingCheat">
-                            <div class="closeCheat">
-                                <!-- https://www.flaticon.com/fr/icone-gratuite/fermer_3426000?term=fermer&page=1&position=3&origin=search&related_id=3426000 -->
-                                <button type="button" id="closeCheat"><img src="./public/assets/img/icon/fermer.png" title="Fermer la zone de triche" alt="Fermer"></button>
-                            </div>
-                            <!-- MORCEAU POUR CHOISIR UNE CARTE DE TRICHE -->
-                            <div class="chooseCard">
-                                <div class="containImg"><img src="./public/assets/img/Austère.jpg" alt="Austère"
-                                        title="Confère une victoire" id="austereCheat">
-                                    <h3>Austère</h3>
-                                </div>
-                                <div class="containImg"><img src="./public/assets/img/Charmignon.jpg" alt="Charmignon"
-                                        title="Confère une victoire en moins à l'ordinateur" id="charmignonCheat">
-                                    <h3>Charmignon</h2>
-                                </div>
-                                <div class="containImg"><img src="./public/assets/img/Barbegarde.jpg" alt="Barbegarde"
-                                        title="Divise les scores par deux" id="barbegardeCheat">
-                                    <h3>Barbegarde</h2>
-                                </div>
-                                <div class="containImg"><img src="./public/assets/img/Hontoscope.jpg" alt="Hontoscope"
-                                        title="Une chance sur deux de retirer deux points à l'un ou l'autre"
-                                        id="hontoscopeCheat">
-                                    <h3>Hontoscope</h2>
-                                </div>
-                            </div>
-                            <!-- MORCEAU POUR CHOISIR LA FIN DE LA PARTIE -->
-                            <div class="chooseResult">
-                                <button type="button" id="victory">Victoire</button>
-                                <button type="button" id="null">Egalité</button>
-                                <button type="button" id="defeat">Défaite</button>
-                            </div>
-                        </div>
-
-                        <!-- MORCEAU POUR ENTRER DANS LA SECTION DE TRICHE -->
-                        <div class="cheatingEnter" id="cheatingEnter">
-                            <button type="button" title="Entrer dans la section triche" id="cheat">Triche</button>
-                            <div class="hide" id="passwordSection">
-                                <p>C'est honteux !</p>
-                                <input type="password" name="password" id="password">
-                            </div>
-                        </div>
-
-
-                    </div>
+                <!-- AFFICHAGE DE DEPART -->
+                <div class="fightZone noGameStart" id="noGameStart">
+                    <button type="button" id="startGame">Commencer</button>
                 </div>
 
+                <!-- AFFICHADE DU RESULTAT -->
+                <div class="fightZone resultGame hide" id="resultGame">
 
-                <div class="surrend"><button type="reset" title="Recommence la partie" id="surrend">Abandonner</button>
+                    <!-- AFFICHAGE DE LA BANNIERE -->
+                    <div class="banner" id="gameResultBloc">
+                        <img src="./public/assets/img/banniereV.png" alt="" id="banner">
+                        <h4 id="gameResult">Victoire</h4>
+                    </div>
+
+                    <!-- AFFICHAGE DE LA RECOMPENSE -->
+                    <div class="reward hide" id="reward">
+                        <p>Ce mini-jeu provient d'une histoire loufoque dont je vous laisse découvrir le résumé ci
+                            dessous :
+                        </p>
+                        <div class="presentation">
+                            <a href="https://www.atelierdesauteurs.com/text/494804679/les-honteux-de-barbegarde"
+                                target="_blank"><img src="./public/assets/img/Les Honteux de Barbegarde2.jpg"
+                                    alt="Les Honteux de Barbegarde"></a>
+                            <div class="presentationText">
+                                <h3>Les Honteux de Barbegarde</h3>
+                                <p>Au merveilleux pays de Barbegarde, la quiétude règne sans partage entre les
+                                    différentes
+                                    communautés
+                                    jusqu’à ce qu’un sinistre pendard vienne semer la discorde en distribuant des
+                                    brevets de
+                                    honte par
+                                    la propagation intempestive des secrets de ses habitants…</p>
+                                <p>Pour lire cette histoire, cliquez sur l'image. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BOUTON DE RECOMPENSE EN CAS DE VICTOIRE ET REDEMERRAGE D'UNE PARTIE -->
+                    <button type="button" class="hide" id="takeReward">Recupérer la récompense</button>
+                    <button type="button" id="restart">Recommencer</button>
+                </div>
+
+                <!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+                <!-- PARTIE AFFRONTEMENT -->
+
+                <div class="fightZone hide" id="fightZone">
+
+                    <div class="fight" id="fight">
+                        <h2>Affrontement</h2>
+                        <h3>Nombre de manches</h3>
+                        <div id="roundNumber"></div>
+                        <!-- AFFICHE LE SCORE ET LES PROTAGONISTES -->
+                        <div class="show">
+                            <div>
+                                <h3>Score</h3>
+                                <div class="score" id="userScore"></div>
+                                <img src="./public/assets/img/ImageFrame/HutinFrame.png" alt="" class="frameImg"
+                                    id="userSelection">
+                            </div>
+                            <div id="vs">
+                                <p>VS</p>
+                            </div>
+                            <div>
+                                <h3>Score</h3>
+                                <div class="score" id="iaScore"></div>
+                                <img src="./public/assets/img/ImageFrame/AbomineFrame.png" alt="" class="frameImg"
+                                    id="iaSelection">
+                            </div>
+                        </div>
+                        <!-- AFFICHE UNE PHRASE ET LE RESULTAT DE LA MANCHE -->
+                        <div class="showText">
+                            <p id="explainEvent">Abomine lance un sort et Yvres se retrouve au sol comme une merde.</p>
+                            <small>Vous avez reçu un personnage spécial !</small>
+                            <h4 id="roundResult">Echec !</h4>
+                        </div>
+
+
+                        <h3 class="hide">Tricheur !</h3>
+
+                        <div class="userCharacters">
+
+                            <!-- PERSONNAGES NORMAUX -->
+                            <div class="normalCharacters">
+                                <div class="character" title="Yvette la crevette">
+                                    <input type="image" src="./public/assets/img/userCharacters/Yvette.jpg" value="0"
+                                        id="yvette" alt="">
+                                </div>
+                                <div class="character">
+                                    <input type="image" src="./public/assets/img/Jean-Hardi2.jpg" value="1"
+                                        id="jeanHardi" alt="">
+                                </div>
+                                <div class="character">
+                                    <input type="image" src="./public/assets/img/Hutin2.jpg" value="2" id="hutin"
+                                        alt="">
+                                </div>
+                                <div class="character">
+                                    <input type="image" src="./public/assets/img/Alavare2.jpg" value="3" id="alavare"
+                                        alt="">
+                                </div>
+                                <div class="character">
+                                    <input type="image" src="./public/assets/img/Yvres2.jpg" value="4" id="yvres"
+                                        alt="">
+                                </div>
+                                <div class="character">
+                                    <input type="image" src="./public/assets/img/Géhonte2.jpg" value="5" id="gehonte"
+                                        alt="">
+                                </div>
+                            </div>
+
+                            <!-- PERSONNAGES SPECIAUX -->
+                            <div class="specialCharacters">
+                                <div class="character" title="test bien sur">
+                                    <input type="image" src="./public/assets/img/Austère2.jpg" value="1" id="austere"
+                                        alt="">
+                                </div>
+                                <div class="character">
+                                    <input type="image" src="./public/assets/img/Abomine3.jpg" value="1" id="" alt="">
+                                </div>
+                                <div class="character">
+                                    <input type="image" src="./public/assets/img/Abomine3.jpg" value="1" id="" alt="">
+                                </div>
+                                <div class="character">
+                                    <input type="image" src="./public/assets/img/userCharacters/Hontoscope.jpg"
+                                        value="1" id="hontoscope" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PARTIE CHEATING -->
+                        <div class="cheating">
+                            <div class="choosingCheat hide" id="choosingCheat">
+                                <div class="closeCheat">
+                                    <!-- https://www.flaticon.com/fr/icone-gratuite/fermer_3426000?term=fermer&page=1&position=3&origin=search&related_id=3426000 -->
+                                    <button type="button" id="closeCheat"><img src="./public/assets/img/icon/fermer.png"
+                                            title="Fermer la zone de triche" alt="Fermer"></button>
+                                </div>
+                                <!-- MORCEAU POUR CHOISIR UNE CARTE DE TRICHE -->
+                                <div class="chooseCard">
+                                    <div class="containImg"><img src="./public/assets/img/Austère.jpg" alt="Austère"
+                                            title="Confère une victoire" id="austereCheat">
+                                        <h3>Austère</h3>
+                                    </div>
+                                    <div class="containImg"><img src="./public/assets/img/Charmignon.jpg"
+                                            alt="Charmignon" title="Confère une victoire en moins à l'ordinateur"
+                                            id="charmignonCheat">
+                                        <h3>Charmignon</h2>
+                                    </div>
+                                    <div class="containImg"><img src="./public/assets/img/Barbegarde.jpg"
+                                            alt="Barbegarde" title="Divise les scores par deux" id="barbegardeCheat">
+                                        <h3>Barbegarde</h2>
+                                    </div>
+                                    <div class="containImg"><img src="./public/assets/img/Hontoscope.jpg"
+                                            alt="Hontoscope"
+                                            title="Une chance sur deux de retirer deux points à l'un ou l'autre"
+                                            id="hontoscopeCheat">
+                                        <h3>Hontoscope</h2>
+                                    </div>
+                                </div>
+                                <!-- MORCEAU POUR CHOISIR LA FIN DE LA PARTIE -->
+                                <div class="chooseResult">
+                                    <button type="button" id="victory">Victoire</button>
+                                    <button type="button" id="null">Egalité</button>
+                                    <button type="button" id="defeat">Défaite</button>
+                                </div>
+                            </div>
+
+                            <!-- MORCEAU POUR ENTRER DANS LA SECTION DE TRICHE -->
+                            <div class="cheatingEnter" id="cheatingEnter">
+                                <button type="button" title="Entrer dans la section triche" id="cheat">Triche</button>
+                                <div class="hide" id="passwordSection">
+                                    <p>C'est honteux !</p>
+                                    <input type="password" name="password" id="password">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="surrend"><button type="reset" title="Recommence la partie"
+                            id="surrend">Abandonner</button>
+                    </div>
                 </div>
             </div>
 

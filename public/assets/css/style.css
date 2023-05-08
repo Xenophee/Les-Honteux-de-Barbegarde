@@ -112,10 +112,11 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: end;
+    height: 80%;
     border: var(--border-brown-double);
 }
 
-#start, #restart {
+#startGame, #restart {
     font-family: var(--special-font);
     font-size: var(--font-medium-size);
     min-width: 30%;
@@ -173,9 +174,13 @@ h1 {
 
 /* COMBAT */
 
-.fightZone {
+#mainPart {
     width: 60%;
 }
+
+/* .fightZone {
+    width: 100%;
+} */
 
 .gamesNumber {
     background-color: crimson;
