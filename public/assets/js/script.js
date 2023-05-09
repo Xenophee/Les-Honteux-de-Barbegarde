@@ -21,7 +21,7 @@ startGame.addEventListener('click', () => {
 following.addEventListener('click', () => {
     eventGameDisplay.classList.add('hide');
     fightZone.classList.remove('hide');
-})
+});
 
 // AFFICHE LA RECOMPENSE EN CAS DE VICTOIRE
 takeReward.addEventListener('click', () => {

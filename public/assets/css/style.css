@@ -276,9 +276,11 @@ h1 {
     position: relative;
 }
 
-.character img, .character input {
+.character input {
     width: 70px;
+    height: 70px;
     border-radius: 50%;
+    object-fit: cover;
     border: var(--border-beige-double);
 }
 
@@ -336,8 +338,10 @@ padding-bottom: 20px;
     justify-content: space-around;
 }
 
-.containImg img {
-    width: 50%;
+.cheatCharacter input {
+    width: 130px;
+    height: 180px;
+    object-fit: cover;
 }
 
 .chooseResult {

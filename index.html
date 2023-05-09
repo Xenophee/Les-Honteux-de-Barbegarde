@@ -263,25 +263,25 @@
                             <!-- PERSONNAGES SPECIAUX -->
                             <div class="specialCharacters">
                                 <div class="character" title="test bien sur">
-                                    <input type="image" src="./public/assets/img/Austère2.jpg" value="1" id="austere"
+                                    <input type="image" class="inactive" src="./public/assets/img/Austere.jpg" value="0" id="austere"
                                         alt="">
                                 </div>
                                 <div class="character">
-                                    <input type="image" src="./public/assets/img/Abomine3.jpg" value="1" id="" alt="">
+                                    <input type="image" class="inactive" src="./public/assets/img/charmignon.jpg" value="1" id="charmignon" alt="">
                                 </div>
                                 <div class="character">
-                                    <input type="image" src="./public/assets/img/Abomine3.jpg" value="1" id="" alt="">
+                                    <input type="image" class="inactive" src="./public/assets/img/devine.jpg" value="2" id="devine" alt="">
                                 </div>
                                 <div class="character">
-                                    <input type="image" src="./public/assets/img/userCharacters/Hontoscope.jpg"
-                                        value="1" id="hontoscope" alt="">
+                                    <input type="image" class="inactive" src="./public/assets/img/userCharacters/Hontoscope.jpg"
+                                        value="3" id="hontoscope" alt="">
                                 </div>
                             </div>
                         </div>
 
                         <!-- PARTIE CHEATING -->
                         <div class="cheating">
-                            <div class="choosingCheat hide" id="choosingCheat">
+                            <div class="choosingCheat " id="choosingCheat">
                                 <div class="closeCheat">
                                     <!-- https://www.flaticon.com/fr/icone-gratuite/fermer_3426000?term=fermer&page=1&position=3&origin=search&related_id=3426000 -->
                                     <button type="button" id="closeCheat"><img src="./public/assets/img/icon/fermer.png"
@@ -289,31 +289,32 @@
                                 </div>
                                 <!-- MORCEAU POUR CHOISIR UNE CARTE DE TRICHE -->
                                 <div class="chooseCard">
-                                    <div class="containImg"><img src="./public/assets/img/Austère.jpg" alt="Austère"
-                                            title="Confère une victoire" id="austereCheat">
-                                        <h3>Austère</h3>
+                                    <div class="cheatCharacter">
+                                        <input type="image" src="./public/assets/img/austere.jpg"
+                                            value="0" id="hontoscope" alt="">
+                                            <h3>Austère</h2>
                                     </div>
-                                    <div class="containImg"><img src="./public/assets/img/Charmignon.jpg"
-                                            alt="Charmignon" title="Confère une victoire en moins à l'ordinateur"
-                                            id="charmignonCheat">
-                                        <h3>Charmignon</h2>
+                                    <div class="cheatCharacter">
+                                        <input type="image" src="./public/assets/img/Charmignon.jpg"
+                                            value="1" id="hontoscope" alt="">
+                                            <h3>Charmignon</h2>
                                     </div>
-                                    <div class="containImg"><img src="./public/assets/img/Barbegarde.jpg"
-                                            alt="Barbegarde" title="Divise les scores par deux" id="barbegardeCheat">
-                                        <h3>Barbegarde</h2>
+                                    <div class="cheatCharacter">
+                                        <input type="image" src="./public/assets/img/devine.jpg"
+                                            value="2" id="hontoscope" alt="">
+                                            <h3>Devine</h2>
                                     </div>
-                                    <div class="containImg"><img src="./public/assets/img/Hontoscope.jpg"
-                                            alt="Hontoscope"
-                                            title="Une chance sur deux de retirer deux points à l'un ou l'autre"
-                                            id="hontoscopeCheat">
-                                        <h3>Hontoscope</h2>
+                                    <div class="cheatCharacter">
+                                        <input type="image" src="./public/assets/img/A portrait of a hairy pink frog with four eyes on .jpg"
+                                            value="3" id="hontoscope" alt="">
+                                            <h3>Hontoscope</h2>
                                     </div>
                                 </div>
                                 <!-- MORCEAU POUR CHOISIR LA FIN DE LA PARTIE -->
                                 <div class="chooseResult">
-                                    <button type="button" id="victory">Victoire</button>
-                                    <button type="button" id="null">Egalité</button>
-                                    <button type="button" id="defeat">Défaite</button>
+                                    <button type="button" value="0" id="defeat">Défaite</button>
+                                    <button type="button" value="1" id="victory">Victoire</button>
+                                    <button type="button" value="2" id="null">Egalité</button>
                                 </div>
                             </div>
 
