@@ -207,7 +207,7 @@
                             <div>
                                 <h3>Score</h3>
                                 <div class="score" id="userScore"></div>
-                                <img src="./public/assets/img/ImageFrame/HutinFrame.png" alt="" class="frameImg"
+                                <img src="" alt="" class="frameImg"
                                     id="userSelection">
                             </div>
                             <div id="vs">
@@ -216,15 +216,15 @@
                             <div>
                                 <h3>Score</h3>
                                 <div class="score" id="iaScore"></div>
-                                <img src="./public/assets/img/ImageFrame/AbomineFrame.png" alt="" class="frameImg"
+                                <img src="" alt="" class="frameImg"
                                     id="iaSelection">
                             </div>
                         </div>
                         <!-- AFFICHE UNE PHRASE ET LE RESULTAT DE LA MANCHE -->
                         <div class="showText">
-                            <p id="explainEvent">Abomine lance un sort et Yvres se retrouve au sol comme une merde.</p>
-                            <small>Vous avez reçu un personnage spécial !</small>
-                            <h4 id="roundResult">Echec !</h4>
+                            <p id="explainEvent"></p>
+                            <small id="specialText"></small>
+                            <h4 id="roundResult"></h4>
                         </div>
 
 
@@ -281,7 +281,7 @@
 
                         <!-- PARTIE CHEATING -->
                         <div class="cheating">
-                            <div class="choosingCheat " id="choosingCheat">
+                            <div class="choosingCheat hide" id="choosingCheat">
                                 <div class="closeCheat">
                                     <!-- https://www.flaticon.com/fr/icone-gratuite/fermer_3426000?term=fermer&page=1&position=3&origin=search&related_id=3426000 -->
                                     <button type="button" id="closeCheat"><img src="./public/assets/img/icon/fermer.png"
@@ -291,24 +291,30 @@
                                 <div class="chooseCard">
                                     <div class="cheatCharacter">
                                         <input type="image" src="./public/assets/img/austere.jpg"
-                                            value="0" id="hontoscope" alt="">
+                                            value="0" id="cheatAustere" alt="">
                                             <h3>Austère</h2>
                                     </div>
                                     <div class="cheatCharacter">
                                         <input type="image" src="./public/assets/img/Charmignon.jpg"
-                                            value="1" id="hontoscope" alt="">
+                                            value="1" id="cheatCharmignon" alt="">
                                             <h3>Charmignon</h2>
                                     </div>
                                     <div class="cheatCharacter">
                                         <input type="image" src="./public/assets/img/devine.jpg"
-                                            value="2" id="hontoscope" alt="">
+                                            value="2" id="cheatDevine" alt="">
                                             <h3>Devine</h2>
                                     </div>
                                     <div class="cheatCharacter">
                                         <input type="image" src="./public/assets/img/A portrait of a hairy pink frog with four eyes on .jpg"
-                                            value="3" id="hontoscope" alt="">
+                                            value="3" id="cheatHontoscope" alt="">
                                             <h3>Hontoscope</h2>
                                     </div>
+                                </div>
+                                <!-- MORCEAU POUR CHOISIR LA FIN DE LA PARTIE -->
+                                <div class="chooseEvent">
+                                    <button type="button" title="Passe les scores en négatifs" value="0" id="sarcophage">Sarcophage</button>
+                                    <button type="button" title="Divise les scores par deux" value="1" id="barbegarde">Barbegarde</button>
+                                    <button type="button" title="Assomme tous le monde" value="2" id="createur">Créateur</button>
                                 </div>
                                 <!-- MORCEAU POUR CHOISIR LA FIN DE LA PARTIE -->
                                 <div class="chooseResult">
@@ -404,11 +410,12 @@
 
         </section>
 
-
-
     </main>
+
     <script src="./public/assets/js/script.js"></script>
-    <script src="./public/assets/js/game.js"></script>
+    <script type="module" src="./public/assets/js/constants.js"></script>
+    <script type="module" src="./public/assets/js/localStorage.js"></script>
+    <script type="module" src="./public/assets/js/game.js"></script>
 </body>
 
 </html>

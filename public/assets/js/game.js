@@ -1,182 +1,22 @@
 
-// CRÉATION ET ENREGISTREMENT DES INFORMATIONS NÉCESSAIRES DANS LE LOCAL STORAGE
-let saves = {
-    games: { matches: 0, victories: 0, defeats: 0, equalities: 0},
-    rounds: { rounds: 0, success: 0, fail: 0, equal: 0},
-    scores: { user: 0, ia: 0},
-    lastCharacters: { user: null, ia: null},
-    userSpecialCharacters: [false, false, false, false],
-    iaSpecialCharacters: [false, false, false, false],
-    event: false
-};
+import { userCharacters, iaCharacters, gameEvent, roundResults, gameOver } from './constants.js';
+import { games, displayGameStat, saveToLocalStorage, cleanLocalStorage } from './localStorage.js';
 
-// RECUPERATION DES INFORMATIONS DES SCORES DE L'UTILISATEUR DANS LE LOCAL STORAGE
-let games = localStorage.getItem('games') ? JSON.parse(localStorage.getItem('games')) : saves;
 
 
 // MUSIQUE PRINCIPALE
 let mainMusic = new Audio("./public/assets/audio/Jeu.mp3");
 
-const userCharacters = {
-    normal: [
-        { name: 'Yvette la Crevette', src: 'public/assets/img/ImageFrame/YvetteFrame.png', alt: ''},
-        { name: 'Jean-Hardi l\'Emphatique', src: 'public/assets/img/ImageFrame/JeanHardiFrame.png', alt: ''},
-        { name: 'Hutin le Lutin', src: 'public/assets/img/ImageFrame/HutinFrame.png', alt: ''},
-        { name: 'Alavare l\'Opportuniste', src: 'public/assets/img/ImageFrame/AlavareFrame.png', alt: ''},
-        { name: 'Yvres le soit-disant Druide', src: 'public/assets/img/ImageFrame/YvresFrame.png', alt: ''},
-        { name: 'Géhonte le Magicien de la Honte', src: 'public/assets/img/ImageFrame/GehonteFrame.png', alt: ''}
-    ],
-    special: [
-        { name: 'Austère le Drastique', src: 'public/assets/img/ImageFrame/special/austere.png', alt: '', text: 'Austère intervient', effect: 'L\'adversaire perds un point !'},
-        { name: 'Charmignon', src: 'public/assets/img/ImageFrame/special/charmignon.png', alt: '', text: 'Charmignon intervient', effect: 'Aucun personnage spécial ne peut être utilisé par l\'ordinateur pendant deux tours !'},
-        { name: 'Devine', src: 'public/assets/img/ImageFrame/special/devine.png', alt: '', text: 'Devine intervient', effect: 'Vous gagnez un point !'},
-        { name: 'Hontoscope', src: 'public/assets/img/ImageFrame/special/hontoscope.png', alt: '', text: 'Hontoscope intervient', effect: ''}
-    ]
-};
-
-const iaCharacters = {
-    normal: [
-        { name: 'Boulb le Homard', src: 'public/assets/img/ImageFrame/HomardFrame.png', alt: ''},
-        { name: 'Jean-Fonce le Sophistique', src: 'public/assets/img/ImageFrame/JeanFonceFrame.png', alt: ''},
-        { name: 'Furoncle le Pesteux', src: 'public/assets/img/ImageFrame/FuroncleFrame.png', alt: ''},
-        { name: 'Pétroncle le Barbeux', src: 'public/assets/img/ImageFrame/PetroncleFrame.png', alt: ''},
-        { name: 'Licorne non binaire', src: 'public/assets/img/ImageFrame/LicorneFrame.png', alt: ''},
-        { name: 'La mascotte', src: 'public/assets/img/ImageFrame/AbomineFrame.png', alt: ''}
-    ],
-    special: [
-        { name: 'Abomine l\'empoisonneuse', src: 'public/assets/img/ImageFrame/special/abomine.png', alt: '', text: '', effect: ''},
-        { name: 'Le porteur de lumière', src: 'public/assets/img/ImageFrame/special/bouc.png', alt: '', text: '', effect: ''},
-        { name: 'Le suppôt de Sarcophage', src: 'public/assets/img/ImageFrame/special/suppot.png', alt: '', text: '', effect: ''},
-        { name: 'Hontoscope', src: 'public/assets/img/ImageFrame/special/hontoscope.png', alt: '', text: '', effect: ''}
-    ]
-};
-
-const gameEvent = [
-    { name: 'Sarcophage le Nécromancien', src: 'public/assets/img/ImageFrame/event/sarcophage.png', alt: '', text: 'Sarcophage intervient', effect: 'Les scores deviennent négatifs !'},
-    { name: 'Barbegarde', src: 'public/assets/img/ImageFrame/event/barbegarde.png', alt: '', text: 'Barbegarde intervient', effect: 'Les scores sont divisés par deux !'},
-    { name: 'Créateur', src: 'public/assets/img/ImageFrame/event/createur.png', alt: '', text: 'Le créateur intervient', effect: ''}
-];
-
-
-const roundResults = [
-    { title: 'Echec !', class: 'fail'},
-    { title: 'Succès !', class: 'success'},
-    { title: 'Egalité !', class: 'equal'}
-];
-
-const gameOver = [
-    { title: 'Défaite', banner: './public/assets/img/banniereD.png', audio: new Audio("./public/assets/audio/Defeat.mp3")},
-    { title: 'Victoire', banner: './public/assets/img/banniereV.png', audio: new Audio("./public/assets/audio/Victory.mp3")},
-    { title: 'Egalité', banner: './public/assets/img/banniereE.png', audio: new Audio("./public/assets/audio/Egalite.mp3")}
-]
-
 const normalSelect = document.querySelectorAll('.normalCharacters .character input');
 const specialSelect = document.querySelectorAll('.specialCharacters .character input');
-const specialActive = document.querySelectorAll('.specialCharacters .character .active');
+const cheatCharacter = document.querySelectorAll('.cheatCharacter input');
+const chooseEvent = document.querySelectorAll('.chooseEvent button');
 const chooseResult = document.querySelectorAll('.chooseResult button');
 console.log(games);
 
 if (games.rounds.rounds > 0) {
     noGameStart.classList.add('hide');
     fightZone.classList.remove('hide');
-}
-
-// -------------------------------------------------------------------------------------------------------------------------------------------------------
-
-// GERE L'AFFICHAGE DES SCORES DU JEU
-let displayGameStat = () => {
-
-    if (games.lastCharacters.user != null) {
-        // Affiche les images des personnages sélectionnés
-        userSelection.src = userCharacters.normal[games.lastCharacters.user].src;
-        userSelection.title = userCharacters.normal[games.lastCharacters.user].name;
-        userSelection.alt = userCharacters.normal[games.lastCharacters.user].alt;
-
-        iaSelection.src = iaCharacters.normal[games.lastCharacters.ia].src;
-        iaSelection.title = iaCharacters.normal[games.lastCharacters.ia].name;
-        iaSelection.alt = iaCharacters.normal[games.lastCharacters.ia].alt;
-    }
-
-    // Affiche le nombre de parties et de manches globales
-    gamesNumber.textContent = games.games.matches;
-    roundNumber.textContent = games.rounds.rounds;
-
-    // Affiche les scores de l'utilisateur
-    victoriesNumber.textContent = games.games.victories;
-    equalitiessNumber.textContent = games.games.equalities;
-    defeatsNumber.textContent = games.games.defeats;
-
-    sucessNumber.textContent = games.rounds.success;
-    equalNumber.textContent = games.rounds.equal;
-    failNumber.textContent = games.rounds.fail;
-
-    // Affiche les scores de l'ia
-    iaVictories.textContent = games.games.defeats;
-    iaEqualities.textContent = games.games.equalities;
-    iaDefeats.textContent = games.games.victories;
-
-    iaSuccess.textContent = games.rounds.fail;
-    iaEqual.textContent = games.rounds.equal;
-    iaFail.textContent = games.rounds.success;
-
-    // Affiche le score de la partie en cours
-    userScore.textContent = games.scores.user;
-    iaScore.textContent = games.scores.ia;
-
-}
-
-displayGameStat();
-
-
-// -------------------------------------------------------------------------------------------------------------------------------------------------------
-
-// EFFECTUE UNE SAUVEGARDE DES SCORES DANS LE LOCAL STORAGE
-let saveToLocalStorage = () => {
-
-    // Conversion de l'objet en chaine avant de procéder à l'enregistrement
-    let updateGames = JSON.stringify(games);
-
-    // Enregistrement de la mise à jour des scores dans le localStorage
-    localStorage.setItem('games', updateGames);
-
-    // Rappel de la fonction d'affichage des scores sur le jeu
-    displayGameStat();
-}
-
-
-// RÉINITIALISE TOUS LES SCORES À ZÉRO OU SEULEMENT LES SCORES DE LA DERNIÈRE PARTIE SELON LE BOUTON CLIQUÉ
-let cleanLocalStorage = (event) => {
-
-    let resetType = (event.target == cleanScores) ? 1 : 0;
-
-    switch(resetType) {
-        case 1:
-            // Conversion de l'objet de départ avec les scores à 0
-            games = saves;
-            let clean = JSON.stringify(games);
-
-            // Enregistrement du nettoyage
-            localStorage.setItem('games', clean);
-
-            // Relancement de la page pour repartir de la base
-            location.reload();
-            break;
-
-        default:
-            games.scores.user = 0;
-            games.scores.ia = 0;
-            games.rounds.rounds = 0;
-
-            games.rounds.success = 0;
-            games.rounds.equal = 0;
-            games.rounds.fail = 0;
-
-            games.lastCharacters.user = null;
-            games.lastCharacters.ia = null;
-
-            saveToLocalStorage();
-    }
-    
 }
 
 
@@ -190,12 +30,11 @@ let randomNumber = (randomType, value) => {
     if (randomType == true) {
 
         Number = Math.floor(Math.random()*(value));
-        console.log(`Le chiffre random est ${Number}`);
 
     } else {
 
         Number = Math.floor(Math.random() * 100) + 1;
-        
+
     }
 
     return Number;
@@ -204,10 +43,11 @@ let randomNumber = (randomType, value) => {
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // AFFICHE LES EVENEMENTS ET ENREGISTRE LES EFFETS
-let eventGame = () => {
+let eventGame = (type) => {
 
-    let eventType = randomNumber();
-    console.log(`Le chiffre random event est ${eventType}`);
+    // console.log(type);
+    let eventType = (type !== undefined) ? Number(type) : randomNumber();
+    // console.log(`Le chiffre random event est ${eventType}`);
 
     // Si le nombre aléatoire sorti est supérieur à 20, il n'y aura pas d'évènement ; on stoppe le script
     if (eventType >= 20) {
@@ -215,7 +55,7 @@ let eventGame = () => {
     }
 
     // On relance la fonction du nombre aléatoire avec true en paramètre pour obtenir un chiffre entre 0 et 2
-    eventType = randomNumber(true, gameEvent.length);
+    eventType = (type !== undefined) ? Number(type) : randomNumber(true, gameEvent.length);
     
     // Change la scène pour les évènements
     eventGameDisplay.classList.remove('hide');
@@ -227,6 +67,7 @@ let eventGame = () => {
     eventImg.alt = gameEvent[eventType].alt;
     eventText.textContent = gameEvent[eventType].text;
     eventEffect.textContent = gameEvent[eventType].effect;
+    gameEvent[eventType].audio.play();
 
     // Mets en place les effets de l'évènement selon son type
     switch(eventType) {
@@ -243,12 +84,15 @@ let eventGame = () => {
                 eventGameDisplay.classList.add('hide');
                 resultGame.classList.remove('hide');
                 fightZone.classList.add('hide');
+                gameEvent[eventType].audio.pause();
                 endGame(2);
             });
     }
 
     games.event = true;
     saveToLocalStorage();
+
+    return true;
 }
 
 
@@ -258,13 +102,18 @@ let specialObtain = () => {
 
     let specialUserType = randomNumber();
     let specialIaType = randomNumber();
-    console.log(games.userSpecialCharacters);
+    let resultUser;
+    let resultIa;
 
     // Si le nombre aléatoire sorti est supérieur à 20, il n'y aura pas d'obtention de personnage spéciaux ; on stoppe le script
-    if (specialUserType <= 40) {
+    if (specialUserType <= 30) {
 
         specialUserType = randomNumber(true, userCharacters.special.length);
 
+        if(games.userSpecialCharacters[specialUserType] == false) {
+            resultUser = true;
+        }
+        
         games.userSpecialCharacters[specialUserType] = true;
 
         specialSelect[specialUserType].classList.replace('inactive', 'active');
@@ -272,23 +121,35 @@ let specialObtain = () => {
         specialSelect[specialUserType].addEventListener('click', specialUse);
     }
 
-    if (specialIaType <= 40) {
+    if (specialIaType <= 30) {
         
         specialIaType = randomNumber(true, iaCharacters.special.length);
 
+        if(games.iaSpecialCharacters[specialIaType] == false) {
+            resultIa = true;
+        }
+
         games.iaSpecialCharacters[specialIaType] = true;
+
+    }
+
+    if (resultUser == true && resultIa == true) {
+        specialText.textContent = 'Vous et l\'ordinateur avez reçu un personnage spécial !';
+    } else if (resultUser == true) {
+        specialText.textContent = 'Vous avez reçu un personnage spécial !';
+    } else if (resultIa == true) {
+        specialText.textContent = 'L\'ordinateur a reçu un personnage spécial !';
     }
 
     saveToLocalStorage();
-
 }
 
 
 // UTILISATION DES PERSONNAGES SPECIAUX
 let specialUse = (element) => {
 
-    console.log(element.target.value);
-    let special = element.target.value;
+    let special = Number(element.target.value);
+    console.log(element.target);
 
     // Change la scène pour les évènements
     eventGameDisplay.classList.remove('hide');
@@ -300,8 +161,9 @@ let specialUse = (element) => {
     eventImg.alt = userCharacters.special[special].alt;
     eventText.textContent = userCharacters.special[special].text;
     eventEffect.textContent = userCharacters.special[special].effect;
+    userCharacters.special[special].audio.play();
 
-    switch (Number(special)) {
+    switch (special) {
         case 0:
             games.scores.ia -= 1;
             break;
@@ -330,6 +192,72 @@ let specialUse = (element) => {
     saveToLocalStorage();
 }
 
+// DETERMINE QUAND L'ORDINATEUR UTILISE SES PROPRES PERSONNAGES SPECIAUX
+let iaSpecialUse = () => {
+
+    console.log(games.iaSpecialCharacters);
+    // Vérifie si l'ordinateur possède un personnage spécial ; si ce n'est pas le cas, fin du script
+    if (!games.iaSpecialCharacters.includes(true)) {
+        return false;
+    }
+
+    let special = [];
+
+    games.iaSpecialCharacters.forEach((element, index) => {
+        
+        if (element == true) {
+            special.push(index);
+        }
+    });
+
+    let witchSpecial = randomNumber(true,special.length);
+    // console.log('Le spécial ia est ' + witchSpecial);
+    let chanceNumber = randomNumber();
+    console.log('Le nombre chance IA est de ' + chanceNumber);
+
+    if (chanceNumber >= 20) {
+        return false;
+    }
+
+        // Change la scène pour les évènements
+        eventGameDisplay.classList.remove('hide');
+        fightZone.classList.add('hide');
+
+        // Affiche toutes les informations relatives au personnage spécial utilisé
+        eventImg.title = iaCharacters.special[special[witchSpecial]].name;
+        eventImg.src = iaCharacters.special[special[witchSpecial]].src;
+        eventImg.alt = iaCharacters.special[special[witchSpecial]].alt;
+        eventText.textContent = iaCharacters.special[special[witchSpecial]].text;
+        eventEffect.textContent = iaCharacters.special[special[witchSpecial]].effect;
+        iaCharacters.special[special[witchSpecial]].audio.play();
+
+        games.iaSpecialCharacters[special[witchSpecial]] = false;
+        // console.log('Je renvoi ' + special[witchSpecial]);
+
+        switch (special[witchSpecial]) {
+            case 0:
+                games.scores.user -= 1;
+                break;
+            case 1:
+                
+                break;
+            case 2:
+                games.scores.ia += 1;
+                break;
+        
+            default:
+                let hontoscopeDecision = Math.floor(Math.random() * 2);
+                // console.log('le random hontoscope est ' + hontoscopeDecision);
+                if (hontoscopeDecision == false) {
+                    games.scores.ia -= 2;
+                } else {
+                    games.scores.user -= 2;
+                }
+    }
+
+    saveToLocalStorage();
+    return true;
+}
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -361,7 +289,7 @@ let endGame = (result) => {
             games.games.equalities += 1;
     }
 
-    resultSentence.textContent += `La partie s'est déroulée en ${games.rounds.rounds} manches.`;
+    resultSentence.textContent += ` La partie s'est déroulée en ${games.rounds.rounds} manches.`;
     games.games.matches += 1;
 
     // Appel de la fonction de sauvegarde dans le local storage
@@ -421,13 +349,27 @@ let score = (result) => {
 // EFFECTUE LES TESTS POUR CONNAITRE LE GAGNANT D'UN AFFRONTEMENT
 let battle = (element) => {
 
-    games.lastCharacters.user = element.target.value;
+    // Si aucun évènement n'a encore eu lieu, on lance le script pour en faire apparaitre un potentiellement
+    if (games.event === false) {
+        let resultEvent = eventGame();
+        if (resultEvent === true) {
+            return false;
+        }
+    }
+
+    let resultIaSpecialUse = iaSpecialUse();
+
+    if (resultIaSpecialUse === true) {
+        return false;
+    }
+
+    games.lastCharacters.user = Number(element.target.value);
     games.lastCharacters.ia = randomNumber(true, iaCharacters.normal.length);
     let result;
     
     switch (games.lastCharacters.user) {
         // POUR YVETTE
-        case '0' :
+        case 0 :
             if (games.lastCharacters.ia == 1 || games.lastCharacters.ia == 3) {
                 result = 1;
             } else if (games.lastCharacters.ia == 4 || games.lastCharacters.ia == 5) {
@@ -437,7 +379,7 @@ let battle = (element) => {
             }
             break;
         // POUR JEAN HARDI
-        case '1' :
+        case 1 :
             if (games.lastCharacters.ia == 4 || games.lastCharacters.ia == 5) {
                 result = 1;
             } else if (games.lastCharacters.ia == 0 || games.lastCharacters.ia == 2) {
@@ -447,7 +389,7 @@ let battle = (element) => {
             }
             break;
         // POUR HUTIN
-        case '2' :
+        case 2 :
             if (games.lastCharacters.ia == 1 || games.lastCharacters.ia == 3) {
                 result = 1;
             } else if (games.lastCharacters.ia == 4 || games.lastCharacters.ia == 5) {
@@ -457,7 +399,7 @@ let battle = (element) => {
             }
             break;
         // POUR ALAVARE
-        case '3' :
+        case 3 :
             if (games.lastCharacters.ia == 4 || games.lastCharacters.ia == 5) {
                 result = 1;
             } else if (games.lastCharacters.ia == 0 || games.lastCharacters.ia == 2) {
@@ -467,7 +409,7 @@ let battle = (element) => {
             }
             break;
         // POUR YVRES
-        case '4' :
+        case 4 :
             if (games.lastCharacters.ia == 0 || games.lastCharacters.ia == 2) {
                 result = 1;
             } else if (games.lastCharacters.ia == 1 || games.lastCharacters.ia == 3) {
@@ -477,7 +419,7 @@ let battle = (element) => {
             }
             break;
         // POUR GEHONTE
-        case '5' :
+        case 5 :
             if (games.lastCharacters.ia == 0 || games.lastCharacters.ia == 2) {
                 result = 1;
             } else if (games.lastCharacters.ia == 1 || games.lastCharacters.ia == 3) {
@@ -488,10 +430,6 @@ let battle = (element) => {
             break;
     }
 
-    // Si aucun évènement n'a encore eu lieu, on lance le script pour en faire apparaitre un potentiellement
-    if (games.event === false) {
-        eventGame();
-    }
 
     // Lancement du script pour obtenir ou non un personnage spécial
     specialObtain();
@@ -511,6 +449,25 @@ restart.addEventListener('click', cleanLocalStorage);
 // PERMET DE DECLENCHER L'AFFRONTEMENT
 normalSelect.forEach(element => {
     element.addEventListener('click', battle)
+});
+
+normalSelect.forEach(element => {
+    element.addEventListener('mouseover', () => {
+        let boing = new Audio("./public/assets/audio/boing.mp3");
+        boing.play();
+    })
+});
+
+// ACTIVE UN PERSONNAGE SPECIAL SELON CELUI QUI EST CLIQUÉ DANS LA PARTIE TRICHE
+cheatCharacter.forEach(element => {
+    element.addEventListener('click', specialUse)
+});
+
+// ACTIVE UN ÉVÉNEMENT DU JEU SELON LE BOUTON DE TRICHE CLIQUÉ
+chooseEvent.forEach(element => {
+    element.addEventListener('click', () => {
+        eventGame(element.value);
+    });
 });
 
 // ACTIVE UNE FIN DE JEU SELON LE BOUTON DE TRICHE CLIQUÉ
@@ -538,3 +495,10 @@ for (let i = 0; i < games.userSpecialCharacters.length; i++) {
         specialSelect[i].addEventListener('click', specialUse);
     }
 }  
+
+
+// window.addEventListener('load', () => {
+//     mainMusic.play();
+//     mainMusic.volume = 0.5;
+//     mainMusic.loop = true;
+// })

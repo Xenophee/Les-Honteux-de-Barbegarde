@@ -1,5 +1,5 @@
 
-
+let scream = new Audio("./public/assets/audio/bahhhhh.mp3");
 
 // OUVERTURE DES REGLES DU JEU
 openRules.addEventListener('click', () => {
@@ -51,6 +51,7 @@ closeCheat.addEventListener('click', () => {
 // AFFICHE LA SECTION DE TRICHE
 password.addEventListener("keydown", function(event) {
     if (event.key === "Enter" && password.value == 'honteux') {
+        scream.play();
         cheatingEnter.classList.add('hide');
         passwordSection.classList.add('hide');
         choosingCheat.classList.remove('hide');
