@@ -39,6 +39,18 @@ nav {
     padding: 15px 0 15px;
 }
 
+@keyframes shadowPulseNormal {
+    50% {
+        box-shadow: 0px 0px 20px green;
+    }
+}
+
+@keyframes shadowPulseSpecial {
+    50% {
+        box-shadow: 0px 0px 20px red;
+    }
+}
+
 
 /* ------------------------------------------------------------------------------------------------------------------------- */
 
@@ -116,12 +128,12 @@ h1 {
     border: var(--border-brown-double);
 }
 
-#startGame, #restart, #following {
+#startGame, #restart, #following, #finished {
     font-family: var(--special-font);
     font-size: var(--font-medium-size);
     min-width: 30%;
     padding: 20px 0 20px;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
 }
 
 .resultGame {
@@ -163,7 +175,7 @@ h1 {
     width: 60%;
 }
 
-#takeReward {
+.takeReward {
     font-family: var(--special-font);
     font-size: var(--font-medium-size);
     min-width: 30%;
@@ -181,12 +193,18 @@ h1 {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 80%;
+    min-height: 80%;
+    padding: 50px 0 0;
     border: var(--border-brown-double);
 }
 
+#eventText {
+    padding: 70px 150px 20px;
+}
 
-
+#eventEffect {
+    padding: 50px 150px 50px;
+}
 
 /* ------------------------------------------------------------------------------------------------------------------------- */
 
@@ -281,12 +299,27 @@ h1 {
     height: 70px;
     border-radius: 50%;
     object-fit: cover;
+    transform: scale(1);
+    transition: 1.5s;
     border: var(--border-beige-double);
 }
 
-.character:hover::after {
+.character input:hover {
+    transform: scale(1.2);
+}
+
+.normalCharacters input:hover {
+    border-color: green;
+    animation: shadowPulseNormal 3s infinite;
+}
+
+.specialCharacters input:hover {
+    border-color: red;
+    animation: shadowPulseSpecial 3s infinite;
+}
+
+/* .character:hover::after {
     width: auto;
-    /* height: 50px; */
     transform: translate(-50%, -50%);
     top: -50%;
     left: 150%;
@@ -297,7 +330,7 @@ h1 {
     position: absolute;
     z-index: 99999;
     border-radius: 3px;
-}
+} */
 
 
 /* ------------------------------------------------------------------------------------------------------------------------- */

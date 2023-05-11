@@ -5,7 +5,7 @@ import { games, displayGameStat, saveToLocalStorage, cleanLocalStorage } from '.
 
 
 // MUSIQUE PRINCIPALE
-let mainMusic = new Audio("./public/assets/audio/Jeu.mp3");
+let mainMusic = new Audio("./public/assets/audio/jeu.mp3");
 
 const normalSelect = document.querySelectorAll('.normalCharacters .character input');
 const specialSelect = document.querySelectorAll('.specialCharacters .character input');
@@ -72,23 +72,27 @@ let eventGame = (type) => {
     // Mets en place les effets de l'évènement selon son type
     switch(eventType) {
         case 0:
+            following.classList.remove('hide');
             games.scores.user = -games.scores.user;
             games.scores.ia = -games.scores.ia;
             break;
         case 1:
+            following.classList.remove('hide');
             games.scores.user = Math.round(games.scores.user /2);
             games.scores.ia = Math.round(games.scores.ia /2);
             break;
         default:
-            following.addEventListener('click', () => {
+            finished.classList.remove('hide');
+            finished.addEventListener('click', () => {
                 eventGameDisplay.classList.add('hide');
                 resultGame.classList.remove('hide');
                 fightZone.classList.add('hide');
                 gameEvent[eventType].audio.pause();
-                endGame(2);
+                endGame([eventType]);
             });
     }
 
+    
     games.event = true;
     saveToLocalStorage();
 
@@ -153,6 +157,7 @@ let specialUse = (element) => {
 
     // Change la scène pour les évènements
     eventGameDisplay.classList.remove('hide');
+    following.classList.remove('hide');
     fightZone.classList.add('hide');
 
     // Affiche toutes les informations relatives au personnage spécial utilisé
@@ -184,6 +189,7 @@ let specialUse = (element) => {
             }
     }
 
+    
     games.userSpecialCharacters[special] = false;
     specialSelect[special].classList.replace('active', 'inactive');
     specialSelect[special].removeEventListener('click', specialUse);
@@ -221,6 +227,7 @@ let iaSpecialUse = () => {
 
         // Change la scène pour les évènements
         eventGameDisplay.classList.remove('hide');
+        following.classList.remove('hide');
         fightZone.classList.add('hide');
 
         // Affiche toutes les informations relatives au personnage spécial utilisé
@@ -269,6 +276,7 @@ let endGame = (result) => {
 
     // Changement de scène avec affichage du résultat de la partie
     resultGame.classList.remove('hide');
+    resultSentence.classList.remove('hide');
     fightZone.classList.add('hide');
 
     // Affiche la bannière et le résultat final avec l'accompagnement audio
@@ -281,10 +289,12 @@ let endGame = (result) => {
         case 0:
             games.games.defeats += 1;
             resultSentence.textContent = `Dommage ! Vous avez été battu par l'ordinateur avec un score de ${games.scores.ia} contre ${games.scores.user} pour vous.`;
+            break;
         case 1:
             takeReward.classList.remove('hide');
             games.games.victories += 1;
             resultSentence.textContent = `Félicitation ! Vous avez remporté cette partie avec un score de ${games.scores.user} contre ${games.scores.ia} pour l'ordinateur.`;
+            break;
         default:
             games.games.equalities += 1;
     }
@@ -335,9 +345,9 @@ let score = (result) => {
     console.log(`Le score user est ${userScore.textContent} et le score ia est ${iaScore.textContent}`);
 
     // Termine la partie dès qu'un score atteint 10
-    if (userScore.textContent == 10 || iaScore.textContent == 10) {
+    if (games.scores.user == 10 || games.scores.ia == 10) {
 
-        let result = (userScore.textContent == 10) ? 1 : 0;
+        let result = (games.scores.user == 10) ? 1 : 0;
 
         endGame(result);
     }
@@ -357,11 +367,11 @@ let battle = (element) => {
         }
     }
 
-    let resultIaSpecialUse = iaSpecialUse();
+    // let resultIaSpecialUse = iaSpecialUse();
 
-    if (resultIaSpecialUse === true) {
-        return false;
-    }
+    // if (resultIaSpecialUse === true) {
+    //     return false;
+    // }
 
     games.lastCharacters.user = Number(element.target.value);
     games.lastCharacters.ia = randomNumber(true, iaCharacters.normal.length);
@@ -453,8 +463,8 @@ normalSelect.forEach(element => {
 
 normalSelect.forEach(element => {
     element.addEventListener('mouseover', () => {
-        let boing = new Audio("./public/assets/audio/boing.mp3");
-        boing.play();
+        let sound = new Audio("./public/assets/audio/sound.mp3");
+        sound.play();
     })
 });
 

@@ -33,13 +33,13 @@ const userCharacters = {
             name: 'Austère le Drastique', 
             src: 'public/assets/img/ImageFrame/special/austere.png', 
             alt: '', 
-            text: 'Austère intervient', 
+            text: 'Vous vous tournez vers l\'archimage de Sagemine. Quoi qu\'il éprouve une répulsion manifeste de venir en aide à une bande de bras cassés, il tient à la réputation de l\'académie. Il accepte finalement de vous soutenir indirectement.', 
             effect: 'L\'adversaire perds un point !',
             audio: new Audio("./public/assets/audio/austere.mp3")},
         { 
             name: 'Charmignon',
             src: 'public/assets/img/ImageFrame/special/charmignon.png', 
-            alt: '', 
+            alt: '',
             text: 'Charmignon intervient', 
             effect: 'Aucun personnage spécial ne peut être utilisé par l\'ordinateur pendant deux tours !',
             audio: new Audio("./public/assets/audio/charmignon.mp3")},
@@ -47,7 +47,7 @@ const userCharacters = {
             name: 'Devine',
             src: 'public/assets/img/ImageFrame/special/devine.png', 
             alt: '', 
-            text: 'Devine intervient', 
+            text: 'Vous consultez Devine, la célèbre voyante de Sagemine. Bien que vous ne sachiez toujours pas s\'il s\'agit d\'une énième escroquerie de bonne femme, il semblerait qu\'elle ait anticipé correctement le prochain mouvement de votre adversaire !', 
             effect: 'Vous gagnez un point !',
             audio: new Audio("./public/assets/audio/devine.mp3")},
         { 
@@ -124,7 +124,7 @@ const gameEvent = [
         name: 'Sarcophage le Nécromancien', 
         src: 'public/assets/img/ImageFrame/event/sarcophage.png', 
         alt: '', 
-        text: 'Sarcophage intervient', 
+        text: 'La voix de Sarcophage résonne soudain sur le théâtre de la chamaillerie. Tout le monde cesse immédiatement ses activités pour se dissimuler dans le buisson le plus proche sous l\'effet d’une indicible terreur.', 
         effect: 'Les scores deviennent négatifs !',
         audio: new Audio("./public/assets/audio/sarcophage.mp3")},
     { 
@@ -138,7 +138,7 @@ const gameEvent = [
         name: 'Créateur', 
         src: 'public/assets/img/ImageFrame/event/createur.png', 
         alt: '', 
-        text: 'Le créateur intervient', 
+        text: 'Une chanson saugrenue s\'élève subitement dans les airs. Aucun doute, il s\'agit du créateur de l\'univers devenu complètement zinzin ! Vous êtes d\'ailleurs convaincu d’apercevoir un de ses énormes yeux scrutateurs dans le firmament.', 
         effect: 'Tous les protagonistes finissent assommés !',
         audio: new Audio("./public/assets/audio/createur.mp3")}
 ];

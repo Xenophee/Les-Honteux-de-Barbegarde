@@ -81,6 +81,12 @@ let cleanLocalStorage = (event) => {
 
     let resetType = (event.target == cleanScores) ? 1 : 0;
 
+    resultGame.classList.add('hide');
+    takeReward.classList.add('hide');
+    reward.classList.add('hide');
+    following.classList.add('hide');
+    finished.classList.add('hide');
+
     switch(resetType) {
         case 1:
             // Conversion de l'objet de départ avec les scores à 0

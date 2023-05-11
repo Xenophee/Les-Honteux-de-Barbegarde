@@ -26,6 +26,7 @@ following.addEventListener('click', () => {
 // AFFICHE LA RECOMPENSE EN CAS DE VICTOIRE
 takeReward.addEventListener('click', () => {
     takeReward.classList.add('hide');
+    resultSentence.classList.add('hide');
     gameResultBloc.classList.add('hide');
     reward.classList.remove('hide');
 });
@@ -33,6 +34,7 @@ takeReward.addEventListener('click', () => {
 // REAFFICHAGE DE L'ARENE POUR REFAIRE UNE PARTIE
 restart.addEventListener('click', () => {
     resultGame.classList.add('hide');
+    gameResultBloc.classList.remove('hide');
     fightZone.classList.remove('hide');
 });
 

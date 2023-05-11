@@ -150,7 +150,8 @@
                     <img src="./public/assets/img/ImageFrame/event/barbegarde.png" alt="" id="eventImg">
                     <div id="eventText"></div>
                     <small id="eventEffect"></small>
-                    <button type="button" id="following">Continuer</button>
+                    <button type="button" class="hide" id="following">Continuer</button>
+                    <button type="button" class="hide" id="finished">Terminer</button>
                 </div>
 
                 <!-- AFFICHADE DU RESULTAT -->
@@ -188,7 +189,7 @@
                     </div>
 
                     <!-- BOUTON DE RECOMPENSE EN CAS DE VICTOIRE ET REDEMERRAGE D'UNE PARTIE -->
-                    <button type="button" class="hide" id="takeReward">Recupérer la récompense</button>
+                    <button type="button" class="takeReward hide" id="takeReward">Recupérer la récompense</button>
                     <button type="button" id="restart">Recommencer</button>
                 </div>
 
@@ -238,23 +239,23 @@
                                     <input type="image" src="./public/assets/img/userCharacters/Yvette.jpg" value="0"
                                         id="yvette" alt="">
                                 </div>
-                                <div class="character">
+                                <div class="character" title="Jean-Hardi l'emphatique">
                                     <input type="image" src="./public/assets/img/Jean-Hardi2.jpg" value="1"
                                         id="jeanHardi" alt="">
                                 </div>
-                                <div class="character">
+                                <div class="character" title="Hutin le lutin">
                                     <input type="image" src="./public/assets/img/Hutin2.jpg" value="2" id="hutin"
                                         alt="">
                                 </div>
-                                <div class="character">
+                                <div class="character" title="Alavare l'opportuniste">
                                     <input type="image" src="./public/assets/img/Alavare2.jpg" value="3" id="alavare"
                                         alt="">
                                 </div>
-                                <div class="character">
+                                <div class="character" title="Yvres le soit-disant Druide">
                                     <input type="image" src="./public/assets/img/Yvres2.jpg" value="4" id="yvres"
                                         alt="">
                                 </div>
-                                <div class="character">
+                                <div class="character" title="Géhonte le magicien de la honte">
                                     <input type="image" src="./public/assets/img/Géhonte2.jpg" value="5" id="gehonte"
                                         alt="">
                                 </div>
@@ -262,17 +263,17 @@
 
                             <!-- PERSONNAGES SPECIAUX -->
                             <div class="specialCharacters">
-                                <div class="character" title="test bien sur">
+                                <div class="character" title="Austère le drastique">
                                     <input type="image" class="inactive" src="./public/assets/img/Austere.jpg" value="0" id="austere"
                                         alt="">
                                 </div>
-                                <div class="character">
+                                <div class="character" title="Charmignon l'illusionniste">
                                     <input type="image" class="inactive" src="./public/assets/img/charmignon.jpg" value="1" id="charmignon" alt="">
                                 </div>
-                                <div class="character">
+                                <div class="character" title="Devine la voyante">
                                     <input type="image" class="inactive" src="./public/assets/img/devine.jpg" value="2" id="devine" alt="">
                                 </div>
-                                <div class="character">
+                                <div class="character" title="Hontoscope">
                                     <input type="image" class="inactive" src="./public/assets/img/userCharacters/Hontoscope.jpg"
                                         value="3" id="hontoscope" alt="">
                                 </div>
