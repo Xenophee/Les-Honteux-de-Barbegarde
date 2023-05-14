@@ -3,12 +3,13 @@ import { userCharacters, iaCharacters, gameEvent, roundResults, gameOver } from 
 
 // CRÉATION DE L'OBJET DE SAUVEGARDE
 let saves = {
-    games: { matches: 0, victories: 0, defeats: 0, equalities: 0},
-    rounds: { rounds: 0, success: 0, fail: 0, equal: 0},
-    scores: { user: 0, ia: 0},
-    lastCharacters: { user: null, ia: null},
+    games: { matches: 0, victories: 0, defeats: 0, equalities: 0 },
+    rounds: { rounds: 0, success: 0, fail: 0, equal: 0 },
+    scores: { user: 0, ia: 0 },
+    lastCharacters: { user: null, ia: null },
     userSpecialCharacters: [false, false, false, false],
     iaSpecialCharacters: [false, false, false, false],
+    permission: { user: { active: true, round: 0 }, ia: { active: true, round: 0 }},
     event: false
 };
 

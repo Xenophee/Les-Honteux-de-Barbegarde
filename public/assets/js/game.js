@@ -23,11 +23,11 @@ if (games.rounds.rounds > 0) {
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // DONNE UN NOMBRE ALEATOIRE SELON LES BESOINS DU JEU
-let randomNumber = (randomType, value) => {
+let randomNumber = (value) => {
 
     let Number;
 
-    if (randomType == true) {
+    if (value) {
 
         Number = Math.floor(Math.random()*(value));
 
@@ -46,7 +46,7 @@ let randomNumber = (randomType, value) => {
 let eventGame = (type) => {
 
     // console.log(type);
-    let eventType = (type !== undefined) ? Number(type) : randomNumber();
+    let eventType = (type) ? Number(type) : randomNumber();
     // console.log(`Le chiffre random event est ${eventType}`);
 
     // Si le nombre aléatoire sorti est supérieur à 20, il n'y aura pas d'évènement ; on stoppe le script
@@ -55,7 +55,7 @@ let eventGame = (type) => {
     }
 
     // On relance la fonction du nombre aléatoire avec true en paramètre pour obtenir un chiffre entre 0 et 2
-    eventType = (type !== undefined) ? Number(type) : randomNumber(true, gameEvent.length);
+    eventType = (type) ? Number(type) : randomNumber(gameEvent.length);
     
     // Change la scène pour les évènements
     eventGameDisplay.classList.remove('hide');
@@ -112,7 +112,7 @@ let specialObtain = () => {
     // Si le nombre aléatoire sorti est supérieur à 20, il n'y aura pas d'obtention de personnage spéciaux ; on stoppe le script
     if (specialUserType <= 30) {
 
-        specialUserType = randomNumber(true, userCharacters.special.length);
+        specialUserType = randomNumber(userCharacters.special.length);
 
         if(games.userSpecialCharacters[specialUserType] == false) {
             resultUser = true;
@@ -127,7 +127,7 @@ let specialObtain = () => {
 
     if (specialIaType <= 30) {
         
-        specialIaType = randomNumber(true, iaCharacters.special.length);
+        specialIaType = randomNumber(iaCharacters.special.length);
 
         if(games.iaSpecialCharacters[specialIaType] == false) {
             resultIa = true;
@@ -173,7 +173,8 @@ let specialUse = (element) => {
             games.scores.ia -= 1;
             break;
         case 1:
-            
+            games.permission.ia.active = false;
+            games.permission.ia.round = games.rounds.rounds += 3;
             break;
         case 2:
             games.scores.user += 1;
@@ -189,11 +190,17 @@ let specialUse = (element) => {
             }
     }
 
-    
     games.userSpecialCharacters[special] = false;
     specialSelect[special].classList.replace('active', 'inactive');
     specialSelect[special].removeEventListener('click', specialUse);
 
+    // Termine la partie dès qu'un score atteint 10
+    if (games.scores.user == 10 || games.scores.ia == 10) {
+
+        let result = (games.scores.user == 10) ? 1 : 0;
+
+        endGame(result);
+    }
 
     saveToLocalStorage();
 }
@@ -202,8 +209,12 @@ let specialUse = (element) => {
 let iaSpecialUse = () => {
 
     console.log(games.iaSpecialCharacters);
+    console.log(games.permission.ia.active);
+    console.log(games.permission.ia.round);
     // Vérifie si l'ordinateur possède un personnage spécial ; si ce n'est pas le cas, fin du script
     if (!games.iaSpecialCharacters.includes(true)) {
+        return false;
+    } else if (games.permission.ia.active == false && games.permission.ia.round > games.rounds.rounds) {
         return false;
     }
 
@@ -216,7 +227,7 @@ let iaSpecialUse = () => {
         }
     });
 
-    let witchSpecial = randomNumber(true,special.length);
+    let witchSpecial = randomNumber(special.length);
     // console.log('Le spécial ia est ' + witchSpecial);
     let chanceNumber = randomNumber();
     console.log('Le nombre chance IA est de ' + chanceNumber);
@@ -246,14 +257,19 @@ let iaSpecialUse = () => {
                 games.scores.user -= 1;
                 break;
             case 1:
-                
+                games.permission.user.active = false;
+                games.permission.user.round = games.rounds.rounds += 3;
+                specialSelect.forEach(element => {
+                    element.removeEventListener('click', specialUse);
+                    element.classList.replace('active', 'inactive');
+                });
                 break;
             case 2:
                 games.scores.ia += 1;
                 break;
         
             default:
-                let hontoscopeDecision = Math.floor(Math.random() * 2);
+                let hontoscopeDecision = randomNumber(2);
                 // console.log('le random hontoscope est ' + hontoscopeDecision);
                 if (hontoscopeDecision == false) {
                     games.scores.ia -= 2;
@@ -277,6 +293,8 @@ let endGame = (result) => {
     // Changement de scène avec affichage du résultat de la partie
     resultGame.classList.remove('hide');
     resultSentence.classList.remove('hide');
+    eventGameDisplay.classList.add('hide');
+    following.classList.add('hide');
     fightZone.classList.add('hide');
 
     // Affiche la bannière et le résultat final avec l'accompagnement audio
@@ -360,7 +378,7 @@ let score = (result) => {
 let battle = (element) => {
 
     // Si aucun évènement n'a encore eu lieu, on lance le script pour en faire apparaitre un potentiellement
-    if (games.event === false) {
+    if (games.event === false && (games.scores.ia > 2 || games.scores.user > 2)) {
         let resultEvent = eventGame();
         if (resultEvent === true) {
             return false;
@@ -374,7 +392,7 @@ let battle = (element) => {
     // }
 
     games.lastCharacters.user = Number(element.target.value);
-    games.lastCharacters.ia = randomNumber(true, iaCharacters.normal.length);
+    games.lastCharacters.ia = randomNumber(iaCharacters.normal.length);
     let result;
     
     switch (games.lastCharacters.user) {
@@ -440,6 +458,10 @@ let battle = (element) => {
             break;
     }
 
+    // specialSelect.forEach(element => {
+    //     element.addEventListener('click', specialUse);
+    //     element.classList.replace('inactive', 'active');
+    // });
 
     // Lancement du script pour obtenir ou non un personnage spécial
     specialObtain();
