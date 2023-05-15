@@ -7,6 +7,9 @@ import { games, displayGameStat, saveToLocalStorage, cleanLocalStorage } from '.
 // MUSIQUE PRINCIPALE
 let mainMusic = new Audio("./public/assets/audio/jeu.mp3");
 
+// Création d'un tableau avec toutes les classes de fond de la partie affrontement
+const classes = roundResults.map(result => result.class);
+
 const normalSelect = document.querySelectorAll('.normalCharacters .character input');
 const specialSelect = document.querySelectorAll('.specialCharacters .character input');
 const cheatCharacter = document.querySelectorAll('.cheatCharacter input');
@@ -348,9 +351,6 @@ let score = (result) => {
 
     // Affichage du texte pour signaler le résultat de la manche
     roundResult.textContent = roundResults[result].title;
-
-    // Création d'un tableau avec toutes les classes de fond de la partie affrontement
-    const classes = roundResults.map(result => result.class);
 
     // Retire toutes les classes qui change le fond de la partie affrontement
     classes.forEach(element => {
