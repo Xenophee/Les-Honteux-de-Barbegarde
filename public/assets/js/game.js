@@ -1,6 +1,8 @@
 
 import { userCharacters, iaCharacters, gameEvent, roundResults, gameOver } from './constants.js';
 import { games, displayGameStat, saveToLocalStorage, cleanLocalStorage } from './localStorage.js';
+import { specialSelect, specialAllow, specialObtain, specialUse } from './special.js';
+import { eventGame } from './event.js';
 
 
 
@@ -11,9 +13,9 @@ let mainMusic = new Audio("./public/assets/audio/jeu.mp3");
 const classes = roundResults.map(result => result.class);
 
 const normalSelect = document.querySelectorAll('.normalCharacters .character input');
-const specialSelect = document.querySelectorAll('.specialCharacters .character input');
-const cheatCharacter = document.querySelectorAll('.cheatCharacter input');
-const chooseEvent = document.querySelectorAll('.chooseEvent button');
+// const specialSelect = document.querySelectorAll('.specialCharacters .character input');
+// const cheatCharacter = document.querySelectorAll('.cheatCharacter input');
+// const chooseEvent = document.querySelectorAll('.chooseEvent button');
 const chooseResult = document.querySelectorAll('.chooseResult button');
 console.log(games);
 
@@ -43,181 +45,17 @@ let randomNumber = (value) => {
     return Number;
 }
 
-// -------------------------------------------------------------------------------------------------------------------------------------------------------
-
-// AFFICHE LES EVENEMENTS ET ENREGISTRE LES EFFETS
-let eventGame = (type) => {
-
-    // console.log(type);
-    let eventType = (type) ? Number(type) : randomNumber();
-    // console.log(`Le chiffre random event est ${eventType}`);
-
-    // Si le nombre aléatoire sorti est supérieur à 20, il n'y aura pas d'évènement ; on stoppe le script
-    if (eventType >= 20) {
-        return false;
-    }
-
-    // On relance la fonction du nombre aléatoire avec true en paramètre pour obtenir un chiffre entre 0 et 2
-    eventType = (type) ? Number(type) : randomNumber(gameEvent.length);
-    
-    // Change la scène pour les évènements
-    eventGameDisplay.classList.remove('hide');
-    fightZone.classList.add('hide');
-
-    // Affiche toutes les informations relatives à l'évènement
-    eventImg.title = gameEvent[eventType].name;
-    eventImg.src = gameEvent[eventType].src;
-    eventImg.alt = gameEvent[eventType].alt;
-    eventText.textContent = gameEvent[eventType].text;
-    eventEffect.textContent = gameEvent[eventType].effect;
-    gameEvent[eventType].audio.play();
-
-    // Mets en place les effets de l'évènement selon son type
-    switch(eventType) {
-        case 0:
-            following.classList.remove('hide');
-            games.scores.user = -games.scores.user;
-            games.scores.ia = -games.scores.ia;
-            break;
-        case 1:
-            following.classList.remove('hide');
-            games.scores.user = Math.round(games.scores.user /2);
-            games.scores.ia = Math.round(games.scores.ia /2);
-            break;
-        default:
-            finished.classList.remove('hide');
-            finished.addEventListener('click', () => {
-                eventGameDisplay.classList.add('hide');
-                resultGame.classList.remove('hide');
-                fightZone.classList.add('hide');
-                gameEvent[eventType].audio.pause();
-                endGame([eventType]);
-            });
-    }
-
-    
-    games.event = true;
-    saveToLocalStorage();
-
-    return true;
-}
-
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-let specialObtain = () => {
-
-    let specialUserType = randomNumber();
-    let specialIaType = randomNumber();
-    let resultUser;
-    let resultIa;
-
-    // Si le nombre aléatoire sorti est supérieur à 20, il n'y aura pas d'obtention de personnage spéciaux ; on stoppe le script
-    if (specialUserType <= 30) {
-
-        specialUserType = randomNumber(userCharacters.special.length);
-
-        if(games.userSpecialCharacters[specialUserType] == false) {
-            resultUser = true;
-        }
-        
-        games.userSpecialCharacters[specialUserType] = true;
-
-        specialSelect[specialUserType].classList.replace('inactive', 'active');
-
-        specialSelect[specialUserType].addEventListener('click', specialUse);
-    }
-
-    if (specialIaType <= 30) {
-        
-        specialIaType = randomNumber(iaCharacters.special.length);
-
-        if(games.iaSpecialCharacters[specialIaType] == false) {
-            resultIa = true;
-        }
-
-        games.iaSpecialCharacters[specialIaType] = true;
-
-    }
-
-    if (resultUser == true && resultIa == true) {
-        specialText.textContent = 'Vous et l\'ordinateur avez reçu un personnage spécial !';
-    } else if (resultUser == true) {
-        specialText.textContent = 'Vous avez reçu un personnage spécial !';
-    } else if (resultIa == true) {
-        specialText.textContent = 'L\'ordinateur a reçu un personnage spécial !';
-    }
-
-    saveToLocalStorage();
-}
-
-
-// UTILISATION DES PERSONNAGES SPECIAUX
-let specialUse = (element) => {
-
-    let special = Number(element.target.value);
-    console.log(element.target);
-
-    // Change la scène pour les évènements
-    eventGameDisplay.classList.remove('hide');
-    following.classList.remove('hide');
-    fightZone.classList.add('hide');
-
-    // Affiche toutes les informations relatives au personnage spécial utilisé
-    eventImg.title = userCharacters.special[special].name;
-    eventImg.src = userCharacters.special[special].src;
-    eventImg.alt = userCharacters.special[special].alt;
-    eventText.textContent = userCharacters.special[special].text;
-    eventEffect.textContent = userCharacters.special[special].effect;
-    userCharacters.special[special].audio.play();
-
-    switch (special) {
-        case 0:
-            games.scores.ia -= 1;
-            break;
-        case 1:
-            games.permission.ia.active = false;
-            games.permission.ia.round = games.rounds.rounds += 3;
-            break;
-        case 2:
-            games.scores.user += 1;
-            break;
-    
-        default:
-            let hontoscopeDecision = Math.floor(Math.random() * 2);
-            console.log('le random hontoscope est ' + hontoscopeDecision);
-            if (hontoscopeDecision == false) {
-                games.scores.user -= 2;
-            } else {
-                games.scores.ia -= 2;
-            }
-    }
-
-    games.userSpecialCharacters[special] = false;
-    specialSelect[special].classList.replace('active', 'inactive');
-    specialSelect[special].removeEventListener('click', specialUse);
-
-    // Termine la partie dès qu'un score atteint 10
-    if (games.scores.user == 10 || games.scores.ia == 10) {
-
-        let result = (games.scores.user == 10) ? 1 : 0;
-
-        endGame(result);
-    }
-
-    saveToLocalStorage();
-}
 
 // DETERMINE QUAND L'ORDINATEUR UTILISE SES PROPRES PERSONNAGES SPECIAUX
 let iaSpecialUse = () => {
 
     console.log(games.iaSpecialCharacters);
-    console.log(games.permission.ia.active);
-    console.log(games.permission.ia.round);
     // Vérifie si l'ordinateur possède un personnage spécial ; si ce n'est pas le cas, fin du script
-    if (!games.iaSpecialCharacters.includes(true)) {
-        return false;
-    } else if (games.permission.ia.active == false && games.permission.ia.round > games.rounds.rounds) {
+    if (!games.iaSpecialCharacters.includes(true) || games.permission.ia > games.rounds.rounds) {
+        console.log('je passe pas');
         return false;
     }
 
@@ -225,7 +63,7 @@ let iaSpecialUse = () => {
 
     games.iaSpecialCharacters.forEach((element, index) => {
         
-        if (element == true) {
+        if (element === true) {
             special.push(index);
         }
     });
@@ -260,12 +98,8 @@ let iaSpecialUse = () => {
                 games.scores.user -= 1;
                 break;
             case 1:
-                games.permission.user.active = false;
-                games.permission.user.round = games.rounds.rounds += 3;
-                specialSelect.forEach(element => {
-                    element.removeEventListener('click', specialUse);
-                    element.classList.replace('active', 'inactive');
-                });
+                games.permission.user = games.rounds.rounds + 3;
+                specialAllow();
                 break;
             case 2:
                 games.scores.ia += 1;
@@ -374,25 +208,9 @@ let score = (result) => {
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// EFFECTUE LES TESTS POUR CONNAITRE LE GAGNANT D'UN AFFRONTEMENT
-let battle = (element) => {
 
-    // Si aucun évènement n'a encore eu lieu, on lance le script pour en faire apparaitre un potentiellement
-    if (games.event === false && (games.scores.ia > 2 || games.scores.user > 2)) {
-        let resultEvent = eventGame();
-        if (resultEvent === true) {
-            return false;
-        }
-    }
+let fightResult = () => {
 
-    // let resultIaSpecialUse = iaSpecialUse();
-
-    // if (resultIaSpecialUse === true) {
-    //     return false;
-    // }
-
-    games.lastCharacters.user = Number(element.target.value);
-    games.lastCharacters.ia = randomNumber(iaCharacters.normal.length);
     let result;
     
     switch (games.lastCharacters.user) {
@@ -458,15 +276,43 @@ let battle = (element) => {
             break;
     }
 
-    // specialSelect.forEach(element => {
-    //     element.addEventListener('click', specialUse);
-    //     element.classList.replace('inactive', 'active');
-    // });
+    return result;
+}
+
+
+
+// -------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// EFFECTUE LES TESTS POUR CONNAITRE LE GAGNANT D'UN AFFRONTEMENT
+let battle = (element) => {
+
+    console.log(games);
+
+    // Si aucun évènement n'a encore eu lieu, on lance le script pour en faire apparaitre un potentiellement
+    if (games.event === false && (games.scores.ia > 2 || games.scores.user > 2)) {
+        let resultEvent = eventGame();
+        if (resultEvent === true) {
+            return false;
+        }
+    }
+
+    let resultIaSpecialUse = iaSpecialUse();
+
+    if (resultIaSpecialUse === true) {
+        return false;
+    }
+
+    games.lastCharacters.user = Number(element.target.value);
+    games.lastCharacters.ia = randomNumber(iaCharacters.normal.length);
+    let result = fightResult();
+    
 
     // Lancement du script pour obtenir ou non un personnage spécial
     specialObtain();
 
-    console.log('Le résultat du combat est ' + result);
+    specialAllow();
+
+    // console.log('Le résultat du combat est ' + result);
     score(result);
 }
 
@@ -478,29 +324,16 @@ cleanScores.addEventListener('click', cleanLocalStorage);
 restart.addEventListener('click', cleanLocalStorage);
 
 
-// PERMET DE DECLENCHER L'AFFRONTEMENT
+// PERMET DE DECLENCHER L'AFFRONTEMENT SUR LES PERSONNAGES DE BASE ET AJOUT D'UN SON AU SURVOL
 normalSelect.forEach(element => {
-    element.addEventListener('click', battle)
-});
+    element.addEventListener('click', battle);
 
-normalSelect.forEach(element => {
     element.addEventListener('mouseover', () => {
         let sound = new Audio("./public/assets/audio/sound.mp3");
         sound.play();
-    })
-});
-
-// ACTIVE UN PERSONNAGE SPECIAL SELON CELUI QUI EST CLIQUÉ DANS LA PARTIE TRICHE
-cheatCharacter.forEach(element => {
-    element.addEventListener('click', specialUse)
-});
-
-// ACTIVE UN ÉVÉNEMENT DU JEU SELON LE BOUTON DE TRICHE CLIQUÉ
-chooseEvent.forEach(element => {
-    element.addEventListener('click', () => {
-        eventGame(element.value);
     });
 });
+
 
 // ACTIVE UNE FIN DE JEU SELON LE BOUTON DE TRICHE CLIQUÉ
 chooseResult.forEach(element => {
@@ -510,23 +343,7 @@ chooseResult.forEach(element => {
 });
 
 
-// RÉINITIALISE LES SCORES DE LA DERNIÈRE PARTIE À ZÉRO EN CAS DE FERMETURE DE LA PAGE EN FIN DE PARTIE
-window.addEventListener('beforeunload', (event) => {
 
-    if (userScore.textContent == 10 || iaScore.textContent == 10) {
-        cleanLocalStorage();
-    }
-
-});
-
-
-// POUR CHAQUE PERSONNAGE SPECIAL OBTENU DANS LE LOCAL STORAGE, ACTIVATION LORS DE L'OUVERTURE DE LA PAGE
-for (let i = 0; i < games.userSpecialCharacters.length; i++) {
-    if (games.userSpecialCharacters[i] === true) {
-        specialSelect[i].classList.replace('inactive', 'active');
-        specialSelect[i].addEventListener('click', specialUse);
-    }
-}  
 
 
 // window.addEventListener('load', () => {
@@ -534,3 +351,6 @@ for (let i = 0; i < games.userSpecialCharacters.length; i++) {
 //     mainMusic.volume = 0.5;
 //     mainMusic.loop = true;
 // })
+
+
+export { randomNumber };

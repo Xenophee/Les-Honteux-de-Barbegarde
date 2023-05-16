@@ -100,7 +100,7 @@ const iaCharacters = {
             src: 'public/assets/img/frame/special/bouc.png', 
             alt: '', 
             text: 'Le porteur de lumière intervient', 
-            effect: 'Rien ne se passe pour le moment',
+            effect: 'Vos personnages spéciaux sont bloqués pendant trois tours !',
             audio: new Audio("./public/assets/audio/porteur.mp3")},
         { 
             name: 'Le suppôt de Sarcophage', 

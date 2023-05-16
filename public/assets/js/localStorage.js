@@ -9,7 +9,7 @@ let saves = {
     lastCharacters: { user: null, ia: null },
     userSpecialCharacters: [false, false, false, false],
     iaSpecialCharacters: [false, false, false, false],
-    permission: { user: { active: true, round: 0 }, ia: { active: true, round: 0 }},
+    permission: { user: null, ia: null },
     event: false
 };
 
@@ -113,9 +113,23 @@ let cleanLocalStorage = (event) => {
             games.lastCharacters.user = null;
             games.lastCharacters.ia = null;
 
+            games.permission.user = null;
+            games.permission.ia = null;
+
             saveToLocalStorage();
     }
 }
+
+
+// RÉINITIALISE LES SCORES DE LA DERNIÈRE PARTIE À ZÉRO EN CAS DE FERMETURE DE LA PAGE EN FIN DE PARTIE
+window.addEventListener('beforeunload', (event) => {
+
+    if (games.scores.user == 10 || games.scores.ia == 10) {
+        cleanLocalStorage();
+    }
+
+});
+
 
 
 export { games, displayGameStat, saveToLocalStorage, cleanLocalStorage };
