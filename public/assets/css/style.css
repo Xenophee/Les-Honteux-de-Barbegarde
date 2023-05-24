@@ -21,45 +21,25 @@ body {
     background-color: bisque;
 }
 
-.centerElements {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-nav {
-    display: flex;
-    justify-content: space-between;
-}
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* ACCUEIL */
 
 #openRules, #cleanScores {
     font-family: var(--special-font);
     font-size: var(--font-medium-size);
-    width: 15%;
     padding: 15px 0 15px;
 }
 
-@keyframes shadowPulseNormal {
-    50% {
-        box-shadow: 0px 0px 20px green;
-    }
+#closeRules {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
+    padding: 5px 0 5px;
 }
-
-@keyframes shadowPulseSpecial {
-    50% {
-        box-shadow: 0px 0px 20px red;
-    }
-}
-
-
-/* ------------------------------------------------------------------------------------------------------------------------- */
-
-/* PERSONNAGES */
 
 .context {
     background-color: brown;
-    padding: 20px 200px 20px 200px;
-    margin: 50px 0 50px;
 }
 
 h1 {
@@ -70,22 +50,14 @@ h1 {
     font-size: var(--font-medium-size);
 }
 
-.principal {
-    display: flex;
-    justify-content: space-around;
+#rules::backdrop {
+    background-color: green;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------- */
 
-/* PERSONNAGES */
-
-.iaStat, .userStat {
-    width: 15%;
-}
-
-.userGameStat, .iaGameStat, .userGlobalStat, .iaGlobalStat {
-    padding: 20px 0;
-}
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* STATISTIQUES */
 
 .userGlobalStat, .iaGlobalStat {
     background-color: aqua;
@@ -95,9 +67,25 @@ h1 {
     background-color: blue;
 }
 
+.userGameStat, .iaGameStat, .userGlobalStat, .iaGlobalStat {
+    padding: 20px 0;
+}
+
 .titleStat {
+    
     background-color: blueviolet;
     padding: 10px;
+}
+
+.statButton {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
+    font-weight: bold;
+    background-color: blueviolet;
+    border: var(--border-brown-double);
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0 20px;
 }
 
 .iconStat {
@@ -110,117 +98,36 @@ h1 {
 
 .more {
     font-family: var(--special-font);
-    font-size: var(--font-normal-size);
+    font-size: 1.2rem;
     width: 100%;
     padding: 15px;
 }
 
 
-/* ------------------------------------------------------------------------------------------------------------------------- */
-
-/* PARTIE AVANT PARTIE */
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* DÉPART */
 
 .noGameStart {
     display: flex;
     justify-content: center;
     align-items: end;
-    height: 80%;
     border: var(--border-brown-double);
 }
 
-#startGame, #restart, #following, #finished {
+#startGame {
     font-family: var(--special-font);
     font-size: var(--font-medium-size);
-    min-width: 30%;
     padding: 20px 0 20px;
-    margin-bottom: 80px;
-}
-
-.resultGame {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-around; */
-    align-items: center;
-    padding: 100px 0 0px;
-    border: var(--border-brown-double);
-}
-
-.banner {
-    position: relative;
-    margin: 100px 0 100px;
-}
-
-.resultGame h4 {
-    font-size: 5rem;
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-}
-
-.reward {
-    font-size: 1.2rem;
-}
-
-.presentation {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 50px 0 50px;
-}
-
-.presentationText {
-    width: 60%;
-}
-
-.takeReward {
-    font-family: var(--special-font);
-    font-size: var(--font-medium-size);
-    min-width: 30%;
-    padding: 10px 0 10px;
-    margin: 50px 0 50px;
 }
 
 
-/* ------------------------------------------------------------------------------------------------------------------------- */
-
-/* SCENE EVENEMENT */
-
-.eventGameDisplay {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    min-height: 80%;
-    padding: 50px 0 0;
-    border: var(--border-brown-double);
-}
-
-#eventText {
-    padding: 70px 150px 20px;
-}
-
-#eventEffect {
-    padding: 50px 150px 50px;
-}
-
-/* ------------------------------------------------------------------------------------------------------------------------- */
-
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 /* COMBAT */
-
-#mainPart {
-    width: 60%;
-}
-
-/* .fightZone {
-    width: 100%;
-} */
 
 .gamesNumber {
     background-color: crimson;
-    /* width: 30%; */
     padding: 30px 0 20px;
     margin-bottom: 30px;
 }
@@ -241,6 +148,13 @@ h1 {
     flex-direction: column;
 }
 
+.show {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: auto;
+}
+
 .fight h2, #roundResult {
     font-size: var(--font-tall-size);
 }
@@ -249,20 +163,8 @@ h1 {
     font-size: var(--font-medium-size);
 }
 
-.show {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: auto;
-}
-
 .frameImg {
     margin: 20px 0 20px;
-}
-
-#vs p {
-    font-family: var(--special-font);
-    font-size: var(--font-tall-size);
 }
 
 #explainEvent {
@@ -270,8 +172,6 @@ h1 {
 }
 
 .userCharacters {
-    background-color: darkgreen;
-    min-height: 20%;
     margin-top: auto;
 }
 
@@ -285,13 +185,13 @@ h1 {
 
 .normalCharacters, .specialCharacters {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px 0 10px;
 }
 
 .character {
     display: flex;
-    position: relative;
 }
 
 .character input {
@@ -299,43 +199,13 @@ h1 {
     height: 70px;
     border-radius: 50%;
     object-fit: cover;
-    transform: scale(1);
-    transition: 1.5s;
     border: var(--border-beige-double);
 }
 
-.character input:hover {
-    transform: scale(1.2);
-}
 
-.normalCharacters input:hover {
-    border-color: green;
-    animation: shadowPulseNormal 3s infinite;
-}
-
-.specialCharacters input:hover {
-    border-color: red;
-    animation: shadowPulseSpecial 3s infinite;
-}
-
-/* .character:hover::after {
-    width: auto;
-    transform: translate(-50%, -50%);
-    top: -50%;
-    left: 150%;
-    content: attr(title);
-    padding: 10px;
-    color: white;
-    background-color: black;
-    position: absolute;
-    z-index: 99999;
-    border-radius: 3px;
-} */
-
-
-/* ------------------------------------------------------------------------------------------------------------------------- */
-
-/* PARTIE CHEAT */
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* TRICHE */
 
 .cheating {
     display: flex;
@@ -366,19 +236,19 @@ padding-bottom: 20px;
     border: none;
 }
 
-.chooseCard {
-    display: flex;
-    justify-content: space-around;
+.cheatCharacter input {
+    object-fit: cover;
 }
 
-.cheatCharacter input {
-    width: 130px;
-    height: 180px;
-    object-fit: cover;
+.chooseCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .chooseEvent {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
     padding: 20px 0 20px;
@@ -386,13 +256,13 @@ padding-bottom: 20px;
 
 .chooseResult {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
     padding: 20px 0 20px;
 }
 
 .chooseResult button, .chooseEvent button {
-    width: 15%;
     font-family: var(--special-font);
     font-size: var(--font-normal-size);
     padding: 9px 0 9px;
@@ -401,58 +271,104 @@ padding-bottom: 20px;
 #cheat {
     font-family: var(--special-font);
     font-size: var(--font-normal-size);
-    width: 15%;
-    height: 50%;
     padding: 5px 0 5px;
 }
 
 #surrend {
     font-family: var(--special-font);
     font-size: 1.5rem;
-    width: 25%;
     height: 60px;
     margin: 30px 0 30px;
 }
 
 
-/* ------------------------------------------------------------------------------------------------------------------------- */
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* SCÈNE ÉVÉNEMENT */
 
-/* PARTIE RESULTAT FINAL */
+.eventGameDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 60%;
+    padding: 30px 0 0;
+    border: var(--border-brown-double);
+}
 
+#eventEffect {
+    font-weight: bold;
+}
 
-
-/* ------------------------------------------------------------------------------------------------------------------------- */
-
-/* MODAL */
-
-#rules::backdrop {
-    background-color: green;
+#following, #finished {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
+    padding: 10px 0px 10px;
+    
 }
 
 
-/* ------------------------------------------------------------------------------------------------------------------------- */
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* SCÈNE FINALE */
 
-/* SPECIAL */
-
-.hide {
-    display: none;
+.resultGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.inactive {
-    filter: grayscale(100) !important;
-    transform: scale(1) !important;
-    cursor: default !important;
-    box-shadow: none !important;
+.banner {
+    position: relative;
 }
 
-.fail {
-    background-color: red;
+.resultGame h4 {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
 }
 
-.success {
-    background-color: green;
+.takeReward, #restart {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
 }
 
-.equal {
-    background-color: blue;
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* RECOMPENSE */
+
+.presentation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.reward {
+    font-size: 1.2rem;
+}
+
+span {
+    font-weight: bold;
+}
+
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* KEYFRAMES */
+
+@keyframes shadowPulseNormal {
+    50% {
+        box-shadow: 0px 0px 20px green;
+    }
+}
+
+@keyframes shadowPulseSpecial {
+    50% {
+        box-shadow: 0px 0px 20px red;
+    }
 }

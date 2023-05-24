@@ -11,8 +11,11 @@
     <script src="https://kit.fontawesome.com/82073d0261.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./public/assets/css/style.css">
-    <link rel="stylesheet" href="./public/assets/css/media.css">
-    <title>Les Honteux de Barbegarde - Chifoumi</title>
+    <link rel="stylesheet" href="./public/assets/css/mobile.css" media="screen and (max-width: 768px)">
+    <link rel="stylesheet" href="./public/assets/css/tablet.css" media="screen and (min-width: 768px) and (max-width: 1000px)">
+    <link rel="stylesheet" href="./public/assets/css/desktop.css" media="screen and (min-width: 1000px)">
+    <link rel="stylesheet" href="./public/assets/css/special.css">
+    <title>Les Honteux de Barbegarde - Mini-Jeu</title>
 </head>
 
 <body>
@@ -53,7 +56,7 @@
     <main>
         <!-- TITRE ET PRESENTATION -->
         <section class="context">
-            <h1>Les Honteux de Barbegarde - Chifoumi</h1>
+            <h1>Les Honteux de Barbegarde <br> Mini-Jeu</h1>
 
             <p>La contrée de Barbegarde est en plein remouds en ce moment. Fort de ses nouveaux alliés en quittant la
                 prison des nains,
@@ -67,7 +70,7 @@
 
             <!-- CARTES DE L'UTILISATEUR -->
             <div class="userStat">
-                <h2 class="titleStat">Vous</h2>
+                <button type="button" class="statButton">Vous</button>
 
                 <div class="userGlobalStat">
                     <div>
@@ -98,7 +101,7 @@
                 </div>
 
                 <!-- CARTES SPECIALES DE L'UTILISATEUR -->
-                <h2 class="titleStat">Partie en cours</h2>
+                <button type="button" class="statButton">Partie en cours</button>
                 <div class="userGameStat">
                     <div>
                         <!-- https://game-icons.net/1x1/delapouite/sun-priest.html -->
@@ -183,7 +186,7 @@
                                     brevets de
                                     honte par
                                     la propagation intempestive des secrets de ses habitants…</p>
-                                <p>Pour lire cette histoire, cliquez sur l'image. </p>
+                                <p><span>Pour lire cette histoire, cliquez sur l'image.</span> </p>
                             </div>
                         </div>
                     </div>
@@ -223,9 +226,9 @@
                         </div>
                         <!-- AFFICHE UNE PHRASE ET LE RESULTAT DE LA MANCHE -->
                         <div class="showText">
-                            <p id="explainEvent"></p>
-                            <small id="specialText"></small>
-                            <h4 id="roundResult"></h4>
+                            <p id="explainEvent">Alavare se casse la gueule et démissione</p>
+                            <small id="specialText">Vous avez reçu un perso spécial !</small>
+                            <h4 id="roundResult">Echec !</h4>
                         </div>
 
 
@@ -346,7 +349,7 @@
 
             <!-- CARTES DE L'ORDINATEUR -->
             <div class="iaStat">
-                <h2 class="titleStat">Adversaire</h2>
+                <button type="button" class="statButton">Ordinateur</button>
                 <!-- CARTES NORMALES DE L'ORDINATEUR -->
                 <div class="iaGlobalStat">
                     <div>
@@ -377,7 +380,7 @@
                 </div>
 
                 <!-- CARTES SPECIALES DE L'ORDINATEUR -->
-                <h2 class="titleStat">Partie en cours</h2>
+                <button type="button" class="statButton">Partie en cours</button>
                 <div class="iaGameStat">
                     <div>
                         <!-- https://game-icons.net/1x1/delapouite/sun-priest.html -->
