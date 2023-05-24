@@ -1,0 +1,120 @@
+{
+    "ia": [
+        {
+            "name": "Boulb",
+            "nickname": "Le Homard Therminator",
+            "biography": "Notoirement célèbre pour avoir mis un terme à la cinquième République très démocratique des crustacés très constitutionnels afin de contrer le complot des langoustines.",
+            "image": "./public/assets/img/Homard2.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Jean-Fonce",
+            "nickname": "Le Sophistique",
+            "biography": "Réputé pour jouer sur les mots et ainsi ne pas accomplir ses devoirs de chevaliers tout en restant dans les clous pour ne pas se faire remercier par l’ordre qu’il représente.",
+            "image": "./public/assets/img/Jean-Fonce2.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Inclusive",
+            "nickname": "La Licorne Arc-en-Ciel",
+            "biography": "Une licorne non binaire qui se sent cheval, mais qui ne se prive pas d’encorner tout ce qui bouge malgré tout..",
+            "image": "./public/assets/img/characters/Inclusive.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Abomine",
+            "nickname": "La Sorcière",
+            "biography": "Répudiée de l’académie de Sagemine pour s’être amouraché de Sarcophage le nécromancien, elle témoigne désormais à qui veut l’entendre que le patriarcat oppressif des mages et la misogynie systémique qui lui est attachée ne tolèrent pas la polymagie des sorcières.",
+            "image": "./public/assets/img/Abomine2.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Pétroncle",
+            "nickname": "Le Barbeux",
+            "biography": "Colporteur ultime de ragots en tout genre, il est la némésis de tout ceux qui ont des secrets honteux à garder.",
+            "image": "./public/assets/img/Pétroncle2.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Furoncle",
+            "nickname": "Le Pesteux",
+            "biography": "Binôme infâme de Pétroncle ; sa petite taille lui permet de s'infiltrer n'importe où et d'espionner les habitants de Barbegarde pour constituer des dossiers bien croustillants.",
+            "image": "./public/assets/img/Furoncle2.jpg",
+            "alt": ""
+        }
+    ],
+    "user": [
+        {
+            "name": "Géhonte",
+            "nickname": "Le magicien de la honte",
+            "biography": "Un incompétent notoire incapable d'allumer une lanterne, mais s'est illustré hardiment dans la défense des crustacés atomiques.",
+            "image": "./public/assets/img/Géhonte2.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Yvres",
+            "nickname": "Le soit-disant druide",
+            "biography": "Souvent en train de vider les stocks de la cave, on n'a jamais vraiment su quand il était sobre.",
+            "image": "./public/assets/img/Yvres2.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Alavare",
+            "nickname": "L'opportuniste",
+            "biography": "On peut toujours compter sur lui quand il y a des mines de diamants à se faire (mais pas pour les partager bien entendu).",
+            "image": "./public/assets/img/Alavare2.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Yvette",
+            "nickname": "La Crevette Atomique",
+            "biography": "Grande héroïne parmi les crustacés atomiques pour avoir sauver les habitants du lac du terrible joug du homard therminator.",
+            "image": "./public/assets/img/characters/Yvette.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Hutin",
+            "nickname": "Le Lutin",
+            "biography": "Demi-paria de la communauté de lutins de Bois-Luron en raison de ses comportements excessifs et d'une mauvaise foi absolu en accusant les autorités de faire du racisme anti-korrigan.",
+            "image": "./public/assets/img/Hutin2.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Jean-Hardi",
+            "nickname": "L'Emphatique",
+            "biography": "Eprouve de grande difficulté à se mouvoir dans son armure, mais respecte les codes de chevaleries à la lettre jusqu'à la bouffonnerie.",
+            "image": "./public/assets/img/Jean-Hardi2.jpg",
+            "alt": ""
+        }
+    ],
+    "neutral": [
+        {
+            "name": "Boulb",
+            "nickname": "Le Homard Therminator",
+            "biography": "Notoirement célèbre pour avoir mis un terme à la cinquième République très démocratique des crustacés très constitutionnels afin de contrer le complot des langoustines.",
+            "image": "./public/assets/img/Homard2.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Jean-Fonce",
+            "nickname": "Le Sophistique",
+            "biography": "Réputé pour jouer sur les mots et ainsi ne pas accomplir ses devoirs de chevaliers tout en restant dans les clous pour ne pas se faire remercier par l’ordre qu’il représente.",
+            "image": "./public/assets/img/Jean-Fonce2.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Inclusive",
+            "nickname": "La Licorne Arc-en-Ciel",
+            "biography": "Une licorne non binaire qui se sent cheval, mais qui ne se prive pas d’encorner tout ce qui bouge malgré tout..",
+            "image": "./public/assets/img/characters/Inclusive.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Abomine",
+            "nickname": "La Sorcière",
+            "biography": "Répudiée de l’académie de Sagemine pour s’être amouraché de Sarcophage le nécromancien, elle témoigne désormais à qui veut l’entendre que le patriarcat oppressif des mages et la misogynie systémique qui lui est attachée ne tolèrent pas la polymagie des sorcières.",
+            "image": "./public/assets/img/Abomine2.jpg",
+            "alt": ""
+        }
+    ]
+}

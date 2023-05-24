@@ -70,9 +70,9 @@
 
             <!-- CARTES DE L'UTILISATEUR -->
             <div class="userStat">
-                <button type="button" class="statButton">Vous</button>
+                <button type="button" class="statButton" id="yourStat">Vous</button>
 
-                <div class="userGlobalStat">
+                <div class="userGlobalStat" id="userGlobalStat">
                     <div>
                         <!-- https://www.flaticon.com/fr/icone-gratuite/trophee_9828706?term=victory&page=1&position=54&origin=search&related_id=9828706
                         https://game-icons.net/1x1/lorc/trophy.html -->
@@ -101,8 +101,8 @@
                 </div>
 
                 <!-- CARTES SPECIALES DE L'UTILISATEUR -->
-                <button type="button" class="statButton">Partie en cours</button>
-                <div class="userGameStat">
+                <button type="button" class="statButton" id="yourGameStat">Partie en cours</button>
+                <div class="userGameStat" id="userGameStat">
                     <div>
                         <!-- https://game-icons.net/1x1/delapouite/sun-priest.html -->
                         <img src="./public/assets/img/icon/sun-priest.png" alt="icône de magicien triomphant"
@@ -129,7 +129,7 @@
                 </div>
 
                 <div class="moreInfo">
-                    <a href="./allies.html"><button type="button" title="En savoir plus sur les personnages"
+                    <a href="./cards.html?id=1"><button type="button" title="En savoir plus sur les personnages"
                             class="more">En savoir plus<br>sur les personnages</button></a>
                 </div>
             </div>
@@ -349,9 +349,9 @@
 
             <!-- CARTES DE L'ORDINATEUR -->
             <div class="iaStat">
-                <button type="button" class="statButton">Ordinateur</button>
+                <button type="button" class="statButton" id="iaStat">Ordinateur</button>
                 <!-- CARTES NORMALES DE L'ORDINATEUR -->
-                <div class="iaGlobalStat">
+                <div class="iaGlobalStat" id="iaGlobalStat">
                     <div>
                         <!-- https://www.flaticon.com/fr/icone-gratuite/trophee_9828706?term=victory&page=1&position=54&origin=search&related_id=9828706
                         https://game-icons.net/1x1/lorc/trophy.html -->
@@ -380,8 +380,8 @@
                 </div>
 
                 <!-- CARTES SPECIALES DE L'ORDINATEUR -->
-                <button type="button" class="statButton">Partie en cours</button>
-                <div class="iaGameStat">
+                <button type="button" class="statButton" id="showIaGameStat">Partie en cours</button>
+                <div class="iaGameStat" id="iaGameStat">
                     <div>
                         <!-- https://game-icons.net/1x1/delapouite/sun-priest.html -->
                         <img src="./public/assets/img/icon/sun-priest.png" alt="icône de magicien triomphant"
@@ -407,7 +407,7 @@
                     </div>
                 </div>
 
-                <div class="moreInfo"><a href="./adversaires.html"><button type="button"
+                <div class="moreInfo"><a href="./cards.html?id=0"><button type="button"
                             title="En savoir plus sur les personnages" class="more">En savoir plus<br>sur les
                             personnages</button></a></div>
             </div>

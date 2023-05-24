@@ -37,6 +37,27 @@ closeRules.addEventListener('click', () => {
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// GÈRE L'AFFICHAGE DES STATISTIQUES
+yourStat.addEventListener('click', () => {
+    userGlobalStat.classList.toggle('hide');
+});
+
+yourGameStat.addEventListener('click', () => {
+    userGameStat.classList.toggle('hide');
+});
+
+iaStat.addEventListener('click', () => {
+    iaGlobalStat.classList.toggle('hide');
+});
+
+showIaGameStat.addEventListener('click', () => {
+    iaGameStat.classList.toggle('hide');
+});
+
+
+// =======================================================================================================================================================
+// -------------------------------------------------------------------------------------------------------------------------------------------------------
+
 // AFFICHAGE DE L'ARÈNE POUR DÉMARRER UNE PARTIE
 startGame.addEventListener('click', () => {
     noGameStart.classList.add('hide');

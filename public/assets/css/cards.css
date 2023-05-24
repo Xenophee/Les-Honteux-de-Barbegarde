@@ -1,6 +1,5 @@
-* {
-    font-family: 'Tiro Tamil', serif;
-}
+
+@import url('variables.css');
 
 
 
@@ -11,67 +10,66 @@ body {
     background-attachment: fixed;
 }
 
-header {
-    margin-top: 1%;
-    margin-bottom: 5%;
-}
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* HEADER */
 
 nav {
     display: flex;
-    justify-content: space-between;
-    padding-right: 6%;
-    padding-left: 6%;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-button {
-    font-family: 'Permanent Marker', cursive;
-    width: 100%;
-    padding: 3%;
+a {
+    width: 90%;
+    font-family: var(--special-font);
+    text-decoration: none;
+    text-align: center;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    font-size: large;
-    border-width: 7px;
-    border-style: double;
-    border-color: #C1A677;
-    background-color: #805b2d;
-    color: wheat;
+    border: var(--border-brown-double);
+    background-color: var(--brown-color);
+    color: #beae91;
+    padding: 10px 0px 10px;
+    margin: 10px 0 10px;
     transition: 2s;
-    cursor: pointer;
 }
 
-button:hover {
-    background-color:#C1A677;
-    border-color: #805b2d;
+a:hover {
+    background-color: var(--beige-color);
+    border-color: var(--brown-color);
     color: black;
     transition: 2s;
 }
 
-a {
-    width: 30%;
-}
 
-/* Blocks */
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* BLOCS */
 
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 3%;
 }
 
 .card {
-    background-color: #C1A677;
-    width: 20%;
-    margin: 2%;
+    background-color: var(--beige-color);
+    width: 95%;
     border-radius: 20px;
     transition-duration:2s;
+    margin: 10px 0 10px;
     box-shadow: 5px 5px 5px #3B3939;
 }
 
 
-/* Cartes */
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* CARTES */
 
-.container>.card>div {
-    min-height: 20vh;
+.card>div {
+    min-height: 40vh;
+    padding: 0px 20px 0px;
 }
 
 .container :hover {
@@ -92,71 +90,77 @@ img {
 }
 
 
-/* Textes */
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* TEXTES */
 
-h1 {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 4rem;
-    color: #C1A677;
-    text-align: center;
-    text-shadow: 1px 1px 4px #3B3939;
-    margin-bottom: 5%;
+* {
+    font-family: var(--main-font);
 }
 
-h2, h3 {
+h1, h2, h3 {
+    font-family: var(--special-font);
     text-align: center;
-    font-family: 'Permanent Marker', cursive;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--beige-color);
+    text-shadow: 1px 1px 4px #3B3939;
 }
 
 p {
     text-align: justify;
-    margin: 10%;
     font-size: large;
 }
 
 
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* RESPONSIVE */
 
-/* Responsive */
+    @media (min-width: 768px) and (max-width: 1200px)  {
 
-    @media (max-width: 1100px) and (min-width: 576px)  {
+        a {
+            width: 25%;
+            padding: 10px 0px 10px;
+            margin: 10px 0 50px;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
 
         .card {
-            width: 27%;
+            width: 40%;
+            margin: 30px 10px 30px;
+        }
+
+        .card>div {
+            min-height: 25vh;
         }
     }
 
 
-    @media (max-width: 576px) {
-        .container {
-            display: block;
-            
+    @media (min-width: 1200px) {
+
+        a {
+            width: 20%;
+            padding: 10px 0px 10px;
+            margin: 10px 0 50px;
+        }
+
+        h1 {
+            font-size: 4rem;
         }
     
         .card {
-            width: 90%;
+            width: 20%;
+            margin: 40px 10px 40px;
         }
     
-        .container>.card>div {
-            min-height:40vh;
-            margin-bottom: 10%;
-            padding-bottom: 3%;
+        .card>div {
+            min-height:20vh;
         }
     
-        nav {
-            display: block;
-            padding-right: 1%;
-            padding-left: 1%;
-        }
-    
-        button {
-            width: 100%;
-            font-size: large;
-            padding: 5%;
-            margin-bottom: 6%;
-        }
-    
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 15%;
-        }
 }
