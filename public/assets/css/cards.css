@@ -21,24 +21,40 @@ nav {
     justify-content: space-around;
 }
 
-a {
+a, button {
     width: 90%;
     font-family: var(--special-font);
+    font-size: 1.3rem;
     text-decoration: none;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    border: var(--border-brown-double);
-    background-color: var(--brown-color);
-    color: #beae91;
+    
+    color: #d1c4ac;
     padding: 10px 0px 10px;
     margin: 10px 0 10px;
     transition: 2s;
 }
 
-a:hover {
+a {
+    border: var(--border-beige-double);
+    background-color: var(--green-color);
+}
+
+button {
+    border: var(--border-beige-double);
+    background-color: var(--brown-color);
+}
+
+button.active {
+    border: var(--border-brown-double);
+    background-color: var(--beige-color);
+    color: var(--dark-brown-color);
+}
+
+a:hover, button:hover {
     background-color: var(--beige-color);
     border-color: var(--brown-color);
-    color: black;
+    color: var(--dark-brown-color);
     transition: 2s;
 }
 
@@ -55,6 +71,7 @@ a:hover {
 
 .card {
     background-color: var(--beige-color);
+    color: var(--dark-brown-color);
     width: 95%;
     border-radius: 20px;
     transition-duration:2s;
@@ -67,9 +84,8 @@ a:hover {
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 /* CARTES */
 
-.card>div {
-    min-height: 40vh;
-    padding: 0px 20px 0px;
+.card div {
+    padding: 0px 25px 15px;
 }
 
 .container :hover {
@@ -81,8 +97,10 @@ a:hover {
 
 img {
     width: 100%;
+    height: 30vh;
     border-top-left-radius: 5%;
     border-top-right-radius: 5%;
+    object-fit: cover;
     -webkit-filter: sepia(100%);
 	filter: sepia(100%);
     -webkit-transition: 3s ease-in-out;
@@ -110,8 +128,7 @@ h1 {
 }
 
 p {
-    text-align: justify;
-    font-size: large;
+    font-size: 1.2rem;
 }
 
 
@@ -121,30 +138,27 @@ p {
 
     @media (min-width: 768px) and (max-width: 1200px)  {
 
-        a {
-            width: 25%;
+        a, button {
+            width: 35%;
             padding: 10px 0px 10px;
-            margin: 10px 0 50px;
+            margin: 10px 20px 10px;
         }
 
         h1 {
             font-size: 3rem;
+            margin: 50px 0 50px;
         }
 
         .card {
             width: 40%;
             margin: 30px 10px 30px;
         }
-
-        .card>div {
-            min-height: 25vh;
-        }
     }
 
 
     @media (min-width: 1200px) {
 
-        a {
+        a, button {
             width: 20%;
             padding: 10px 0px 10px;
             margin: 10px 0 50px;
@@ -152,15 +166,13 @@ p {
 
         h1 {
             font-size: 4rem;
+            margin-bottom: 150px;
         }
     
         .card {
             width: 20%;
             margin: 40px 10px 40px;
         }
-    
-        .card>div {
-            min-height:20vh;
-        }
-    
-}
+    }
+
+
