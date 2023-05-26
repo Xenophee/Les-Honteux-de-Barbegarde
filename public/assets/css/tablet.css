@@ -13,7 +13,8 @@ nav {
 
 #openRules, #cleanScores {
     width: 35%;
-    padding: 15px 0 15px;
+    padding: 15px 0px 15px;
+    margin: 10px 10px 0px;
 }
 
 #closeRules {
@@ -126,7 +127,7 @@ nav {
     height: 180px;
 }
 
-.chooseResult button, .chooseEvent button {
+.chooseResult button, .chooseEvent button, .chooseCard button {
     width: 20%;
 }
 

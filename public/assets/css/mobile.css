@@ -86,7 +86,7 @@ h1 {
     height: 140px;
 }
 
-.chooseResult button, .chooseEvent button {
+.chooseResult button, .chooseEvent button, .chooseCard button {
     width: 90%;
     margin: 4px 0px 4px;
 }

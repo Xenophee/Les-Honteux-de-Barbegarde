@@ -50,6 +50,7 @@ let eventGame = (type) => {
     // ----------------------------------------------------
     // Change la scène pour les évènements
     eventGameDisplay.classList.remove('hide');
+    eventGameDisplay.classList.add('event');
     fightZone.classList.add('hide');
     // ----------------------------------------------------
 

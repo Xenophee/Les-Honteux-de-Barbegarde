@@ -14,13 +14,19 @@
 }
 
 .fail {
-    background-color: red;
+    background-image: url(../img/background/fail.jpg);
 }
 
 .success {
-    background-color: green;
+    background-image: url(../img/background/success.jpg);
 }
 
 .equal {
-    background-color: blue;
+    background-image: url(../img/background/equal.jpg);
+}
+
+.eventGameDisplay.event {
+    /* background-image: url(../img/background/event.jpg); */
+    background-color: var(--beige-filter-color);
+    color: var(--dark-brown-color);
 }

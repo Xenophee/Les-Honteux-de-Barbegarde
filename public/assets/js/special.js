@@ -25,7 +25,7 @@ import { randomNumber } from './game.js';
 
 // SÉLECTION ET STOCKAGE DE TOUS LES PERSONNAGES SPÉCIAUX EN UTILISATION NORMALE ET EN TRICHE
 const specialSelect = document.querySelectorAll('.specialCharacters .character input');
-const cheatCharacter = document.querySelectorAll('.cheatCharacter input');
+const cheatCharacter = document.querySelectorAll('.chooseCard button');
 
 
 // =======================================================================================================================================================
@@ -136,6 +136,7 @@ const specialUse = (element) => {
     // ----------------------------------------------------
     // Change la scène pour les évènements
     eventGameDisplay.classList.remove('hide');
+    eventGameDisplay.classList.remove('event');
     following.classList.remove('hide');
     fightZone.classList.add('hide');
     // ----------------------------------------------------
@@ -243,6 +244,7 @@ const iaSpecialUse = () => {
     // ----------------------------------------------------
     // Change la scène pour les évènements
     eventGameDisplay.classList.remove('hide');
+    eventGameDisplay.classList.remove('event');
     following.classList.remove('hide');
     fightZone.classList.add('hide');
     // ----------------------------------------------------

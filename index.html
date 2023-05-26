@@ -12,7 +12,8 @@
 
     <link rel="stylesheet" href="./public/assets/css/style.css">
     <link rel="stylesheet" href="./public/assets/css/mobile.css" media="screen and (max-width: 768px)">
-    <link rel="stylesheet" href="./public/assets/css/tablet.css" media="screen and (min-width: 768px) and (max-width: 1000px)">
+    <link rel="stylesheet" href="./public/assets/css/tablet.css"
+        media="screen and (min-width: 768px) and (max-width: 1000px)">
     <link rel="stylesheet" href="./public/assets/css/desktop.css" media="screen and (min-width: 1000px)">
     <link rel="stylesheet" href="./public/assets/css/special.css">
     <title>Les Honteux de Barbegarde - Mini-Jeu</title>
@@ -23,7 +24,7 @@
     <!-- HEADER AVEC REGLES DU JEU ET STATISTIQUES -->
     <header>
         <nav>
-            <button type="button" title="Réinitialise les scores" id="cleanScores">Reset</button>
+            <button type="button" title="Réinitialise les scores" id="cleanScores">Réinitialiser</button>
             <!-- BOUTON ET MODAL POUR LES REGLES DU JEU -->
             <button type="button" title="Ouvrir les règles du jeu" id="openRules">Règles du jeu</button>
             <dialog id="rules">
@@ -74,8 +75,6 @@
 
                 <div class="userGlobalStat" id="userGlobalStat">
                     <div>
-                        <!-- https://www.flaticon.com/fr/icone-gratuite/trophee_9828706?term=victory&page=1&position=54&origin=search&related_id=9828706
-                        https://game-icons.net/1x1/lorc/trophy.html -->
                         <img src="./public/assets/img/icon/trophy.png" alt="icône de trophée" class="iconStat">
                         <div>Nombre de victoires</div>
                         <div id="victoriesNumber"></div>
@@ -83,7 +82,6 @@
                     </div>
 
                     <div>
-                        <!-- https://game-icons.net/1x1/lorc/surrounded-shield.html -->
                         <img src="./public/assets/img/icon/surrounded-shield.png"
                             alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
                         <div>Nombre de matchs nuls</div>
@@ -92,7 +90,6 @@
                     </div>
 
                     <div>
-                        <!-- https://game-icons.net/1x1/delapouite/grave-flowers.html -->
                         <img src="./public/assets/img/icon/grave-flowers.png" alt="icône de pierre tombale"
                             class="iconStat">
                         <div>Nombre de défaites</div>
@@ -104,7 +101,6 @@
                 <button type="button" class="statButton" id="yourGameStat">Partie en cours</button>
                 <div class="userGameStat" id="userGameStat">
                     <div>
-                        <!-- https://game-icons.net/1x1/delapouite/sun-priest.html -->
                         <img src="./public/assets/img/icon/sun-priest.png" alt="icône de magicien triomphant"
                             class="iconStat">
                         <div>Manches gagnées</div>
@@ -112,7 +108,6 @@
                         <hr>
                     </div>
                     <div>
-                        <!-- https://game-icons.net/1x1/delapouite/shield-bash.html -->
                         <img src="./public/assets/img/icon/shield-bash.png"
                             alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
                         <div>Manches égalités</div>
@@ -120,7 +115,6 @@
                         <hr>
                     </div>
                     <div>
-                        <!-- https://game-icons.net/1x1/lorc/arrowed.html -->
                         <img src="./public/assets/img/icon/arrowed.png" alt="icône de personnage percé de flèches"
                             class="iconStat">
                         <div>Manches perdues</div>
@@ -129,8 +123,8 @@
                 </div>
 
                 <div class="moreInfo">
-                    <a href="./cards.html?id=1"><button type="button" title="En savoir plus sur les personnages"
-                            class="more">En savoir plus<br>sur les personnages</button></a>
+                    <a href="./cards.html?id=1"><button type="button" class="more">En savoir plus<br>sur les
+                            personnages</button></a>
                 </div>
             </div>
 
@@ -176,7 +170,7 @@
                         <div class="presentation">
                             <a href="https://www.atelierdesauteurs.com/text/494804679/les-honteux-de-barbegarde"
                                 target="_blank"><img src="./public/assets/img/Les Honteux de Barbegarde2.jpg"
-                                    alt="Les Honteux de Barbegarde"></a>
+                                    alt="Les Honteux de Barbegarde" class="rewardImg"></a>
                             <div class="presentationText">
                                 <h3>Les Honteux de Barbegarde</h3>
                                 <p>Au merveilleux pays de Barbegarde, la quiétude règne sans partage entre les
@@ -203,140 +197,143 @@
                 <div class="fightZone hide" id="fightZone">
 
                     <div class="fight" id="fight">
-                        <h2>Affrontement</h2>
-                        <h3>Nombre de manches</h3>
-                        <div id="roundNumber"></div>
-                        <!-- AFFICHE LE SCORE ET LES PROTAGONISTES -->
-                        <div class="show">
-                            <div>
-                                <h3>Score</h3>
-                                <div class="score" id="userScore"></div>
-                                <img src="" alt="" class="frameImg"
-                                    id="userSelection">
+                        <div class="platform" id="platform">
+                            <h2>Affrontement</h2>
+                            <h3>Nombre de manches</h3>
+                            <div id="roundNumber"></div>
+                            <!-- AFFICHE LE SCORE ET LES PROTAGONISTES -->
+                            <div class="show">
+                                <div>
+                                    <h3>Score</h3>
+                                    <div class="score" id="userScore"></div>
+                                    <img src="" alt="" class="frameImg" id="userSelection">
+                                </div>
+                                <div id="vs">
+                                    <p>VS</p>
+                                </div>
+                                <div>
+                                    <h3>Score</h3>
+                                    <div class="score" id="iaScore"></div>
+                                    <img src="" alt="" class="frameImg" id="iaSelection">
+                                </div>
                             </div>
-                            <div id="vs">
-                                <p>VS</p>
+                            <!-- AFFICHE UNE PHRASE ET LE RESULTAT DE LA MANCHE -->
+                            <div class="showText">
+                                <p id="explainEvent"></p>
+                                <small id="specialText"></small>
+                                <h4 id="roundResult"></h4>
                             </div>
-                            <div>
-                                <h3>Score</h3>
-                                <div class="score" id="iaScore"></div>
-                                <img src="" alt="" class="frameImg"
-                                    id="iaSelection">
-                            </div>
-                        </div>
-                        <!-- AFFICHE UNE PHRASE ET LE RESULTAT DE LA MANCHE -->
-                        <div class="showText">
-                            <p id="explainEvent">Alavare se casse la gueule et démissione</p>
-                            <small id="specialText">Vous avez reçu un perso spécial !</small>
-                            <h4 id="roundResult">Echec !</h4>
                         </div>
 
 
                         <h3 class="hide">Tricheur !</h3>
 
-                        <div class="userCharacters">
+                        <div class="gameStuff">
+                            <div class="userCharacters">
 
-                            <!-- PERSONNAGES NORMAUX -->
-                            <div class="normalCharacters">
-                                <div class="character" title="Yvette la crevette">
-                                    <input type="image" src="./public/assets/img/userCharacters/yvette.jpg" value="0"
-                                        id="yvette" alt="">
-                                </div>
-                                <div class="character" title="Jean-Hardi l'emphatique">
-                                    <input type="image" src="./public/assets/img/Jean-Hardi2.jpg" value="1"
-                                        id="jeanHardi" alt="">
-                                </div>
-                                <div class="character" title="Hutin le lutin">
-                                    <input type="image" src="./public/assets/img/Hutin2.jpg" value="2" id="hutin"
-                                        alt="">
-                                </div>
-                                <div class="character" title="Alavare l'opportuniste">
-                                    <input type="image" src="./public/assets/img/userCharacters/alavare.jpg" value="3" id="alavare"
-                                        alt="">
-                                </div>
-                                <div class="character" title="Yvres le soit-disant Druide">
-                                    <input type="image" src="./public/assets/img/userCharacters/yvres.jpg" value="4" id="yvres"
-                                        alt="">
-                                </div>
-                                <div class="character" title="Géhonte le magicien de la honte">
-                                    <input type="image" src="./public/assets/img/userCharacters/gehonte.jpg" value="5" id="gehonte"
-                                        alt="">
-                                </div>
-                            </div>
-
-                            <!-- PERSONNAGES SPECIAUX -->
-                            <div class="specialCharacters">
-                                <div class="character" title="Austère le drastique">
-                                    <input type="image" class="inactive" src="./public/assets/img/userCharacters/austere.jpg" value="0" id="austere"
-                                        alt="">
-                                </div>
-                                <div class="character" title="Charmignon l'illusionniste">
-                                    <input type="image" class="inactive" src="./public/assets/img/userCharacters/charmignon.jpg" value="1" id="charmignon" alt="">
-                                </div>
-                                <div class="character" title="Devine la voyante">
-                                    <input type="image" class="inactive" src="./public/assets/img/userCharacters/devine.jpg" value="2" id="devine" alt="">
-                                </div>
-                                <div class="character" title="Hontoscope">
-                                    <input type="image" class="inactive" src="./public/assets/img/userCharacters/hontoscope.jpg"
-                                        value="3" id="hontoscope" alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PARTIE CHEATING -->
-                        <div class="cheating">
-                            <div class="choosingCheat hide" id="choosingCheat">
-                                <div class="closeCheat">
-                                    <!-- https://www.flaticon.com/fr/icone-gratuite/fermer_3426000?term=fermer&page=1&position=3&origin=search&related_id=3426000 -->
-                                    <button type="button" id="closeCheat"><img src="./public/assets/img/icon/fermer.png"
-                                            title="Fermer la zone de triche" alt="Fermer"></button>
-                                </div>
-                                <!-- MORCEAU POUR CHOISIR UNE CARTE DE TRICHE -->
-                                <div class="chooseCard">
-                                    <div class="cheatCharacter">
-                                        <input type="image" src="./public/assets/img/austere.jpg"
-                                            value="0" id="cheatAustere" alt="">
-                                            <h3>Austère</h2>
+                                <!-- PERSONNAGES NORMAUX -->
+                                <div class="normalCharacters">
+                                    <div class="character" title="Yvette la crevette">
+                                        <input type="image" src="./public/assets/img/userCharacters/yvette.jpg" value="0"
+                                            id="yvette" alt="">
                                     </div>
-                                    <div class="cheatCharacter">
-                                        <input type="image" src="./public/assets/img/Charmignon.jpg"
-                                            value="1" id="cheatCharmignon" alt="">
-                                            <h3>Charmignon</h2>
+                                    <div class="character" title="Jean-Hardi l'emphatique">
+                                        <input type="image" src="./public/assets/img/Jean-Hardi2.jpg" value="1"
+                                            id="jeanHardi" alt="">
                                     </div>
-                                    <div class="cheatCharacter">
-                                        <input type="image" src="./public/assets/img/devine.jpg"
-                                            value="2" id="cheatDevine" alt="">
-                                            <h3>Devine</h2>
+                                    <div class="character" title="Hutin le lutin">
+                                        <input type="image" src="./public/assets/img/Hutin2.jpg" value="2" id="hutin"
+                                            alt="">
                                     </div>
-                                    <div class="cheatCharacter">
-                                        <input type="image" src="./public/assets/img/A portrait of a hairy pink frog with four eyes on .jpg"
-                                            value="3" id="cheatHontoscope" alt="">
-                                            <h3>Hontoscope</h2>
+                                    <div class="character" title="Alavare l'opportuniste">
+                                        <input type="image" src="./public/assets/img/userCharacters/alavare.jpg" value="3"
+                                            id="alavare" alt="">
+                                    </div>
+                                    <div class="character" title="Yvres le soit-disant Druide">
+                                        <input type="image" src="./public/assets/img/userCharacters/yvres.jpg" value="4"
+                                            id="yvres" alt="">
+                                    </div>
+                                    <div class="character" title="Géhonte le magicien de la honte">
+                                        <input type="image" src="./public/assets/img/userCharacters/gehonte.jpg" value="5"
+                                            id="gehonte" alt="">
                                     </div>
                                 </div>
-                                <!-- MORCEAU POUR CHOISIR LA FIN DE LA PARTIE -->
-                                <div class="chooseEvent">
-                                    <button type="button" title="Passe les scores en négatifs" value="0" id="sarcophage">Sarcophage</button>
-                                    <button type="button" title="Divise les scores par deux" value="1" id="barbegarde">Barbegarde</button>
-                                    <button type="button" title="Assomme tous le monde" value="2" id="createur">Créateur</button>
-                                </div>
-                                <!-- MORCEAU POUR CHOISIR LA FIN DE LA PARTIE -->
-                                <div class="chooseResult">
-                                    <button type="button" value="0" id="defeat">Défaite</button>
-                                    <button type="button" value="1" id="victory">Victoire</button>
-                                    <button type="button" value="2" id="null">Egalité</button>
+    
+                                <!-- PERSONNAGES SPECIAUX -->
+                                <div class="specialCharacters">
+                                    <div class="character" title="Austère le drastique">
+                                        <input type="image" class="inactive"
+                                            src="./public/assets/img/userCharacters/austere.jpg" value="0" id="austere"
+                                            alt="">
+                                    </div>
+                                    <div class="character" title="Charmignon l'illusionniste">
+                                        <input type="image" class="inactive"
+                                            src="./public/assets/img/userCharacters/charmignon.jpg" value="1"
+                                            id="charmignon" alt="">
+                                    </div>
+                                    <div class="character" title="Devine la voyante">
+                                        <input type="image" class="inactive"
+                                            src="./public/assets/img/userCharacters/devine.jpg" value="2" id="devine"
+                                            alt="">
+                                    </div>
+                                    <div class="character" title="Hontoscope">
+                                        <input type="image" class="inactive"
+                                            src="./public/assets/img/userCharacters/hontoscope.jpg" value="3"
+                                            id="hontoscope" alt="">
+                                    </div>
                                 </div>
                             </div>
+    
+                            <!-- PARTIE CHEATING -->
+                            <div class="cheating">
+                                <div class="choosingCheat hide" id="choosingCheat">
+                                    <div class="closeCheat">
+                                        <!-- https://www.flaticon.com/fr/icone-gratuite/fermer_3426000?term=fermer&page=1&position=3&origin=search&related_id=3426000 -->
+                                        <button type="button" id="closeCheat"><img src="./public/assets/img/icon/fermer.png"
+                                                title="Fermer la zone de triche" alt="Fermer"></button>
+                                    </div>
+                                    <!-- MORCEAU POUR CHOISIR UNE CARTE DE TRICHE -->
+                                    <h5>Spéciaux</h5>
+                                    <div class="chooseCard">
+                                        <button type="button" title="Retire un point à l'ordinateur" value="0"
+                                            id="cheatAustere">Austère</button>
+                                        <button type="button" title="Empêche l'ordinateur de jouer ses personnages spéciaux pendant 3 tours" value="1"
+                                            id="cheatCharmignon">Charmignon</button>
+                                        <button type="button" title="Vous donne un point" value="2"
+                                            id="cheatDevine">Devine</button>
+                                            <button type="button" title="Une chance sur deux de retirer deux points à l'ordinateur ou à vous-même" value="3"
+                                            id="cheatHontoscope">Hontoscope</button>
+                                    </div>
 
-                            <!-- MORCEAU POUR ENTRER DANS LA SECTION DE TRICHE -->
-                            <div class="cheatingEnter" id="cheatingEnter">
-                                <button type="button" title="Entrer dans la section triche" id="cheat">Triche</button>
-                                <div class="hide" id="passwordSection">
-                                    <p>C'est honteux !</p>
-                                    <input type="password" name="password" id="password">
+                                    <!-- MORCEAU POUR CHOISIR LA FIN DE LA PARTIE -->
+                                    <h5>Événements</h5>
+                                    <div class="chooseEvent">
+                                        <button type="button" title="Passe les scores en négatifs" value="0"
+                                            id="sarcophage">Sarcophage</button>
+                                        <button type="button" title="Divise les scores par deux" value="1"
+                                            id="barbegarde">Barbegarde</button>
+                                        <button type="button" title="Assomme tous le monde" value="2"
+                                            id="createur">Créateur</button>
+                                    </div>
+                                    <!-- MORCEAU POUR CHOISIR LA FIN DE LA PARTIE -->
+                                    <h5>Fin de partie</h5>
+                                    <div class="chooseResult">
+                                        <button type="button" value="0" id="defeat">Défaite</button>
+                                        <button type="button" value="1" id="victory">Victoire</button>
+                                        <button type="button" value="2" id="null">Egalité</button>
+                                    </div>
                                 </div>
+    
+                                <!-- MORCEAU POUR ENTRER DANS LA SECTION DE TRICHE -->
+                                <div class="cheatingEnter" id="cheatingEnter">
+                                    <button type="button" title="Entrer dans la section triche" id="cheat">Triche</button>
+                                    <div class="hide" id="passwordSection">
+                                        <p>C'est honteux !</p>
+                                        <input type="password" name="password" id="password">
+                                    </div>
+                                </div>
+    
                             </div>
-
                         </div>
                     </div>
 
@@ -407,8 +404,8 @@
                     </div>
                 </div>
 
-                <div class="moreInfo"><a href="./cards.html?id=0"><button type="button"
-                            title="En savoir plus sur les personnages" class="more">En savoir plus<br>sur les
+                <div class="moreInfo"><a href="./cards.html?id=0"><button type="button" class="more">En savoir
+                            plus<br>sur les
                             personnages</button></a></div>
             </div>
 

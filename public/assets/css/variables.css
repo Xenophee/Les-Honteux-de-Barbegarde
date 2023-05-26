@@ -3,16 +3,27 @@
     --dark-brown-color: #473217;
     --green-color: #516d61;
     --beige-color: #c1a677;
+    --light-beige-color: #d1c4ac;
 
-    --green-filter-color: #516d6183;
+    --green-filter-color: #516d619c;
+    --brown-filter-color: #805b2db2;
+    --beige-filter-color: #c1a677b7;
 
     --special-font: 'Permanent Marker', cursive;
     --main-font: 'Tiro Tamil', serif;
     --font-normal-size: 1rem;
+    --font-ideal-size: 1.2rem;
     --font-medium-size: 1.5rem;
     --font-tall-size: 2rem;
 
-    --border-brown-double: double 7px var(--brown-color);
-    --border-green-double: double 7px var(--green-color);
-    --border-beige-double: double 7px var(--beige-color);
+    --box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    --text-shadow: 1px 1px 4px #3B3939;
+
+    --border-brown-double: double 4px var(--brown-color);
+    --border-green-double: double 4px var(--green-color);
+    --border-beige-double: double 4px var(--beige-color);
+
+    --border-beige-dotted: dotted 1px var(--beige-color);
+    --border-brown-dotted: dotted 1px var(--brown-color);
+    --border-green-dotted: dotted 1px var(--green-color);
 }

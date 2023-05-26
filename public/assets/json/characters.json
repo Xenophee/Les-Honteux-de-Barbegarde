@@ -4,28 +4,28 @@
             "name": "Boulb",
             "nickname": "Le Homard Therminator",
             "biography": "Notoirement célèbre pour avoir mis un terme à la cinquième République très démocratique des crustacés très constitutionnels afin de contrer le complot des langoustines.",
-            "image": "./public/assets/img/Homard2.jpg",
+            "image": "./public/assets/img/characters/ia/homard.jpg",
             "alt": ""
         },
         {
             "name": "Jean-Fonce",
             "nickname": "Le Sophistique",
             "biography": "Réputé pour jouer sur les mots et ainsi ne pas accomplir ses devoirs de chevaliers tout en restant dans les clous pour ne pas se faire remercier par l’ordre qu’il représente.",
-            "image": "./public/assets/img/Jean-Fonce2.jpg",
+            "image": "./public/assets/img/characters/ia/jean-fonce.jpg",
             "alt": ""
         },
         {
             "name": "Inclusive",
             "nickname": "La Licorne Arc-en-Ciel",
             "biography": "Une licorne non binaire qui se sent cheval, mais qui ne se prive pas d’encorner tout ce qui bouge malgré tout..",
-            "image": "./public/assets/img/characters/Inclusive.jpg",
+            "image": "./public/assets/img/characters/ia/inclusive.jpg",
             "alt": ""
         },
         {
             "name": "Abomine",
             "nickname": "La Sorcière",
             "biography": "Répudiée de l’académie de Sagemine pour s’être amouraché de Sarcophage le nécromancien, elle témoigne désormais à qui veut l’entendre que le patriarcat oppressif des mages et la misogynie systémique qui lui est attachée ne tolèrent pas la polymagie des sorcières.",
-            "image": "./public/assets/img/Abomine2.jpg",
+            "image": "./public/assets/img/characters/ia/abomine.jpg",
             "alt": ""
         },
         {
@@ -48,28 +48,28 @@
             "name": "Géhonte",
             "nickname": "Le magicien de la honte",
             "biography": "Un incompétent notoire incapable d'allumer une lanterne, mais s'est illustré hardiment dans la défense des crustacés atomiques.",
-            "image": "./public/assets/img/Géhonte2.jpg",
+            "image": "./public/assets/img/characters/user/gehonte.jpg",
             "alt": ""
         },
         {
             "name": "Yvres",
             "nickname": "Le soit-disant druide",
             "biography": "Souvent en train de vider les stocks de la cave, on n'a jamais vraiment su quand il était sobre.",
-            "image": "./public/assets/img/Yvres2.jpg",
+            "image": "./public/assets/img/characters/user/yvres.jpg",
             "alt": ""
         },
         {
             "name": "Alavare",
             "nickname": "L'opportuniste",
             "biography": "On peut toujours compter sur lui quand il y a des mines de diamants à se faire (mais pas pour les partager bien entendu).",
-            "image": "./public/assets/img/Alavare2.jpg",
+            "image": "./public/assets/img/characters/user/alavare.jpg",
             "alt": ""
         },
         {
             "name": "Yvette",
             "nickname": "La Crevette Atomique",
             "biography": "Grande héroïne parmi les crustacés atomiques pour avoir sauver les habitants du lac du terrible joug du homard therminator.",
-            "image": "./public/assets/img/characters/Yvette.jpg",
+            "image": "./public/assets/img/characters/user/yvette.jpg",
             "alt": ""
         },
         {
@@ -85,6 +85,27 @@
             "biography": "Eprouve de grande difficulté à se mouvoir dans son armure, mais respecte les codes de chevaleries à la lettre jusqu'à la bouffonnerie.",
             "image": "./public/assets/img/Jean-Hardi2.jpg",
             "alt": ""
+        },
+        {
+            "name": "Austère",
+            "nickname": "Le Drastique",
+            "biography": "Eprouve de grande difficulté à se mouvoir dans son armure, mais respecte les codes de chevaleries à la lettre jusqu'à la bouffonnerie.",
+            "image": "./public/assets/img/characters/user/austere.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Charmignon",
+            "nickname": "L'enchanteur",
+            "biography": "Eprouve de grande difficulté à se mouvoir dans son armure, mais respecte les codes de chevaleries à la lettre jusqu'à la bouffonnerie.",
+            "image": "./public/assets/img/characters/user/charmignon.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Devine",
+            "nickname": "La Voyante",
+            "biography": "Eprouve de grande difficulté à se mouvoir dans son armure, mais respecte les codes de chevaleries à la lettre jusqu'à la bouffonnerie.",
+            "image": "./public/assets/img/characters/user/devine.jpg",
+            "alt": ""
         }
     ],
     "neutral": [
@@ -92,28 +113,28 @@
             "name": "Sarcophage",
             "nickname": "Le Nécromancien",
             "biography": "Notoirement célèbre pour avoir mis un terme à la cinquième République très démocratique des crustacés très constitutionnels afin de contrer le complot des langoustines.",
-            "image": "./public/assets/img/Homard2.jpg",
+            "image": "./public/assets/img/characters/others/sarcophage.jpg",
             "alt": ""
         },
         {
             "name": "Barbegarde",
             "nickname": "",
             "biography": "Réputé pour jouer sur les mots et ainsi ne pas accomplir ses devoirs de chevaliers tout en restant dans les clous pour ne pas se faire remercier par l’ordre qu’il représente.",
-            "image": "./public/assets/img/Jean-Fonce2.jpg",
+            "image": "./public/assets/img/characters/others/barbegarde.jpg",
             "alt": ""
         },
         {
             "name": "Le créateur",
             "nickname": "",
             "biography": "Une licorne non binaire qui se sent cheval, mais qui ne se prive pas d’encorner tout ce qui bouge malgré tout..",
-            "image": "./public/assets/img/characters/Inclusive.jpg",
+            "image": "./public/assets/img/characters/others/createur.jpg",
             "alt": ""
         },
         {
             "name": "Hontoscope",
             "nickname": "Le thermomètre de la honte",
             "biography": "Répudiée de l’académie de Sagemine pour s’être amouraché de Sarcophage le nécromancien, elle témoigne désormais à qui veut l’entendre que le patriarcat oppressif des mages et la misogynie systémique qui lui est attachée ne tolèrent pas la polymagie des sorcières.",
-            "image": "./public/assets/img/Abomine2.jpg",
+            "image": "./public/assets/img/characters/others/hontoscope.jpg",
             "alt": ""
         }
     ]

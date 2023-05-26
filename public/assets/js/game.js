@@ -168,11 +168,11 @@ const score = (result) => {
 
     // Retire d'abord toutes les classes qui change le fond de la partie affrontement
     classes.forEach(element => {
-        fight.classList.remove(element);
+        platform.classList.remove(element);
     });
 
     // Ajout de la classe pour le fond de la partie affrontement
-    fight.classList.add(roundResults[result].class);
+    platform.classList.add(roundResults[result].class);
     // ----------------------------------------------------
 
     // ----------------------------------------------------
