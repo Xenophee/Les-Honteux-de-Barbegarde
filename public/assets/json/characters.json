@@ -1,6 +1,13 @@
 {
     "ia": [
         {
+            "name": "Abomine",
+            "nickname": "La Sorcière",
+            "biography": "Répudiée de l’académie de Sagemine pour s’être amouraché de Sarcophage le nécromancien, elle témoigne désormais à qui veut l’entendre que le patriarcat oppressif des mages et la misogynie systémique qui lui est attachée ne tolèrent pas la polymagie des sorcières.",
+            "image": "./public/assets/img/characters/ia/abomine.jpg",
+            "alt": ""
+        },
+        {
             "name": "Boulb",
             "nickname": "Le Homard Therminator",
             "biography": "Notoirement célèbre pour avoir mis un terme à la cinquième République très démocratique des crustacés très constitutionnels afin de contrer le complot des langoustines.",
@@ -8,10 +15,10 @@
             "alt": ""
         },
         {
-            "name": "Jean-Fonce",
-            "nickname": "Le Sophistique",
-            "biography": "Réputé pour jouer sur les mots et ainsi ne pas accomplir ses devoirs de chevaliers tout en restant dans les clous pour ne pas se faire remercier par l’ordre qu’il représente.",
-            "image": "./public/assets/img/characters/ia/jean-fonce.jpg",
+            "name": "Furoncle",
+            "nickname": "Le Pesteux",
+            "biography": "Binôme infâme de Pétroncle ; sa petite taille lui permet de s'infiltrer n'importe où et d'espionner les habitants de Barbegarde pour constituer des dossiers bien croustillants.",
+            "image": "./public/assets/img/characters/ia/furoncle.jpg",
             "alt": ""
         },
         {
@@ -22,10 +29,10 @@
             "alt": ""
         },
         {
-            "name": "Abomine",
-            "nickname": "La Sorcière",
-            "biography": "Répudiée de l’académie de Sagemine pour s’être amouraché de Sarcophage le nécromancien, elle témoigne désormais à qui veut l’entendre que le patriarcat oppressif des mages et la misogynie systémique qui lui est attachée ne tolèrent pas la polymagie des sorcières.",
-            "image": "./public/assets/img/characters/ia/abomine.jpg",
+            "name": "Jean-Fonce",
+            "nickname": "Le Sophistique",
+            "biography": "Réputé pour jouer sur les mots et ainsi ne pas accomplir ses devoirs de chevaliers tout en restant dans les clous pour ne pas se faire remercier par l’ordre qu’il représente.",
+            "image": "./public/assets/img/characters/ia/jean-fonce.jpg",
             "alt": ""
         },
         {
@@ -34,48 +41,48 @@
             "biography": "Colporteur ultime de ragots en tout genre, il est la némésis de tout ceux qui ont des secrets honteux à garder.",
             "image": "./public/assets/img/Pétroncle2.jpg",
             "alt": ""
-        },
-        {
-            "name": "Furoncle",
-            "nickname": "Le Pesteux",
-            "biography": "Binôme infâme de Pétroncle ; sa petite taille lui permet de s'infiltrer n'importe où et d'espionner les habitants de Barbegarde pour constituer des dossiers bien croustillants.",
-            "image": "./public/assets/img/Furoncle2.jpg",
-            "alt": ""
         }
     ],
     "user": [
         {
-            "name": "Géhonte",
-            "nickname": "Le magicien de la honte",
-            "biography": "Un incompétent notoire incapable d'allumer une lanterne, mais s'est illustré hardiment dans la défense des crustacés atomiques.",
-            "image": "./public/assets/img/characters/user/gehonte.jpg",
-            "alt": ""
-        },
-        {
-            "name": "Yvres",
-            "nickname": "Le soit-disant druide",
-            "biography": "Souvent en train de vider les stocks de la cave, on n'a jamais vraiment su quand il était sobre.",
-            "image": "./public/assets/img/characters/user/yvres.jpg",
-            "alt": ""
-        },
-        {
             "name": "Alavare",
             "nickname": "L'opportuniste",
-            "biography": "On peut toujours compter sur lui quand il y a des mines de diamants à se faire (mais pas pour les partager bien entendu).",
+            "biography": "Pourtant compétent dans son domaine, le mystère reste entier sur ses motivations à s’associer régulièrement avec des demeurés. Certains supposent qu’il est ainsi plus simple pour lui de se vêtir de tout les mérites en cas de succès lors d’une entreprise ou de faire porter le poids de la responsabilité sur les autres en cas d’échec. Ce qui ne fait pas secret en revanche, c’est l’étendue de son avidité et de sa vanité.",
             "image": "./public/assets/img/characters/user/alavare.jpg",
             "alt": ""
         },
         {
-            "name": "Yvette",
-            "nickname": "La Crevette Atomique",
-            "biography": "Grande héroïne parmi les crustacés atomiques pour avoir sauver les habitants du lac du terrible joug du homard therminator.",
-            "image": "./public/assets/img/characters/user/yvette.jpg",
+            "name": "Austère",
+            "nickname": "Le Drastique",
+            "biography": "Devenu Archimage de l’académie de Sagemine suite à la disparition de Barbegarde, Austère essaye tant bien que mal de dissimuler la guignolerie de l’institut qu’il dirige auprès des autres aréopages de magiciens à l’étranger. Il n’hésite pas à recourir à des méthodes peu conventionnelles pour se faire ; l’important est de conserver les apparences et un semblant de dignité dans cet immense bourbier à crétins.",
+            "image": "./public/assets/img/characters/user/austere.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Charmignon",
+            "nickname": "L'enchanteur",
+            "biography": "Véritable tombeur, Charmignon n’est pas seulement le plus bel adonis de Sagemine, il est également passé maitre dans l’art des illusions. Cette caractéristique fait d’ailleurs constamment douter les autres magiciens sur l’authenticité de sa beauté. Toutefois, l’inquiétude la plus grave nourrit par les habitants de la région est l’existence ou non de sa barbe. Tantôt avec, tantôt sans… Où se trouve le réel ? Le jeune enchanteur semble se jouer des conventions au grand dam des dragons-barbiers.",
+            "image": "./public/assets/img/characters/user/charmignon.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Devine",
+            "nickname": "La Voyante",
+            "biography": "Bien qu’elle ait cette irritante habitude de discourir pendant une heure sur quelque chose qui ne nécessite que 5 min de son temps, Devine est reconnu malgré tout pour la pertinence de ses dons de voyance par Austère lui-même. Autant dire qu’elle est abondamment sollicitée aussi bien par l’intelligentsia de Sagemine comme par le moindre péquenaud du coin sur des rocamboles. Prévoir donc un délai de 5 ans pour obtenir un rendez-vous et surtout, prévoyez votre journée !",
+            "image": "./public/assets/img/characters/user/devine.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Géhonte",
+            "nickname": "Le magicien de la honte",
+            "biography": "Incompétent notoire, incapable d'allumer une lanterne, Géhonte est tout simplement la risée ultime de Sagemine et sert d’attraction humoristique pour les autres membres de l’académie quand ils ont besoin de se rassurer sur leurs propres aptitudes. Heureusement pour lui, il se montre néanmoins utile pour le nettoyage des latrines et autres tâches ingrates auxquelles chacun préfère se soustraire. ",
+            "image": "./public/assets/img/characters/user/gehonte.jpg",
             "alt": ""
         },
         {
             "name": "Hutin",
-            "nickname": "Le Lutin",
-            "biography": "Demi-paria de la communauté de lutins de Bois-Luron en raison de ses comportements excessifs et d'une mauvaise foi absolu en accusant les autorités de faire du racisme anti-korrigan.",
+            "nickname": "Le Korrigano-lutin",
+            "biography": "Demi-paria de la communauté de lutins de Bois-Luron en raison de ses comportements outrancier et d'une mauvaise foi gargantuesque. Il proclame maintenant à qui veut l’entendre que son exclusion est motivée par du racisme anti-korrigan décomplexé, véritable fléau de la société lutine.",
             "image": "./public/assets/img/Hutin2.jpg",
             "alt": ""
         },
@@ -87,54 +94,47 @@
             "alt": ""
         },
         {
-            "name": "Austère",
-            "nickname": "Le Drastique",
-            "biography": "Eprouve de grande difficulté à se mouvoir dans son armure, mais respecte les codes de chevaleries à la lettre jusqu'à la bouffonnerie.",
-            "image": "./public/assets/img/characters/user/austere.jpg",
+            "name": "Yvette",
+            "nickname": "La Crevette Atomique",
+            "biography": "Quoique l’exploit est à mettre plutôt au crédit de Géhonte, l’histoire retiendra qu’Yvette est une grande héroïne parmi les crustacés atomiques pour avoir sauvé les habitants du lac du terrible joug du homard therminator qui nourrissait de sombres projets à l’encontre des langoustines. ",
+            "image": "./public/assets/img/characters/user/yvette.jpg",
             "alt": ""
         },
         {
-            "name": "Charmignon",
-            "nickname": "L'enchanteur",
-            "biography": "Eprouve de grande difficulté à se mouvoir dans son armure, mais respecte les codes de chevaleries à la lettre jusqu'à la bouffonnerie.",
-            "image": "./public/assets/img/characters/user/charmignon.jpg",
-            "alt": ""
-        },
-        {
-            "name": "Devine",
-            "nickname": "La Voyante",
-            "biography": "Eprouve de grande difficulté à se mouvoir dans son armure, mais respecte les codes de chevaleries à la lettre jusqu'à la bouffonnerie.",
-            "image": "./public/assets/img/characters/user/devine.jpg",
+            "name": "Yvres",
+            "nickname": "Le soit-disant druide",
+            "biography": "Souvent en train de vider les stocks de la cave, on n'a jamais vraiment su quand il était sobre. On n’a jamais vraiment su non plus s’il est bien ce qu’il prétend être étant donné la difficulté de juger les capacités en druidisme d’un alcoolique invétéré. Ceci d’autant plus que l’individu semble particulièrement lunatique ; tantôt adorateur absolu de la faune et la flore, tantôt coupable de maltraitance envers eux.",
+            "image": "./public/assets/img/characters/user/yvres.jpg",
             "alt": ""
         }
     ],
     "neutral": [
         {
-            "name": "Sarcophage",
-            "nickname": "Le Nécromancien",
-            "biography": "Notoirement célèbre pour avoir mis un terme à la cinquième République très démocratique des crustacés très constitutionnels afin de contrer le complot des langoustines.",
-            "image": "./public/assets/img/characters/others/sarcophage.jpg",
-            "alt": ""
-        },
-        {
             "name": "Barbegarde",
-            "nickname": "",
-            "biography": "Réputé pour jouer sur les mots et ainsi ne pas accomplir ses devoirs de chevaliers tout en restant dans les clous pour ne pas se faire remercier par l’ordre qu’il représente.",
+            "nickname": "Le bâtisseur désabusé",
+            "biography": "Fondateur légendaire de la région qui porte désormais son nom, il a néanmoins quitté Sagemine il y a fort longtemps en disparaissant sans mot dire, laissant la fonction d’Archimage à son bras droit Austère. Personne n’est au courant, mais il sirote maintenant des cocktails à la plage tout en riant des incapables qu’il a laissés avec soulagement derrière lui.",
             "image": "./public/assets/img/characters/others/barbegarde.jpg",
-            "alt": ""
-        },
-        {
-            "name": "Le créateur",
-            "nickname": "",
-            "biography": "Une licorne non binaire qui se sent cheval, mais qui ne se prive pas d’encorner tout ce qui bouge malgré tout..",
-            "image": "./public/assets/img/characters/others/createur.jpg",
             "alt": ""
         },
         {
             "name": "Hontoscope",
             "nickname": "Le thermomètre de la honte",
-            "biography": "Répudiée de l’académie de Sagemine pour s’être amouraché de Sarcophage le nécromancien, elle témoigne désormais à qui veut l’entendre que le patriarcat oppressif des mages et la misogynie systémique qui lui est attachée ne tolèrent pas la polymagie des sorcières.",
+            "biography": "Petite créature malfaisante aux allures de grenouille, elle possède la fâcheuse habitude de se coller aux bottines des individus particulièrement honteux en s’exclamant « Oh la honte ! » d’une voix stridente et insupportable à la moindre action ratée de sa victime. En résumé, se faire suivre par un hontoscope, c’est vraiment trop la honte !",
             "image": "./public/assets/img/characters/others/hontoscope.jpg",
+            "alt": ""
+        },
+        {
+            "name": "L'Entité",
+            "nickname": "Le créateur psychotique",
+            "biography": "La légende raconte qu’après avoir conçu l’univers en 13 jours, l’Entité contempla longuement sa création branquignole. Elle fut tellement horrifiée par la médiocrité de sa réalisation qu’elle décida de se suicider en se jetant dans la fournaise d’une étoile flamboyante avant de se précipiter dans un trou noir titanesque, mais elle ne parvint qu’à altérer son intelligence et devenir finalement complètement toquée.",
+            "image": "./public/assets/img/characters/others/createur.jpg",
+            "alt": ""
+        },
+        {
+            "name": "Sarcophage",
+            "nickname": "Le cérébromancien",
+            "biography": "Véritable aspirateur à QI, Sarcophage possède la terrible réputation de s’emparer de l’intelligence de tous ceux qui l’approchent d’un peu trop prêt. De fait, personne ne sait s’il s’agit d’un homme ou d’une femme, mais tout le monde sait qu’il vaut mieux garder ses distances avec ce sinistre individu si l’on ne veut pas finir dans son armée d’abrutis !",
+            "image": "./public/assets/img/characters/others/sarcophage.jpg",
             "alt": ""
         }
     ]
