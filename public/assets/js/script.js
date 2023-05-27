@@ -19,11 +19,36 @@ const scream = new Audio("./public/assets/audio/bahhhhh.mp3");
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// GÈRE L'AFFICHAGE DES DONNÉES DE MISES À JOUR
+
+    fetch('/public/assets/json/updates.json')
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+
+        data.updates.map(function(updates, key) {
+
+            date.innerHTML = `${updates.date}`;
+            content.innerHTML = `${updates.content}`;
+            next.innerHTML = `${updates.next}`;
+        });
+
+    });
+
+
+// =======================================================================================================================================================
+// -------------------------------------------------------------------------------------------------------------------------------------------------------
+
 // OUVERTURE DES RÈGLES DU JEU
 openRules.addEventListener('click', () => {
     rules.showModal();
 });
 
+// OUVERTURE DES MISES À JOUR
+openUpdates.addEventListener('click', () => {
+    updates.showModal();
+});
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -31,6 +56,11 @@ openRules.addEventListener('click', () => {
 // FERMETURE DES RÈGLES DU JEU
 closeRules.addEventListener('click', () => {
     rules.close();
+});
+
+// FERMETURE DES MISES À JOUR
+closeUpdates.addEventListener('click', () => {
+    updates.close();
 });
 
 

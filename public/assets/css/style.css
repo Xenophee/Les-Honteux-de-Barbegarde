@@ -51,7 +51,7 @@ body {
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 /* ACCUEIL */
 
-#openRules, #cleanScores {
+#openRules, #cleanScores, #openUpdates {
     font-family: var(--special-font);
     font-size: var(--font-medium-size);
     background-color: var(--brown-color);
@@ -63,12 +63,12 @@ body {
     transition: 2s;
 }
 
-#openRules:hover, #cleanScores:hover {
+#openRules:hover, #cleanScores:hover, #openUpdates:hover {
     background-color: var(--green-color);
     box-shadow: var(--box-shadow);
 }
 
-#closeRules {
+#closeRules, #closeUpdates {
     font-family: var(--special-font);
     font-size: var(--font-medium-size);
     background-color: var(--brown-color);
@@ -80,8 +80,43 @@ body {
     transition: 2s;
 }
 
-#closeRules:hover {
+#closeRules:hover, #closeUpdates:hover {
     background-color: var(--dark-brown-color);
+}
+
+#rules, #updates {
+    background-color: var(--beige-color);
+    color: var(--dark-brown-color);
+    font-size: var(--font-ideal-size);
+    box-shadow: var(--box-shadow);
+}
+
+#rules h2, #updates h2 {
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    padding: 10px 0 10px;
+    margin-bottom: 100px;
+}
+
+#rules::backdrop, #updates::backdrop {
+    background-color: #516d619c;
+}
+
+dialog {
+    width: 50%;
+    height: 90%;
+}
+
+dialog hr {
+    width: 70%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: var(--border-brown-double);
+}
+
+h3 {
+    font-size: var(--font-medium-size);
+    margin-bottom: 50px;
 }
 
 .context {
@@ -96,24 +131,6 @@ h1 {
 
 .context p {
     font-size: var(--font-medium-size);
-}
-
-#rules {
-    background-color: var(--beige-color);
-    color: var(--dark-brown-color);
-    font-size: var(--font-ideal-size);
-    box-shadow: var(--box-shadow);
-}
-
-#rules h2 {
-    background-color: var(--brown-color);
-    color: var(--light-beige-color);
-    padding: 10px 0 10px;
-    margin-bottom: 100px;
-}
-
-#rules::backdrop {
-    background-color: #516d619c;
 }
 
 

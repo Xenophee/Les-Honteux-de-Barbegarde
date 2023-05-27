@@ -11,13 +11,13 @@ nav {
     justify-content: space-between;
 }
 
-#openRules, #cleanScores {
+#openRules, #cleanScores, #openUpdates {
     width: 15%;
     padding: 15px 0 15px;
     margin: 20px 20px 0px;
 }
 
-#closeRules {
+#closeRules, #closeUpdates {
     width: 20%;
     margin-top: 20px;
 }

@@ -25,6 +25,22 @@
     <header>
         <nav>
             <button type="button" title="Réinitialise les scores" id="cleanScores">Réinitialiser</button>
+
+            <!-- BOUTON ET MODAL POUR LES REGLES DU JEU -->
+            <button type="button" title="Lire les dernières mises à jour" id="openUpdates">Mises à jour</button>
+            <dialog id="updates">
+                <div>
+                    <h2>Mises à jour</h2>
+                    <h3 id="date"></h3>
+                    <p id="content"></p>
+                    <hr>
+                    <h3>Prochainement</h3>
+                    <p id="next"></p>
+                    <hr>
+                    <button type="button" id="closeUpdates">Fermer</button>
+                </div>
+            </dialog>
+
             <!-- BOUTON ET MODAL POUR LES REGLES DU JEU -->
             <button type="button" title="Ouvrir les règles du jeu" id="openRules">Règles du jeu</button>
             <dialog id="rules">
