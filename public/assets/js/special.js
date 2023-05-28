@@ -31,6 +31,16 @@ const cheatCharacter = document.querySelectorAll('.chooseCard button');
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// LANCEMENT DU SON AU SURVOL D'UN PERSONNAGE SPÉCIAL
+const specialSound = () => {
+    let sound = new Audio("./public/assets/audio/boing.mp3");
+        sound.play();
+        sound.volume = 0.5;
+}
+
+// =======================================================================================================================================================
+// -------------------------------------------------------------------------------------------------------------------------------------------------------
+
 // AUTORISE OU NON L'UTILISATION DES PERSONNAGES SPECIAUX PAR L'UTILISATEUR
 const specialAllow = () => {
 
@@ -40,6 +50,7 @@ const specialAllow = () => {
             // Ajout d'un écouteur d'événement pour chaque personnage dont la valeur est "true" dans le tableau
             if (element === true) {
                 specialSelect[index].addEventListener('click', specialUse);
+                specialSelect[index].addEventListener('mouseover', specialSound);
                 specialSelect[index].classList.replace('inactive', 'active');
             };
         });
@@ -49,6 +60,7 @@ const specialAllow = () => {
             // Désactivation des écouteurs d'événement pour chaque personnage dont la valeur est "true" dans le tableau
             if (element === true) {
                 specialSelect[index].removeEventListener('click', specialUse);
+                specialSelect[index].removeEventListener('mouseover', specialSound);
                 specialSelect[index].classList.replace('active', 'inactive');
             };
         });
@@ -131,6 +143,7 @@ const specialUse = (element) => {
     // ----------------------------------------------------
     // Stocke l'indication du personnage utilisé dans une variable
     let special = Number(element.target.value);
+    let infoType;
     // ----------------------------------------------------
 
     // ----------------------------------------------------
@@ -139,16 +152,6 @@ const specialUse = (element) => {
     eventGameDisplay.classList.remove('event');
     following.classList.remove('hide');
     fightZone.classList.add('hide');
-    // ----------------------------------------------------
-
-    // ----------------------------------------------------
-    // Affiche toutes les informations relatives au personnage spécial utilisé et lance l'audio
-    eventImg.title = userCharacters.special[special].name;
-    eventImg.src = userCharacters.special[special].src;
-    eventImg.alt = userCharacters.special[special].alt;
-    eventText.textContent = userCharacters.special[special].text;
-    eventEffect.textContent = userCharacters.special[special].effect;
-    userCharacters.special[special].audio.play();
     // ----------------------------------------------------
 
     // ----------------------------------------------------
@@ -174,8 +177,26 @@ const specialUse = (element) => {
             } else {
                 games.scores.ia -= 2;
             };
+            infoType = hontoscopeDecision;
             break;
     };
+    // ----------------------------------------------------
+
+    // ----------------------------------------------------
+    // Affiche toutes les informations relatives au personnage spécial utilisé et lance l'audio
+    eventImg.title = userCharacters.special[special].name;
+    eventImg.src = userCharacters.special[special].src;
+    eventImg.alt = userCharacters.special[special].alt;
+
+    if (typeof userCharacters.special[special].text === 'string') {
+        eventText.textContent = userCharacters.special[special].text;
+        eventEffect.textContent = userCharacters.special[special].effect;
+    } else {
+        eventText.textContent = userCharacters.special[special].text[infoType];
+        eventEffect.textContent = userCharacters.special[special].effect[infoType];
+    }
+    
+    userCharacters.special[special].audio.play();
     // ----------------------------------------------------
 
     // ----------------------------------------------------
@@ -183,6 +204,7 @@ const specialUse = (element) => {
     games.userSpecialCharacters[special] = false;
     specialSelect[special].classList.replace('active', 'inactive');
     specialSelect[special].removeEventListener('click', specialUse);
+    specialSelect[special].removeEventListener('mouseover', specialSound);
     // ----------------------------------------------------
 
     // ----------------------------------------------------
@@ -231,6 +253,7 @@ const iaSpecialUse = () => {
     // ----------------------------------------------------
     // Récupération des spéciaux disponibles et détermine lequel est finalement utilisé
     let special = [];
+    let infoType;
 
     games.iaSpecialCharacters.forEach((element, index) => {
         if (element === true) {
@@ -247,16 +270,6 @@ const iaSpecialUse = () => {
     eventGameDisplay.classList.remove('event');
     following.classList.remove('hide');
     fightZone.classList.add('hide');
-    // ----------------------------------------------------
-
-    // ----------------------------------------------------
-    // Affiche toutes les informations relatives au personnage spécial utilisé
-    eventImg.title = iaCharacters.special[special[witchSpecial]].name;
-    eventImg.src = iaCharacters.special[special[witchSpecial]].src;
-    eventImg.alt = iaCharacters.special[special[witchSpecial]].alt;
-    eventText.textContent = iaCharacters.special[special[witchSpecial]].text;
-    eventEffect.textContent = iaCharacters.special[special[witchSpecial]].effect;
-    iaCharacters.special[special[witchSpecial]].audio.play();
     // ----------------------------------------------------
 
     // ----------------------------------------------------
@@ -287,8 +300,26 @@ const iaSpecialUse = () => {
             } else {
                 games.scores.user -= 2;
             };
+            infoType = hontoscopeDecision;
             break;
     };
+    // ----------------------------------------------------
+
+    // ----------------------------------------------------
+    // Affiche toutes les informations relatives au personnage spécial utilisé
+    eventImg.title = iaCharacters.special[special[witchSpecial]].name;
+    eventImg.src = iaCharacters.special[special[witchSpecial]].src;
+    eventImg.alt = iaCharacters.special[special[witchSpecial]].alt;
+
+    if (typeof iaCharacters.special[special[witchSpecial]].text === 'string') {
+        eventText.textContent = iaCharacters.special[special[witchSpecial]].text;
+        eventEffect.textContent = iaCharacters.special[special[witchSpecial]].effect;
+    } else {
+        eventText.textContent = iaCharacters.special[special[witchSpecial]].text[infoType];
+        eventEffect.textContent = iaCharacters.special[special[witchSpecial]].effect[infoType];
+    }
+
+    iaCharacters.special[special[witchSpecial]].audio.play();
     // ----------------------------------------------------
 
     // ----------------------------------------------------

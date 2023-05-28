@@ -30,7 +30,6 @@ const scream = new Audio("./public/assets/audio/bahhhhh.mp3");
 
             date.innerHTML = `${updates.date}`;
             content.innerHTML = `${updates.content}`;
-            next.innerHTML = `${updates.next}`;
         });
 
     });

@@ -58,7 +58,7 @@ const userCharacters = {
             name: 'Charmignon',
             src: 'public/assets/img/frame/special/charmignon.png', 
             alt: 'Bel homme brun souriant aux cheveux longs.',
-            text: 'Charmignon intervient', 
+            text: 'Avant même que vous ayez le temps de vous expliquer auprès de Charmignon, ce dernier vous délivre son sourire charmeur et s\'emploie déjà à altérer la perception de vos adversaires à l\'aide de ses meilleurs enchantements. Vous êtes fasciné par les talents de cet homme, mais ses victimes le sont d\'autant plus et ne semblent plus se préoccuper de quoi que ce soit d\'autre.', 
             effect: 'Aucun personnage spécial ne peut être utilisé par l\'ordinateur pendant trois tours !',
             audio: new Audio("./public/assets/audio/charmignon.mp3")},
         { 
@@ -72,8 +72,9 @@ const userCharacters = {
             name: 'Hontoscope',
             src: 'public/assets/img/frame/special/hontoscope.png', 
             alt: 'Petite grenouille rose poilue.', 
-            text: 'Hontoscope intervient', 
-            effect: ['L’ordinateur perd deux points !', 'Vous perdez deux points !'],
+            text: ['Vous tentez de vous débarrasser du hontoscope qui vous colle aux ribouis en arguant que l\'équipe adverse est bien plus honteuse que la vôtre. Ses gros yeux se plissent dans une expression méfiante tandis que s\'efface son petit sourire malaisant habituel. La multiplicité des arguments que vous lui exposez ne semble pas le convaincre et finit par s\'esclaffer bruyamment. Vous rougissez de honte.',
+            'Vous tentez de vous débarrasser du hontoscope qui vous colle aux ribouis en arguant que l’équipe adverse est bien plus honteuse que la vôtre. Ses gros yeux s\'écarquillent dans une expression réceptive tandis que s\'efface son petit sourire malaisant habituel. La multiplicité des arguments que vous lui exposez semble le convaincre et finit par vous lâcher pour s’accrocher à un membre de l\'équipe adverse en fredonnant le chant de la honte.'], 
+            effect: ['Vous perdez deux points !', 'L\'ordinateur perd deux points !'],
             audio: new Audio("./public/assets/audio/hontoscope.mp3")}
     ]
 };
@@ -122,22 +123,23 @@ const iaCharacters = {
             name: 'Le porteur de lumière', 
             src: 'public/assets/img/frame/special/bouc.png', 
             alt: '', 
-            text: 'Le porteur de lumière intervient', 
+            text: '', 
             effect: 'Vos personnages spéciaux sont bloqués pendant trois tours !',
             audio: new Audio("./public/assets/audio/porteur.mp3")},
         { 
             name: 'Le suppôt de Sarcophage', 
             src: 'public/assets/img/frame/special/suppot.png', 
             alt: '', 
-            text: 'Le suppôt intervient', 
+            text: '', 
             effect: 'L\'ordinateur gagne un point !',
             audio: new Audio("./public/assets/audio/suppot.mp3")},
         { 
             name: 'Hontoscope', 
             src: 'public/assets/img/frame/special/hontoscope.png', 
             alt: 'Petite grenouille rose poilue.', 
-            text: 'Hontoscope intervient', 
-            effect: ['L’ordinateur perd deux points !', 'Vous perdez deux points !'],
+            text: ['Votre adversaire tente de se débarrasser du hontoscope qui lui colle aux ribouis en arguant que votre équipe est bien plus honteuse que la sienne. Ses gros yeux se plissent dans une expression méfiante tandis que s\'efface son petit sourire malaisant habituel. La multiplicité des arguments qu’il lui expose ne semble pas le convaincre et finit par s\'esclaffer bruyamment. Votre adversaire rougit de honte.',
+            'Votre adversaire tente de se débarrasser du hontoscope qui lui colle aux ribouis en arguant que votre équipe est bien plus honteuse que la sienne. Ses gros yeux s\'écarquillent dans une expression réceptive tandis que s\'efface son petit sourire malaisant habituel. La multiplicité des arguments qu’il lui expose semble le convaincre et finit par le lâcher pour s’accrocher à un membre de votre équipe en fredonnant le chant de la honte.'], 
+            effect: ['L\'ordinateur perd deux points !', 'Vous perdez deux points !'],
             audio: new Audio("./public/assets/audio/hontoscope.mp3")}
     ]
 };
