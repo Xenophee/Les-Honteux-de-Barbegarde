@@ -170,6 +170,8 @@ const cleanLocalStorage = (event) => {
             games.permission.user = 0;
             games.permission.ia = 0;
 
+            games.event = false;
+
             // Appel de la fonction de sauvegarde
             saveToLocalStorage();
     };

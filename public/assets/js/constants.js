@@ -24,11 +24,11 @@ const userCharacters = {
         { 
             name: 'Yvette la Crevette', 
             src: 'public/assets/img/frame/normal/user/yvette.png', 
-            alt: ''},
+            alt: 'Petite crevette rouge orangé sur son rocher.'},
         { 
             name: 'Jean-Hardi l\'Emphatique', 
             src: 'public/assets/img/frame/normal/user/jean-hardi.png', 
-            alt: ''},
+            alt: 'Chevalier en armure complète noir et or.'},
         { 
             name: 'Hutin le Lutin', 
             src: 'public/assets/img/frame/HutinFrame.png', 
@@ -36,44 +36,44 @@ const userCharacters = {
         { 
             name: 'Alavare l\'Opportuniste', 
             src: 'public/assets/img/frame/normal/user/alavare.png', 
-            alt: ''},
+            alt: 'Vieux magicien à l’air sévère dans un château.'},
         { 
             name: 'Yvres le soit-disant Druide', 
             src: 'public/assets/img/frame/normal/user/yvres.png', 
-            alt: ''},
+            alt: 'Vieux druide dans une forêt.'},
         { 
             name: 'Géhonte le Magicien de la Honte', 
             src: 'public/assets/img/frame/normal/user/gehonte.png', 
-            alt: ''}
+            alt: 'Vieux magicien barbu à lunette dans une cave.'}
     ],
     special: [
         { 
             name: 'Austère le Drastique', 
             src: 'public/assets/img/frame/special/austere.png', 
-            alt: '', 
+            alt: 'Vieux magicien barbu à lunette en tenue académique.', 
             text: 'Vous vous tournez vers l\'archimage de Sagemine. Quoi qu\'il éprouve une répulsion manifeste de venir en aide à une bande de bras cassés, il tient à la réputation de l\'académie. Il accepte finalement de vous soutenir indirectement.', 
             effect: 'L\'adversaire perds un point !',
             audio: new Audio("./public/assets/audio/austere.mp3")},
         { 
             name: 'Charmignon',
             src: 'public/assets/img/frame/special/charmignon.png', 
-            alt: '',
+            alt: 'Bel homme brun souriant aux cheveux longs.',
             text: 'Charmignon intervient', 
-            effect: 'Aucun personnage spécial ne peut être utilisé par l\'ordinateur pendant deux tours !',
+            effect: 'Aucun personnage spécial ne peut être utilisé par l\'ordinateur pendant trois tours !',
             audio: new Audio("./public/assets/audio/charmignon.mp3")},
         { 
             name: 'Devine',
             src: 'public/assets/img/frame/special/devine.png', 
-            alt: '', 
-            text: 'Vous consultez Devine, la célèbre voyante de Sagemine. Bien que vous ne sachiez toujours pas s\'il s\'agit d\'une énième escroquerie de bonne femme, il semblerait qu\'elle ait anticipé correctement le prochain mouvement de votre adversaire !', 
+            alt: 'Vieille dame avec un chapeau de sorcière.', 
+            text: 'Vous consultez Devine, la célèbre voyante de Sagemine. Bien que vous ne sachiez toujours pas s\'il s\'agit d\'une énième escroquerie de bonne femme, il semblerait qu\'elle ait parfaitement anticipé le prochain mouvement de votre adversaire !', 
             effect: 'Vous gagnez un point !',
             audio: new Audio("./public/assets/audio/devine.mp3")},
         { 
             name: 'Hontoscope',
             src: 'public/assets/img/frame/special/hontoscope.png', 
-            alt: '', 
+            alt: 'Petite grenouille rose poilue.', 
             text: 'Hontoscope intervient', 
-            effect: '',
+            effect: ['L’ordinateur perd deux points !', 'Vous perdez deux points !'],
             audio: new Audio("./public/assets/audio/hontoscope.mp3")}
     ]
 };
@@ -88,15 +88,15 @@ const iaCharacters = {
         { 
             name: 'Boulb le Homard', 
             src: 'public/assets/img/frame/normal/ia/homard.png', 
-            alt: ''},
+            alt: 'Homard bleu dans son environnement naturel.'},
         { 
             name: 'Jean-Fonce le Sophistique', 
             src: 'public/assets/img/frame/normal/ia/jeanfonce.png', 
-            alt: ''},
+            alt: 'Chevalier brun, tête découverte, en armure verte.'},
         { 
             name: 'Furoncle le Pesteux', 
             src: 'public/assets/img/frame/normal/ia/furoncle.png', 
-            alt: ''},
+            alt: 'Petit troll malicieux à cornes dans la forêt.'},
         { 
             name: 'Pétroncle le Barbeux', 
             src: 'public/assets/img/frame/PetroncleFrame.png', 
@@ -104,7 +104,7 @@ const iaCharacters = {
         { 
             name: 'Licorne non binaire', 
             src: 'public/assets/img/frame/LicorneFrame.png', 
-            alt: ''},
+            alt: 'Licorne arc-en-ciel au regard noir.'},
         { 
             name: 'La mascotte', 
             src: 'public/assets/img/frame/AbomineFrame.png', 
@@ -114,7 +114,7 @@ const iaCharacters = {
         { 
             name: 'Abomine l\'empoisonneuse', 
             src: 'public/assets/img/frame/special/abomine.png', 
-            alt: '', 
+            alt: 'Belle magicienne aux cheveux rouges dans son laboratoire.', 
             text: 'Abomine intervient', 
             effect: 'Vous perdez un point !',
             audio: new Audio("./public/assets/audio/abomine.mp3")},
@@ -135,9 +135,9 @@ const iaCharacters = {
         { 
             name: 'Hontoscope', 
             src: 'public/assets/img/frame/special/hontoscope.png', 
-            alt: '', 
+            alt: 'Petite grenouille rose poilue.', 
             text: 'Hontoscope intervient', 
-            effect: '',
+            effect: ['L’ordinateur perd deux points !', 'Vous perdez deux points !'],
             audio: new Audio("./public/assets/audio/hontoscope.mp3")}
     ]
 };
