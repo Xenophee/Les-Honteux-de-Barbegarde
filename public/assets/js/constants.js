@@ -27,7 +27,7 @@ const userCharacters = {
             alt: ''},
         { 
             name: 'Jean-Hardi l\'Emphatique', 
-            src: 'public/assets/img/frame/JeanHardiFrame.png', 
+            src: 'public/assets/img/frame/normal/user/jean-hardi.png', 
             alt: ''},
         { 
             name: 'Hutin le Lutin', 
@@ -95,7 +95,7 @@ const iaCharacters = {
             alt: ''},
         { 
             name: 'Furoncle le Pesteux', 
-            src: 'public/assets/img/frame/FuroncleFrame.png', 
+            src: 'public/assets/img/frame/normal/ia/furoncle.png', 
             alt: ''},
         { 
             name: 'Pétroncle le Barbeux', 

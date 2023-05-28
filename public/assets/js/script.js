@@ -20,7 +20,6 @@ const scream = new Audio("./public/assets/audio/bahhhhh.mp3");
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // GÈRE L'AFFICHAGE DES DONNÉES DE MISES À JOUR
-
     fetch('/public/assets/json/updates.json')
     .then((response) => {
         return response.json();

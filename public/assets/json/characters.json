@@ -89,8 +89,8 @@
         {
             "name": "Jean-Hardi",
             "nickname": "L'Emphatique",
-            "biography": "Eprouve de grande difficulté à se mouvoir dans son armure, mais respecte les codes de chevaleries à la lettre jusqu'à la bouffonnerie.",
-            "image": "./public/assets/img/Jean-Hardi2.jpg",
+            "biography": "D’une éminente maladresse en raison de sa grande difficulté à se mouvoir dans son armure trop lourde, Jean-Hardi fait partie des chevaliers ridiculisés de son ordre, et ce d’autant plus qu’il respecte les codes de chevaleries à la lettre jusqu'à la bouffonnerie. En bref, il n’est jamais avare de majestueux principes, mais souvent mis au tapis par le réel, et plus encore par la gent féminine qui ne se prive pas de réflexions sardoniques en sa présence.",
+            "image": "./public/assets/img/characters/user/jean-hardi.jpg",
             "alt": ""
         },
         {
