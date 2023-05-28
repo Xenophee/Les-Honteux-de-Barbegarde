@@ -100,6 +100,7 @@ startGame.addEventListener('click', () => {
 following.addEventListener('click', () => {
     eventGameDisplay.classList.add('hide');
     fightZone.classList.remove('hide');
+    following.classList.add('hide');
 });
 
 

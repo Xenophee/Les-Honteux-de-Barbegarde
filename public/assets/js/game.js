@@ -89,7 +89,6 @@ const endGame = (result) => {
     resultGame.classList.remove('hide');
     resultSentence.classList.remove('hide');
     eventGameDisplay.classList.add('hide');
-    following.classList.add('hide');
     fightZone.classList.add('hide');
     // ----------------------------------------------------
 
@@ -374,6 +373,21 @@ surrend.addEventListener('click', () => {
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// PERMETS D'AFFICHER LE RÉSULTAT DE LA PARTIE APRÈS L'ÉVÉNEMENT DU CRÉATEUR
+finished.addEventListener('click', () => {
+    eventGameDisplay.classList.add('hide');
+    resultGame.classList.remove('hide');
+    fightZone.classList.add('hide');
+    finished.classList.add('hide');
+    gameEvent[2].audio.pause();
+    endGame(2);
+});
+
+
+// =======================================================================================================================================================
+// -------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// LANCE LA MUSIQUE PRINCIPALE DU JEU
 // window.addEventListener('load', () => {
 //     mainMusic.play();
 //     mainMusic.volume = 0.5;

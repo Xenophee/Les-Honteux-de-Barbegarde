@@ -82,13 +82,7 @@ let eventGame = (type) => {
         // La partie se termine prématurément sur une égalité
         case 2:
             finished.classList.remove('hide');
-            finished.addEventListener('click', () => {
-                eventGameDisplay.classList.add('hide');
-                resultGame.classList.remove('hide');
-                fightZone.classList.add('hide');
-                gameEvent[eventType].audio.pause();
-                endGame(eventType);
-            });
+            
             break;
     };
     // ----------------------------------------------------

@@ -133,8 +133,6 @@ const cleanLocalStorage = (event) => {
     resultGame.classList.add('hide');
     takeReward.classList.add('hide');
     reward.classList.add('hide');
-    following.classList.add('hide');
-    finished.classList.add('hide');
     // ----------------------------------------------------
 
 
