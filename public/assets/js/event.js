@@ -82,7 +82,6 @@ let eventGame = (type) => {
         // La partie se termine prématurément sur une égalité
         case 2:
             finished.classList.remove('hide');
-            
             break;
     };
     // ----------------------------------------------------

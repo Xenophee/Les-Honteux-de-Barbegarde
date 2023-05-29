@@ -2,8 +2,8 @@
     "ia": [
         {
             "name": "Abomine",
-            "nickname": "La Sorcière",
-            "biography": "Répudiée de l’académie de Sagemine pour s’être amouraché de Sarcophage le cérébromancien, elle témoigne désormais à qui veut l’entendre que le patriarcat oppressif des mages et la misogynie systémique qui lui est attachée ne tolèrent pas la polymagie des sorcières.",
+            "nickname": "L'empoisonneuse",
+            "biography": "Répudiée de l’académie de Sagemine pour s’être amourachée de Sarcophage le cérébromancien, elle témoigne désormais à la moindre occasion que le patriarcat oppressif des mages et la misogynie systémique qui lui est attachée ne tolèrent pas la polymagie des sorcières. Malgré le ridicule du discours, certains mages s’en font le relais en espérant sans doute attirer ses faveurs ou pour des raisons plus obscures.",
             "image": "./public/assets/img/characters/ia/abomine.jpg",
             "alt": "Belle magicienne aux cheveux rouges dans son laboratoire."
         },
@@ -17,7 +17,7 @@
         {
             "name": "Furoncle",
             "nickname": "Le Pesteux",
-            "biography": "Binôme infâme de Pétroncle ; sa petite taille lui permet de s'infiltrer n'importe où et d'espionner les habitants de Barbegarde pour constituer des dossiers bien croustillants.",
+            "biography": "Binôme infâme de Pétroncle ; sa petite taille lui permet de s'infiltrer n'importe où et d'espionner les habitants de Barbegarde pour constituer des dossiers bien croustillants sur leurs secrets les plus honteux. C’est également lui qui transmet les notes à leur complice de Sagemine en toute discrétion.",
             "image": "./public/assets/img/characters/ia/furoncle.jpg",
             "alt": "Petit troll malicieux à cornes dans la forêt."
         },
@@ -31,16 +31,30 @@
         {
             "name": "Jean-Fonce",
             "nickname": "Le Sophistique",
-            "biography": "Réputé pour jouer sur les mots et ainsi ne pas accomplir ses devoirs de chevaliers tout en restant dans les clous pour ne pas se faire remercier par l’ordre qu’il représente.",
+            "biography": "Jean-fonce est particulièrement réputé pour jouer sur les mots et ainsi ne pas accomplir ses devoirs de chevaliers tout en restant dans les clous pour ne pas se faire remercier par l’ordre qu’il représente. Bien que cette prédisposition ait le don d’en agacer plus d’un, une partie de ses supérieurs se montrent toutefois admiratifs de ses raisonnements intellectuels et estiment qu’il devrait être le prochain penseur officiel de la doctrine chevaleresque.",
             "image": "./public/assets/img/characters/ia/jean-fonce.jpg",
             "alt": "Chevalier brun, tête découverte, en armure verte."
         },
         {
             "name": "Pétroncle",
             "nickname": "Le Barbeux",
-            "biography": "Colporteur ultime de ragots en tout genre, il est la némésis de tout ceux qui ont des secrets honteux à garder.",
+            "biography": "Avec son ignoble petit frère Furoncle, Pétroncle voue son existence à collecter les inavouables secrets de tous ceux qu’il croise et prends bien soin de stocker toutes ces informations sensationnelles dans son immense bibliothèque. Elles serviront à faire du chantage dans les cas les plus intéressants ou à coller une énorme honte à ses victimes simplement pour s’amuser.",
             "image": "./public/assets/img/Pétroncle2.jpg",
             "alt": ""
+        },
+        {
+            "name": "Vertuose VI",
+            "nickname": "Le roi des fées",
+            "biography": "Comme tous les autres rois fées avant lui, Vertuose, sixième du nom, s’évertue à défendre ce qui est reconnu comme bon dans la doctrine féerique et souhaite imposer cette dernière à tous en raison, selon lui, de sa vocation universelle. Tous ceux qui ne valide pas cette façon de pensée se voit ostracisé par la société féerique dans le meilleur des cas, voir déporté dans les « camps de redressement de la vertu égarée » pour les pires récalcitrants.",
+            "image": "./public/assets/img/characters/ia/vertuose.jpg",
+            "alt": "Homme fée avec une couronne et des ailes de papillons"
+        },
+        {
+            "name": "Veulerine",
+            "nickname": "L'alchimiste pétochard",
+            "biography": "",
+            "image": "./public/assets/img/characters/ia/veulerine.jpg",
+            "alt": "Vieil alchimiste à lunette dans son laboratoire."
         }
     ],
     "user": [

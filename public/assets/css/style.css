@@ -105,6 +105,16 @@ body {
 dialog {
     width: 50%;
     max-height: 85%;
+    
+}
+
+dialog p {
+    margin: 50px;
+}
+
+dialog ul {
+    margin: 50px;
+    list-style: none;
 }
 
 dialog hr {
@@ -284,7 +294,6 @@ h1 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
     color: var(--dark-brown-color);
     box-shadow: var(--box-shadow);
     border: 3px solid #805b2d;
@@ -606,6 +615,10 @@ h5 {
 
 span {
     font-weight: bold;
+}
+
+#postNote {
+    font-style: italic;
 }
 
 

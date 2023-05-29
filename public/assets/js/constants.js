@@ -48,7 +48,7 @@ const userCharacters = {
     ],
     special: [
         { 
-            name: 'Austère le Drastique', 
+            name: 'Austère', 
             src: 'public/assets/img/frame/special/austere.png', 
             alt: 'Vieux magicien barbu à lunette en tenue académique.', 
             text: 'Vous vous tournez vers l\'archimage de Sagemine. Quoi qu\'il éprouve une répulsion manifeste de venir en aide à une bande de bras cassés, il tient à la réputation de l\'académie. Il accepte finalement de vous soutenir indirectement.', 
@@ -104,7 +104,7 @@ const iaCharacters = {
             alt: ''},
         { 
             name: 'Licorne non binaire', 
-            src: 'public/assets/img/frame/LicorneFrame.png', 
+            src: 'public/assets/img/frame/normal/ia/inclusive.png', 
             alt: 'Licorne arc-en-ciel au regard noir.'},
         { 
             name: 'La mascotte', 
@@ -113,26 +113,26 @@ const iaCharacters = {
     ],
     special: [
         { 
-            name: 'Abomine l\'empoisonneuse', 
+            name: 'Abomine', 
             src: 'public/assets/img/frame/special/abomine.png', 
             alt: 'Belle magicienne aux cheveux rouges dans son laboratoire.', 
-            text: 'Abomine intervient', 
+            text: 'Vous vous rendez compte que trop tardivement que votre adversaire a eu recourt aux bons services d\'Abomine. Le camarade que vous aviez prévu pour le prochain duel est déjà en train de s\'étouffer en regardant le contenu de sa gourde d\'un œil suspicieux. Quelques secondes plus tard, le voilà étalé au sol, foudroyer par le sommeil, et ronflant copieusement.', 
             effect: 'Vous perdez un point !',
-            audio: new Audio("./public/assets/audio/abomine.mp3")},
+            audio: new Audio("")},
         { 
-            name: 'Le porteur de lumière', 
-            src: 'public/assets/img/frame/special/bouc.png', 
-            alt: '', 
-            text: '', 
+            name: 'Vertuose VI', 
+            src: 'public/assets/img/frame/special/vertuose.png', 
+            alt: 'Homme fée avec une couronne et des ailes de papillons', 
+            text: 'Profitant du fait qu\'il soit momentanément en visite diplomatique à Barbegarde, votre adversaire demande de l\'aide au roi des fées sachant sa haine viscérale pour les Korrigans. Ni une, ni deux, lorsque son regard méprisant se posa sur Hutin, il ne fallut guère plus pour le convaincre de paralyser une partie de l\'attroupement avec une de ses attaques à base de pollen dont seules les fées ont le secret.', 
             effect: 'Vos personnages spéciaux sont bloqués pendant trois tours !',
-            audio: new Audio("./public/assets/audio/porteur.mp3")},
+            audio: new Audio("")},
         { 
-            name: 'Le suppôt de Sarcophage', 
-            src: 'public/assets/img/frame/special/suppot.png', 
-            alt: '', 
+            name: 'Veulerine', 
+            src: 'public/assets/img/frame/special/veulerine.png', 
+            alt: 'Vieil alchimiste à lunette dans son laboratoire.', 
             text: '', 
             effect: 'L\'ordinateur gagne un point !',
-            audio: new Audio("./public/assets/audio/suppot.mp3")},
+            audio: new Audio("")},
         { 
             name: 'Hontoscope', 
             src: 'public/assets/img/frame/special/hontoscope.png', 
@@ -153,21 +153,21 @@ const gameEvent = [
     { 
         name: 'Sarcophage le Nécromancien', 
         src: 'public/assets/img/frame/event/sarcophage.png', 
-        alt: '', 
+        alt: 'Personnage androgyne vêtu en femme.', 
         text: 'La voix de Sarcophage résonne soudain sur le théâtre de la chamaillerie. Tout le monde cesse immédiatement ses activités pour se dissimuler dans le buisson le plus proche sous l\'effet d’une indicible terreur.', 
         effect: 'Les scores deviennent négatifs !',
         audio: new Audio("./public/assets/audio/sarcophage.mp3")},
     { 
         name: 'Barbegarde', 
         src: 'public/assets/img/frame/event/barbegarde.png', 
-        alt: '', 
-        text: 'Barbegarde intervient', 
+        alt: 'Vieux magicien vêtu de doré.', 
+        text: 'Tout en sirotant son cocktail sur la plage, Barbegarde désormais réfugié dans une région lointaine ne se lasse pas de rire en admirant le spectacle piteux qui continue de se dérouler dans la célèbre contrée qui porte son nom. Penché sur son instrument magique, il décide même d’y apporter une touche personnelle en lançant un sort sur les différents protagonistes. Subitement, ils se mettent tous à répéter à l’unisson « je suis un neu-neu ! » une bonne centaine de fois. Barbegarde rit de plus belle.', 
         effect: 'Les scores sont divisés par deux !',
         audio: new Audio("./public/assets/audio/barbegarde.mp3")},
     { 
         name: 'Créateur', 
         src: 'public/assets/img/frame/event/createur.png', 
-        alt: '', 
+        alt: 'Cosmos aux mille couleurs.', 
         text: 'Une chanson saugrenue s\'élève subitement dans les airs. Aucun doute, il s\'agit du créateur de l\'univers devenu complètement zinzin ! Vous êtes d\'ailleurs convaincu d’apercevoir un de ses énormes yeux scrutateurs dans le firmament.', 
         effect: 'Tous les protagonistes finissent assommés !',
         audio: new Audio("./public/assets/audio/createur.mp3")}
