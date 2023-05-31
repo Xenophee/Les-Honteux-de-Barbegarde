@@ -32,15 +32,22 @@
             "name": "Jean-Fonce",
             "nickname": "Le Sophistique",
             "biography": "Jean-fonce est particulièrement réputé pour jouer sur les mots et ainsi ne pas accomplir ses devoirs de chevaliers tout en restant dans les clous pour ne pas se faire remercier par l’ordre qu’il représente. Bien que cette prédisposition ait le don d’en agacer plus d’un, une partie de ses supérieurs se montrent toutefois admiratifs de ses raisonnements intellectuels et estiment qu’il devrait être le prochain penseur officiel de la doctrine chevaleresque.",
-            "image": "./public/assets/img/characters/ia/jean-fonce.jpg",
+            "image": "./public/assets/img/characters/ia/jeanfonce.jpg",
             "alt": "Chevalier brun, tête découverte, en armure verte."
         },
         {
             "name": "Pétroncle",
             "nickname": "Le Barbeux",
             "biography": "Avec son ignoble petit frère Furoncle, Pétroncle voue son existence à collecter les inavouables secrets de tous ceux qu’il croise et prends bien soin de stocker toutes ces informations sensationnelles dans son immense bibliothèque. Elles serviront à faire du chantage dans les cas les plus intéressants ou à coller une énorme honte à ses victimes simplement pour s’amuser.",
-            "image": "./public/assets/img/Pétroncle2.jpg",
-            "alt": ""
+            "image": "./public/assets/img/characters/ia/petroncle.jpg",
+            "alt": "Grand troll vert barbu."
+        },
+        {
+            "name": "Toupille",
+            "nickname": "Le Koala kleptomane",
+            "biography": "Même s’il ne peut pas s’empêcher de voler tout ce qu’il estime intéressant pour le revendre plus tard, il n’est heureusement pas très habile et se fait prendre la main dans le sac la plupart du temps. Afin d‘échapper à toutes représailles sur ses tentatives de larcins, il exécute alors sa botte secrète qui consiste à attendrir sa victime en déployant son plus irrésistible visage. Et ça marche !",
+            "image": "./public/assets/img/characters/ia/toupille.jpg",
+            "alt": "Koala mignon en habit de voleur."
         },
         {
             "name": "Vertuose VI",
@@ -52,7 +59,7 @@
         {
             "name": "Veulerine",
             "nickname": "L'alchimiste pétochard",
-            "biography": "",
+            "biography": "À défaut de transformer le plomb en or, il s’est illustré pour opérer un échange de matière entre des fluides de toute nature en fromage coulant avec un taux de réussite de 3%. Autant dire que peu de monde se risque à gouter sa production dès lors que la plupart des échecs connus contiennent un résidu mystérieux de crottin de licorne. Les mauvaises langues racontent qu’il s’agit là de son tempérament de capon qui ressort dans ses créations.",
             "image": "./public/assets/img/characters/ia/veulerine.jpg",
             "alt": "Vieil alchimiste à lunette dans son laboratoire."
         }
@@ -97,8 +104,8 @@
             "name": "Hutin",
             "nickname": "Le Korrigano-lutin",
             "biography": "Demi-paria de la communauté de lutins de Bois-Luron en raison de ses comportements outrancier et d'une mauvaise foi gargantuesque. Il proclame maintenant à qui veut l’entendre que son exclusion est motivée par du racisme anti-korrigan décomplexé, véritable fléau de la société lutine.",
-            "image": "./public/assets/img/Hutin2.jpg",
-            "alt": ""
+            "image": "./public/assets/img/characters/user/hutin.jpg",
+            "alt": "Lutin mi-korrigan au regard furieux."
         },
         {
             "name": "Jean-Hardi",

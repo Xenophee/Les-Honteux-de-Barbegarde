@@ -102,18 +102,9 @@ body {
     background-color: #516d619c;
 }
 
-dialog {
-    width: 50%;
-    max-height: 85%;
-    
-}
-
-dialog p {
-    margin: 50px;
-}
-
 dialog ul {
-    margin: 50px;
+    margin: 30px 0 30px;
+    padding: 0;
     list-style: none;
 }
 
@@ -122,11 +113,6 @@ dialog hr {
     margin-top: 50px;
     margin-bottom: 50px;
     border: var(--border-brown-double);
-}
-
-h3 {
-    font-size: var(--font-medium-size);
-    margin-bottom: 50px;
 }
 
 .context {
@@ -230,7 +216,7 @@ h1 {
     align-items: end;
     min-height: 85vh;
     border: var(--border-brown-double);
-    background-image: url(../img/background/start3.png);
+    background-image: url(../img/background/equal.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -261,6 +247,9 @@ h1 {
 /* COMBAT */
 
 .gamesNumber {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--beige-filter-color);
     color: var(--dark-brown-color);
     box-shadow: var(--box-shadow);
@@ -275,11 +264,15 @@ h1 {
 }
 
 #gamesNumber {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
     font-size: var(--font-medium-size);
     background-color: var(--brown-color);
     color: var(--beige-color);
-    padding: 3px 10px 3px;
+    /* padding: 3px 10px 3px; */
     border-radius: 50%;
 }
 
@@ -290,14 +283,15 @@ h1 {
 }
 
 .platform {
-    background-image: url(../img/background/equal.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
     color: var(--dark-brown-color);
     box-shadow: var(--box-shadow);
     border: 3px solid #805b2d;
     margin-bottom: 20px;
+    z-index: -2;
 }
 
 .show {
@@ -322,6 +316,13 @@ h1 {
 
 #explainEvent {
     font-size: 1.2rem;
+}
+
+#specialText {
+    background-color: var(--beige-filter-color);
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .gameStuff {

@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Tiro+Tamil&display=swap"
         rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/82073d0261.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/82073d0261.js" crossorigin="anonymous"></script> -->
 
     <link rel="stylesheet" href="./public/assets/css/style.css">
     <link rel="stylesheet" href="./public/assets/css/mobile.css" media="screen and (max-width: 768px)">
@@ -59,22 +59,48 @@
                             <li><span>Hontoscope</span> : une chance sur deux de retirer deux points à l’ordinateur ou à vous-mêmes.</li>
                         </ul>
                     <p>En outre, vous avez % de chance de voir survenir un événement spécial durant la partie parmi les trois disponibles.</p>
+                    <p>Les scores peuvent devenir négatifs au cours de la partie.</p>
                     <p>Lorsque l’un des deux camps obtient 10 points, la partie s’achève.</p>
                     <p>Voici les rapports de force de chaque personnage :</p>
-                    <p>Yvette = Boulb <br>
-                        Yvette > Jean-Fonce & Pétroncle <br>
-                        Yvette < Licorne & Abomine </p> <p>Jean-Hardi = Jean-Fonce <br>
-                            Jean-Hardi > Licorne & Abomine <br>
-                            Jean-Hardi < Boulb & Furoncle </p> <p>Hutin = Furoncle <br>
-                                Hutin > Jean-Fonce & Pétroncle <br>
-                                Hutin < Licorne & Abomine </p> <p>Alavare = Pétroncle <br>
-                                    Alavare > Licorne & Abomine <br>
-                                    Alavare < Boulb & Furoncle </p> <p>Yvres = Licorne <br>
-                                        Yvres > Boulb & Furoncle <br>
-                                        Yvres < Jean-Fonce & Pétroncle </p> <p>Géhonte = Abomine <br>
-                                            Géhonte > Boulb & Furoncle <br>
-                                            Géhonte < Jean-Fonce & Pétroncle </p> <button type="button" id="closeRules">
-                                                Fermer</button>
+
+                    
+                    <ul>
+                        <div><span>Yvette</span></div>
+                        <li>= Boulb & Furoncle</li>
+                        <li>> Jean-Fonce & Pétroncle</li>
+                        <li>< Licorne & Toupille</li>
+                    </ul>
+                    <ul>
+                        <div><span>Jean-Hardi</span></div>
+                        <li>= Jean-Fonce & Pétroncle</li>
+                        <li>> Licorne & Toupille</li>
+                        <li>< Boulb & Furoncle </li>
+                    </ul>
+                    <ul>
+                        <div><span>Hutin</span></div>
+                        <li>= Furoncle & Boulb</li>
+                        <li>> Jean-Fonce & Pétroncle </li>
+                        <li>< Licorne & Toupille </li>
+                    </ul>
+                    <ul>
+                        <div><span>Alavare</span></div>
+                        <li>= Pétroncle & Jean-Fonce</li>
+                        <li>> Licorne & Toupille</li>
+                        <li>< Boulb & Furoncle </li>
+                    </ul>
+                    <ul>
+                        <div><span>Yvres</span></div>
+                        <li>= Inclusive & Toupille</li>
+                        <li>> Boulb & Furoncle</li>
+                        <li>< Jean-Fonce & Pétroncle </li>
+                    </ul>
+                    <ul>
+                        <div><span>Géhonte</span></div>
+                        <li>= Inclusive & Toupille</li>
+                        <li>> Boulb & Furoncle</li>
+                        <li>< Jean-Fonce & Pétroncle</li>
+                    </ul>
+                    <button type="button" id="closeRules">Fermer</button>
                 </div>
             </dialog>
         </nav>
@@ -100,7 +126,7 @@
             <div class="userStat">
                 <button type="button" class="statButton" id="yourStat">Vous</button>
 
-                <div class="userGlobalStat" id="userGlobalStat">
+                <div class="userGlobalStat hide" id="userGlobalStat">
                     <div>
                         <img src="./public/assets/img/icon/trophy.png" alt="icône de trophée" class="iconStat">
                         <div>Nombre de victoires</div>
@@ -126,7 +152,7 @@
 
                 <!-- CARTES SPECIALES DE L'UTILISATEUR -->
                 <button type="button" class="statButton" id="yourGameStat">Partie en cours</button>
-                <div class="userGameStat" id="userGameStat">
+                <div class="userGameStat hide" id="userGameStat">
                     <div>
                         <img src="./public/assets/img/icon/sun-priest.png" alt="icône de magicien triomphant"
                             class="iconStat">
@@ -225,7 +251,7 @@
                 <div class="fightZone hide" id="fightZone">
 
                     <div class="fight" id="fight">
-                        <div class="platform" id="platform">
+                        <div class="platform equal" id="platform">
                             <h2>Affrontement</h2>
                             <h3>Nombre de manches</h3>
                             <div id="roundNumber"></div>
@@ -260,27 +286,27 @@
                                 <div class="normalCharacters">
                                     <div class="character" title="Yvette la crevette">
                                         <input type="image" src="./public/assets/img/userCharacters/yvette.jpg" value="0"
-                                            id="yvette" alt="">
+                                            id="yvette" alt="Petite crevette rouge orangé sur son rocher.">
                                     </div>
                                     <div class="character" title="Jean-Hardi l'emphatique">
-                                        <input type="image" src="./public/assets/img/userCharacters/jean-hardi.jpg" value="1"
-                                            id="jeanHardi" alt="">
+                                        <input type="image" src="./public/assets/img/userCharacters/jeanhardi.jpg" value="1"
+                                            id="jeanHardi" alt="Chevalier en armure complète noir et or.">
                                     </div>
                                     <div class="character" title="Hutin le lutin">
-                                        <input type="image" src="./public/assets/img/Hutin2.jpg" value="2" id="hutin"
-                                            alt="">
+                                        <input type="image" src="./public/assets/img/userCharacters/hutin.jpg" value="2" id="hutin"
+                                            alt="Lutin mi-korrigan au regard furieux.">
                                     </div>
                                     <div class="character" title="Alavare l'opportuniste">
                                         <input type="image" src="./public/assets/img/userCharacters/alavare.jpg" value="3"
-                                            id="alavare" alt="">
+                                            id="alavare" alt="Vieux magicien à l’air sévère dans un château.">
                                     </div>
                                     <div class="character" title="Yvres le soit-disant Druide">
                                         <input type="image" src="./public/assets/img/userCharacters/yvres.jpg" value="4"
-                                            id="yvres" alt="">
+                                            id="yvres" alt="Vieux druide dans une forêt.">
                                     </div>
                                     <div class="character" title="Géhonte le magicien de la honte">
                                         <input type="image" src="./public/assets/img/userCharacters/gehonte.jpg" value="5"
-                                            id="gehonte" alt="">
+                                            id="gehonte" alt="Vieux magicien barbu à lunette dans une cave.">
                                     </div>
                                 </div>
     
@@ -289,22 +315,22 @@
                                     <div class="character" title="Austère le drastique">
                                         <input type="image" class="inactive"
                                             src="./public/assets/img/userCharacters/austere.jpg" value="0" id="austere"
-                                            alt="">
+                                            alt="Vieux magicien barbu à lunette en tenue académique.">
                                     </div>
                                     <div class="character" title="Charmignon l'illusionniste">
                                         <input type="image" class="inactive"
                                             src="./public/assets/img/userCharacters/charmignon.jpg" value="1"
-                                            id="charmignon" alt="">
+                                            id="charmignon" alt="Bel homme brun souriant aux cheveux longs.">
                                     </div>
                                     <div class="character" title="Devine la voyante">
                                         <input type="image" class="inactive"
                                             src="./public/assets/img/userCharacters/devine.jpg" value="2" id="devine"
-                                            alt="">
+                                            alt="Vieille dame avec un chapeau de sorcière.">
                                     </div>
                                     <div class="character" title="Hontoscope">
                                         <input type="image" class="inactive"
                                             src="./public/assets/img/userCharacters/hontoscope.jpg" value="3"
-                                            id="hontoscope" alt="">
+                                            id="hontoscope" alt="Petite grenouille rose poilue.">
                                     </div>
                                 </div>
                             </div>
@@ -372,7 +398,7 @@
             <div class="iaStat">
                 <button type="button" class="statButton" id="iaStat">Ordinateur</button>
                 <!-- CARTES NORMALES DE L'ORDINATEUR -->
-                <div class="iaGlobalStat" id="iaGlobalStat">
+                <div class="iaGlobalStat hide" id="iaGlobalStat">
                     <div>
                         <!-- https://game-icons.net/1x1/lorc/trophy.html -->
                         <img src="./public/assets/img/icon/trophy.png" alt="icône de trophée" class="iconStat">
@@ -382,7 +408,6 @@
                     </div>
 
                     <div>
-                        <!-- https://game-icons.net/1x1/lorc/surrounded-shield.html -->
                         <img src="./public/assets/img/icon/surrounded-shield.png"
                             alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
                         <div>Nombre de matchs nuls</div>
@@ -391,7 +416,6 @@
                     </div>
 
                     <div>
-                        <!-- https://game-icons.net/1x1/delapouite/grave-flowers.html -->
                         <img src="./public/assets/img/icon/grave-flowers.png" alt="icône de pierre tombale"
                             class="iconStat">
                         <div>Nombre de défaites</div>
@@ -401,9 +425,8 @@
 
                 <!-- CARTES SPECIALES DE L'ORDINATEUR -->
                 <button type="button" class="statButton" id="showIaGameStat">Partie en cours</button>
-                <div class="iaGameStat" id="iaGameStat">
+                <div class="iaGameStat hide" id="iaGameStat">
                     <div>
-                        <!-- https://game-icons.net/1x1/delapouite/sun-priest.html -->
                         <img src="./public/assets/img/icon/sun-priest.png" alt="icône de magicien triomphant"
                             class="iconStat">
                         <div>Manches gagnées</div>
@@ -411,7 +434,6 @@
                         <hr>
                     </div>
                     <div>
-                        <!-- https://game-icons.net/1x1/delapouite/shield-bash.html -->
                         <img src="./public/assets/img/icon/shield-bash.png"
                             alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
                         <div>Manches égalités</div>
@@ -419,7 +441,6 @@
                         <hr>
                     </div>
                     <div>
-                        <!-- https://game-icons.net/1x1/lorc/arrowed.html -->
                         <img src="./public/assets/img/icon/arrowed.png" alt="icône de personnage percé de flèches"
                             class="iconStat">
                         <div>Manches perdues</div>

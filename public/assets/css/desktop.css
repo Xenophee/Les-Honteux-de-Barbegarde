@@ -17,6 +17,15 @@ nav {
     margin: 20px 20px 0px;
 }
 
+dialog {
+    width: 50%;
+    max-height: 85%;
+}
+
+dialog p {
+    margin: 50px;
+}
+
 #closeRules, #closeUpdates {
     width: 20%;
     margin-top: 20px;
@@ -62,6 +71,11 @@ nav {
 
 #mainPart {
     width: 60%;
+}
+
+h3 {
+    font-size: var(--font-medium-size);
+    margin-bottom: 50px;
 }
 
 .frameImg {

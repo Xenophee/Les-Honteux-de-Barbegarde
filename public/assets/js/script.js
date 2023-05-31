@@ -19,6 +19,27 @@ const scream = new Audio("./public/assets/audio/bahhhhh.mp3");
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// VERIFICATION DE LA PRISE EN CHARGE DU LOCAL STORAGE
+if (!window.localStorage) {
+    alert("Votre navigateur ne permet pas de faire fonctionner ce jeu correctement. Veuillez quitter la navigation privée ou changer de navigateur.");
+};
+
+
+// =======================================================================================================================================================
+// -------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// AFFICHE LES BANNIÈRES DE STATISTIQUES DIRECTEMENT POUR LES GRANDS ÉCRANS
+if (window.innerWidth >= 1024) {
+    userGlobalStat.classList.remove('hide');
+    userGameStat.classList.remove('hide');
+    iaGlobalStat.classList.remove('hide');
+    iaGameStat.classList.remove('hide');
+};
+
+
+// =======================================================================================================================================================
+// -------------------------------------------------------------------------------------------------------------------------------------------------------
+
 // GÈRE L'AFFICHAGE DES DONNÉES DE MISES À JOUR
     fetch('/public/assets/json/updates.json')
     .then((response) => {

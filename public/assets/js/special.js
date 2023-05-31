@@ -129,6 +129,14 @@ const specialObtain = () => {
     };
     // ----------------------------------------------------
 
+    // ----------------------------------------------------
+    // Lance un son d'avertissement en cas d'obtention de spécial par l'utilisateur
+    if (resultUser == true) {
+        const specialSound = new Audio("./public/assets/audio/special_obtain.mp3")
+        specialSound.play();
+    }
+    // ----------------------------------------------------
+
     // Appel de la fonction de sauvegarde
     saveToLocalStorage();
 }

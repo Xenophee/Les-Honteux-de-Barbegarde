@@ -27,12 +27,12 @@ const userCharacters = {
             alt: 'Petite crevette rouge orangé sur son rocher.'},
         { 
             name: 'Jean-Hardi l\'Emphatique', 
-            src: 'public/assets/img/frame/normal/user/jean-hardi.png', 
+            src: 'public/assets/img/frame/normal/user/jeanhardi.png', 
             alt: 'Chevalier en armure complète noir et or.'},
         { 
-            name: 'Hutin le Lutin', 
-            src: 'public/assets/img/frame/HutinFrame.png', 
-            alt: ''},
+            name: 'Hutin le Korrigano-lutin', 
+            src: 'public/assets/img/frame/normal/user/hutin.png', 
+            alt: 'Lutin mi-korrigan au regard furieux.'},
         { 
             name: 'Alavare l\'Opportuniste', 
             src: 'public/assets/img/frame/normal/user/alavare.png', 
@@ -53,7 +53,7 @@ const userCharacters = {
             alt: 'Vieux magicien barbu à lunette en tenue académique.', 
             text: 'Vous vous tournez vers l\'archimage de Sagemine. Quoi qu\'il éprouve une répulsion manifeste de venir en aide à une bande de bras cassés, il tient à la réputation de l\'académie. Il accepte finalement de vous soutenir indirectement.', 
             effect: 'L\'adversaire perds un point !',
-            audio: new Audio("./public/assets/audio/austere.mp3")},
+            audio: new Audio("./public/assets/audio/charmignon.mp3")},
         { 
             name: 'Charmignon',
             src: 'public/assets/img/frame/special/charmignon.png', 
@@ -67,7 +67,7 @@ const userCharacters = {
             alt: 'Vieille dame avec un chapeau de sorcière.', 
             text: 'Vous consultez Devine, la célèbre voyante de Sagemine. Bien que vous ne sachiez toujours pas s\'il s\'agit d\'une énième escroquerie de bonne femme, il semblerait qu\'elle ait parfaitement anticipé le prochain mouvement de votre adversaire !', 
             effect: 'Vous gagnez un point !',
-            audio: new Audio("./public/assets/audio/devine.mp3")},
+            audio: new Audio("./public/assets/audio/charmignon.mp3")},
         { 
             name: 'Hontoscope',
             src: 'public/assets/img/frame/special/hontoscope.png', 
@@ -100,16 +100,16 @@ const iaCharacters = {
             alt: 'Petit troll malicieux à cornes dans la forêt.'},
         { 
             name: 'Pétroncle le Barbeux', 
-            src: 'public/assets/img/frame/PetroncleFrame.png', 
-            alt: ''},
+            src: 'public/assets/img/frame/normal/ia/petroncle.png', 
+            alt: 'Grand troll vert barbu.'},
         { 
             name: 'Licorne non binaire', 
             src: 'public/assets/img/frame/normal/ia/inclusive.png', 
             alt: 'Licorne arc-en-ciel au regard noir.'},
         { 
-            name: 'La mascotte', 
-            src: 'public/assets/img/frame/AbomineFrame.png', 
-            alt: ''}
+            name: 'Toupille le Kleptomane', 
+            src: 'public/assets/img/frame/normal/ia/toupille.png', 
+            alt: 'Koala mignon en habit de voleur.'}
     ],
     special: [
         { 
@@ -118,21 +118,21 @@ const iaCharacters = {
             alt: 'Belle magicienne aux cheveux rouges dans son laboratoire.', 
             text: 'Vous vous rendez compte que trop tardivement que votre adversaire a eu recourt aux bons services d\'Abomine. Le camarade que vous aviez prévu pour le prochain duel est déjà en train de s\'étouffer en regardant le contenu de sa gourde d\'un œil suspicieux. Quelques secondes plus tard, le voilà étalé au sol, foudroyer par le sommeil, et ronflant copieusement.', 
             effect: 'Vous perdez un point !',
-            audio: new Audio("")},
+            audio: new Audio("./public/assets/audio/special_ia.mp3")},
         { 
             name: 'Vertuose VI', 
             src: 'public/assets/img/frame/special/vertuose.png', 
             alt: 'Homme fée avec une couronne et des ailes de papillons', 
             text: 'Profitant du fait qu\'il soit momentanément en visite diplomatique à Barbegarde, votre adversaire demande de l\'aide au roi des fées sachant sa haine viscérale pour les Korrigans. Ni une, ni deux, lorsque son regard méprisant se posa sur Hutin, il ne fallut guère plus pour le convaincre de paralyser une partie de l\'attroupement avec une de ses attaques à base de pollen dont seules les fées ont le secret.', 
             effect: 'Vos personnages spéciaux sont bloqués pendant trois tours !',
-            audio: new Audio("")},
+            audio: new Audio("./public/assets/audio/special_ia.mp3")},
         { 
             name: 'Veulerine', 
             src: 'public/assets/img/frame/special/veulerine.png', 
             alt: 'Vieil alchimiste à lunette dans son laboratoire.', 
-            text: '', 
+            text: 'Le camarade que vous aviez prévu pour le prochain duel se tord subitement de douleur et s’enfuit de la scène avec une furieuse envie de se soulager aux toilettes. Vous devinez qu’il a dû consommer un des fromages moisis de Veulerine avant de venir… Vous remarquez le petit sourire en coin de votre adversaire. Est-il de connivence avec le pétochard ou s’amuse-t-il simplement de la situation ?', 
             effect: 'L\'ordinateur gagne un point !',
-            audio: new Audio("")},
+            audio: new Audio("./public/assets/audio/special_ia.mp3")},
         { 
             name: 'Hontoscope', 
             src: 'public/assets/img/frame/special/hontoscope.png', 

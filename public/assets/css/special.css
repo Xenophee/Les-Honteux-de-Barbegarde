@@ -26,7 +26,6 @@
 }
 
 .eventGameDisplay.event {
-    /* background-image: url(../img/background/event.jpg); */
     background-color: var(--beige-filter-color);
     color: var(--dark-brown-color);
 }
