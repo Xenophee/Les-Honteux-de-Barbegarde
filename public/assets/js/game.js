@@ -26,15 +26,25 @@ import { eventGame } from './event.js';
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// MUSIQUE PRINCIPALE
+// MUSIQUE PRINCIPALE DU JEU
 const mainMusic = new Audio("./public/assets/audio/jeu.mp3");
+
+const activeMainMusic = () => {
+
+    mainMusic.play();
+    mainMusic.volume = 0.5;
+    mainMusic.loop = true;
+};
+
+
+// =======================================================================================================================================================
+// -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Création d'un tableau avec toutes les classes de fond de la partie affrontement
 const classes = roundResults.map(result => result.class);
 
 const normalSelect = document.querySelectorAll('.normalCharacters .character input');
 const chooseResult = document.querySelectorAll('.chooseResult button');
-console.log(games);
 
 
 // =======================================================================================================================================================
@@ -276,7 +286,7 @@ const fightResult = () => {
 // EFFECTUE LES TESTS POUR CONNAITRE LE GAGNANT D'UN AFFRONTEMENT
 const battle = (element) => {
 
-    console.log(games);
+    specialText.textContent = '';
 
     // ----------------------------------------------------
     // Si aucun évènement n'a encore eu lieu, et si un des scores (utiliseur ou ordinateur) est supérieur à deux, on lance le script pour en faire apparaitre un potentiellement
@@ -400,21 +410,19 @@ restart.addEventListener('click', () => {
     classes.forEach(element => {
         platform.classList.remove(element);
     });
+
+    activeMainMusic();
 });
 
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// LANCE LA MUSIQUE PRINCIPALE DU JEU
-// window.addEventListener('load', () => {
-//     mainMusic.play();
-//     mainMusic.volume = 0.5;
-//     mainMusic.loop = true;
-// })
+// LANCE LA MUSIQUE PRINCIPALE DU JEU AU LANCEMENT DE LA PAGE
+    activeMainMusic();
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-export { randomNumber };
+export { randomNumber, mainMusic };

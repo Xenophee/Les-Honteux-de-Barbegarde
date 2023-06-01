@@ -240,7 +240,6 @@ const specialUse = (element) => {
 const iaSpecialUse = () => {
 
     // ----------------------------------------------------
-    console.log(games.iaSpecialCharacters);
     // Vérifie si l'ordinateur possède un personnage spécial et s'il a la permission pour en utiliser un ; si ce n'est pas le cas, fin du script
     if (!games.iaSpecialCharacters.includes(true) || games.permission.ia > games.rounds.rounds) {
         return false;
@@ -250,7 +249,6 @@ const iaSpecialUse = () => {
     // ----------------------------------------------------
     // Détermine si l'ordinateur utilise un spécial si le nombre aléatoire retourné est supérieur ou égal à celui attendu ; sinon fin du script
     let chanceNumber = randomNumber();
-    console.log('Le nombre chance IA est de ' + chanceNumber);
 
     if (chanceNumber >= 20) {
         return false;

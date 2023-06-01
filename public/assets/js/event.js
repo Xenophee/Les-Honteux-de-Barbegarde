@@ -14,7 +14,7 @@ Fichier contenant toutes les fonctionnalités nécessaires pour les événements
 
 import { userCharacters, iaCharacters, gameEvent, roundResults, gameOver } from './constants.js';
 import { games, displayGameStat, saveToLocalStorage, cleanLocalStorage } from './localStorage.js';
-import { randomNumber } from './game.js';
+import { randomNumber, mainMusic } from './game.js';
 
 
 // =======================================================================================================================================================
@@ -55,20 +55,11 @@ let eventGame = (type) => {
     // ----------------------------------------------------
 
     // ----------------------------------------------------
-    // Affiche toutes les informations relatives à l'évènement et lance l'audio
-    eventImg.title = gameEvent[eventType].name;
-    eventImg.src = gameEvent[eventType].src;
-    eventImg.alt = gameEvent[eventType].alt;
-    eventText.textContent = gameEvent[eventType].text;
-    eventEffect.textContent = gameEvent[eventType].effect;
-    gameEvent[eventType].audio.play();
-    // ----------------------------------------------------
-
-    // ----------------------------------------------------
     // Mets en place les effets de l'évènement selon son type
     switch(eventType) {
         // Les scores de la partie en cours passent en négatif
         case 0:
+            mainMusic.pause();
             following.classList.remove('hide');
             games.scores.user = -games.scores.user;
             games.scores.ia = -games.scores.ia;
@@ -81,9 +72,20 @@ let eventGame = (type) => {
             break;
         // La partie se termine prématurément sur une égalité
         case 2:
+            mainMusic.pause();
             finished.classList.remove('hide');
             break;
     };
+    // ----------------------------------------------------
+
+    // ----------------------------------------------------
+    // Affiche toutes les informations relatives à l'évènement et lance l'audio
+    eventImg.title = gameEvent[eventType].name;
+    eventImg.src = gameEvent[eventType].src;
+    eventImg.alt = gameEvent[eventType].alt;
+    eventText.textContent = gameEvent[eventType].text;
+    eventEffect.textContent = gameEvent[eventType].effect;
+    gameEvent[eventType].audio.play();
     // ----------------------------------------------------
 
     // ----------------------------------------------------

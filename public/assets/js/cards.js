@@ -129,6 +129,6 @@ characters[urlId].classList.add('active');
 // MUSIQUE DE LA PAGE
 const mainMusic = new Audio("./public/assets/audio/carte.mp3");
 
-// mainMusic.play();
-// mainMusic.volume = 0.5;
-// mainMusic.loop = true;
+mainMusic.play();
+mainMusic.volume = 0.5;
+mainMusic.loop = true;
