@@ -35,7 +35,7 @@ const urlId = (urlParams.get('id')) ? urlParams.get('id') : 2;
 // GÈRE L'AFFICHAGE DES DONNÉES DU JSON
 const dataDisplay = (key) => {
 
-    fetch('/public/assets/json/characters.json')
+    fetch('./public/assets/json/characters.json')
     .then((response) => {
         return response.json();
     })
