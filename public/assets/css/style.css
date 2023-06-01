@@ -216,7 +216,7 @@ h1 {
     align-items: end;
     min-height: 85vh;
     border: var(--border-brown-double);
-    background-image: url(../img/background/equal.jpg);
+    background-image: url(../img/background/success.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -283,6 +283,7 @@ h1 {
 }
 
 .platform {
+    background-image: url(../img/background/success.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -319,7 +320,6 @@ h1 {
 }
 
 #specialText {
-    background-color: var(--beige-filter-color);
     font-weight: bold;
     border-radius: 10px;
     padding: 10px;

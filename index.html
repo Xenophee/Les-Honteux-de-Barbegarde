@@ -8,13 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Tiro+Tamil&display=swap"
         rel="stylesheet">
 
-    <!-- <script src="https://kit.fontawesome.com/82073d0261.js" crossorigin="anonymous"></script> -->
-
     <link rel="stylesheet" href="./public/assets/css/style.css">
     <link rel="stylesheet" href="./public/assets/css/mobile.css" media="screen and (max-width: 768px)">
-    <link rel="stylesheet" href="./public/assets/css/tablet.css"
-        media="screen and (min-width: 768px) and (max-width: 1000px)">
-    <link rel="stylesheet" href="./public/assets/css/desktop.css" media="screen and (min-width: 1000px)">
+    <link rel="stylesheet" href="./public/assets/css/tablet.css" media="screen and (min-width: 768px) and (max-width: 1024px)">
+    <link rel="stylesheet" href="./public/assets/css/desktop.css" media="screen and (min-width: 1024px)">
     <link rel="stylesheet" href="./public/assets/css/special.css">
     <link rel="icon" type="image/png" href="./public/assets/img/icon/icon.jpg">
     <meta name="description" content="Plongez dans l'univers décalé des Honteux de Barbegarde à travers un mini-jeu inspiré d’une histoire de fantasy humoristique. Affrontez une galerie de personnages truculents et tentez de remporter la victoire face à l’ordinateur !" />
@@ -39,6 +36,7 @@
                     <h3>Prochainement</h3>
                     <p id="next">Optimisation des performances.</p>
                     <hr>
+                    <p>Pour signaler un bug ou soumettre des pistes d'amélioration du jeu, vous pouvez me contacter à cette adresse : <br> <span>xenophee@hotmail.fr</span></p>
                     <button type="button" id="closeUpdates">Fermer</button>
                 </div>
             </dialog>
@@ -50,7 +48,7 @@
                     <h2>Règles du jeu</h2>
                     <p>Choisissez un personnage parmi les six proposés à chaque manche, et l’ordinateur vous fournira un
                         adversaire parmi son propre choix de six.</p>
-                    <p>À chaque manche, vous et l’ordinateur avez % de chance d’obtenir un personnage spécial que vous êtes libre d’utilisé 
+                    <p>À chaque manche, vous et l’ordinateur avez 20% de chance d’obtenir un personnage spécial que vous êtes libre d’utilisé 
                         quand bon vous semble durant la partie en cours ou les suivantes. Chacun des quatre personnages accorde un avantage spécifique :</p>
                         <ul>
                             <li><span>Austère</span> : retire un point à l’ordinateur.</li>
@@ -58,7 +56,7 @@
                             <li><span>Devine</span> : vous donne un point.</li>
                             <li><span>Hontoscope</span> : une chance sur deux de retirer deux points à l’ordinateur ou à vous-mêmes.</li>
                         </ul>
-                    <p>En outre, vous avez % de chance de voir survenir un événement spécial durant la partie parmi les trois disponibles.</p>
+                    <p>En outre, vous avez 10% de chance de voir survenir un événement spécial durant la partie parmi les trois disponibles.</p>
                     <p>Les scores peuvent devenir négatifs au cours de la partie.</p>
                     <p>Lorsque l’un des deux camps obtient 10 points, la partie s’achève.</p>
                     <p>Voici les rapports de force de chaque personnage :</p>
@@ -251,7 +249,7 @@
                 <div class="fightZone hide" id="fightZone">
 
                     <div class="fight" id="fight">
-                        <div class="platform equal" id="platform">
+                        <div class="platform success" id="platform">
                             <h2>Affrontement</h2>
                             <h3>Nombre de manches</h3>
                             <div id="roundNumber"></div>
@@ -400,7 +398,6 @@
                 <!-- CARTES NORMALES DE L'ORDINATEUR -->
                 <div class="iaGlobalStat hide" id="iaGlobalStat">
                     <div>
-                        <!-- https://game-icons.net/1x1/lorc/trophy.html -->
                         <img src="./public/assets/img/icon/trophy.png" alt="icône de trophée" class="iconStat">
                         <div>Nombre de victoires</div>
                         <div id="iaVictories"></div>

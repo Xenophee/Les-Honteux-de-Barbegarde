@@ -36,7 +36,7 @@ const specialSound = () => {
     let sound = new Audio("./public/assets/audio/boing.mp3");
         sound.play();
         sound.volume = 0.5;
-}
+};
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ const specialSound = () => {
 const specialAllow = () => {
 
     // Si la permission est inférieure au nombre total de manches ou égal à zéro, on procède à l'activation
-    if (games.permission.user < games.rounds.rounds || games.permission.user == 0) {
+    if (games.permission.user <= games.rounds.rounds || games.permission.user == 0) {
         games.userSpecialCharacters.forEach((element, index) => {
             // Ajout d'un écouteur d'événement pour chaque personnage dont la valeur est "true" dans le tableau
             if (element === true) {
@@ -83,7 +83,7 @@ const specialObtain = () => {
 
     // ----------------------------------------------------
     // Si le nombre aléatoire sorti est inférieur au nombre indiqué, obtention pour l'utilisateur !
-    if (specialUserType <= 30) {
+    if (specialUserType <= 20) {
 
         // Détermine quel personnage spécial débloquer
         specialUserType = randomNumber(userCharacters.special.length);
@@ -103,7 +103,7 @@ const specialObtain = () => {
 
     // ----------------------------------------------------
     // Si le nombre aléatoire sorti est inférieur au nombre indiqué, obtention pour l'ordinateur !
-    if (specialIaType <= 30) {
+    if (specialIaType <= 20) {
         
         // Détermine quel personnage spécial débloquer
         specialIaType = randomNumber(iaCharacters.special.length);
@@ -243,7 +243,6 @@ const iaSpecialUse = () => {
     console.log(games.iaSpecialCharacters);
     // Vérifie si l'ordinateur possède un personnage spécial et s'il a la permission pour en utiliser un ; si ce n'est pas le cas, fin du script
     if (!games.iaSpecialCharacters.includes(true) || games.permission.ia > games.rounds.rounds) {
-        console.log('je passe pas');
         return false;
     };
     // ----------------------------------------------------

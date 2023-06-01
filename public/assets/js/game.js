@@ -318,12 +318,12 @@ const battle = (element) => {
     // ----------------------------------------------------
 
     // ----------------------------------------------------
-    specialAllow();
+    // Lancement du script pour mettre à jour les scores
+    score(result);
     // ----------------------------------------------------
 
     // ----------------------------------------------------
-    // Lancement du script pour mettre à jour les scores
-    score(result);
+    specialAllow();
     // ----------------------------------------------------
 };
 
@@ -333,7 +333,11 @@ const battle = (element) => {
 
 // PERMETS DE FAIRE APPEL À LA FONCTION DE NETTOYAGE DU LOCAL STORAGE SUR LES BOUTONS DE RÉINITIALISATION ET POUR RECOMMENCER UNE PARTIE
 cleanScores.addEventListener('click', cleanLocalStorage);
-restart.addEventListener('click', cleanLocalStorage);
+
+restart.addEventListener('click', () => {
+    cleanLocalStorage();
+    specialAllow();
+});
 
 
 // =======================================================================================================================================================

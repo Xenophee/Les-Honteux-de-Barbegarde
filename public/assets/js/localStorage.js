@@ -62,6 +62,14 @@ const displayGameStat = () => {
         iaSelection.src = iaCharacters.normal[games.lastCharacters.ia].src;
         iaSelection.title = iaCharacters.normal[games.lastCharacters.ia].name;
         iaSelection.alt = iaCharacters.normal[games.lastCharacters.ia].alt;
+    } else {
+        userSelection.src = '';
+        userSelection.title = '';
+        userSelection.alt = '';
+
+        iaSelection.src = '';
+        iaSelection.title = '';
+        iaSelection.alt = '';
     };
 
     // Affiche le nombre de parties et de manches globales
@@ -169,6 +177,9 @@ const cleanLocalStorage = (event) => {
             games.permission.ia = 0;
 
             games.event = false;
+
+            specialText.textContent = '';
+            roundResult.textContent = '';
 
             // Appel de la fonction de sauvegarde
             saveToLocalStorage();

@@ -37,7 +37,7 @@ let eventGame = (type) => {
 
     // ----------------------------------------------------
     // En l'absence de paramètre d'entrée, si le nombre aléatoire sorti est supérieur ou égal à celui indiqué, il n'y aura pas d'évènement ; on stoppe le script
-    if (type === undefined && eventType >= 20) {
+    if (type === undefined && eventType >= 10) {
         return false;
     };
     // ----------------------------------------------------
