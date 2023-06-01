@@ -41,7 +41,7 @@ if (window.innerWidth >= 1024) {
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // GÈRE L'AFFICHAGE DES DONNÉES DE MISES À JOUR
-    fetch('/public/assets/json/updates.json')
+    fetch('./public/assets/json/updates.json')
     .then((response) => {
         return response.json();
     })
