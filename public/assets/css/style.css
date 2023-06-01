@@ -325,6 +325,10 @@ h1 {
     padding: 10px;
 }
 
+#roundResult {
+    margin: 0px 0px 30px;
+}
+
 .gameStuff {
     border: var(--border-brown-double);
     box-shadow: var(--box-shadow);
