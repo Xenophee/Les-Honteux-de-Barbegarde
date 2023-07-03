@@ -18,8 +18,7 @@ button {
 }
 
 body {
-    background-color: bisque;
-    background-image: url(../img/background/3926543.jpg);
+    background-image: url(../img/background/background.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -91,7 +90,7 @@ body {
     box-shadow: var(--box-shadow);
 }
 
-#rules h2, #updates h2 {
+#rules h2 {
     background-color: var(--brown-color);
     color: var(--light-beige-color);
     padding: 10px 0 10px;
@@ -100,6 +99,31 @@ body {
 
 #rules::backdrop, #updates::backdrop {
     background-color: #516d619c;
+}
+
+.headerUpdates {
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#previousUpdate, #nextUpdate {
+    background-color: transparent;
+    color: var(--light-beige-color);
+    padding: 5px 10px;
+    border: none;
+}
+
+#previousUpdate:hover, #nextUpdate:hover {
+    color: var(--beige-color);
+    border: var(--border-beige-double);
+}
+
+.version, #versionNumber {
+    font-size: 1rem;
 }
 
 dialog ul {

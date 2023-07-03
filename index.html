@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Tiro+Tamil&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="./public/assets/css/style.css">
-    <link rel="stylesheet" href="./public/assets/css/mobile.css" media="screen and (max-width: 768px)">
+    <link rel="stylesheet" href="./public/assets/css/mobile.css" media="screen and (max-width: 767px)">
     <link rel="stylesheet" href="./public/assets/css/tablet.css" media="screen and (min-width: 768px) and (max-width: 1024px)">
     <link rel="stylesheet" href="./public/assets/css/desktop.css" media="screen and (min-width: 1024px)">
     <link rel="stylesheet" href="./public/assets/css/special.css">
-    <link rel="icon" type="image/png" href="./public/assets/img/icon/icon.jpg">
+    <link rel="icon" type="image/webp" href="./public/assets/img/icon/icon.webp">
     <meta name="description" content="Plongez dans l'univers décalé des Honteux de Barbegarde à travers un mini-jeu inspiré d’une histoire de fantasy humoristique. Affrontez une galerie de personnages truculents et tentez de remporter la victoire face à l’ordinateur !" />
     <title>Les Honteux de Barbegarde - Mini-Jeu</title>
 </head>
@@ -29,12 +30,17 @@
             <button type="button" title="Lire les dernières mises à jour" id="openUpdates">Mises à jour</button>
             <dialog id="updates">
                 <div>
-                    <h2>Mises à jour</h2>
+                    <div class="headerUpdates">
+                        <button id="previousUpdate"><i class="fa-sharp fa-solid fa-chevron-left"></i></button>
+                        <h2>Mises à jour <br>
+                        <span class="version">Version </span><span id="versionNumber"></span></h2>
+                        <button id="nextUpdate"><i class="fa-sharp fa-solid fa-chevron-right"></i></button>
+                    </div>
                     <h3 id="date"></h3>
                     <p id="content"></p>
                     <hr>
                     <h3>Prochainement</h3>
-                    <p id="next">Optimisation des performances.</p>
+                    <p id="next"></p>
                     <hr>
                     <p>Pour signaler un bug ou soumettre des pistes d'amélioration du jeu, vous pouvez me contacter à cette adresse : <br> <span>xenophee@hotmail.fr</span></p>
                     <button type="button" id="closeUpdates">Fermer</button>
@@ -126,14 +132,14 @@
 
                 <div class="userGlobalStat hide" id="userGlobalStat">
                     <div>
-                        <img src="./public/assets/img/icon/trophy.png" alt="icône de trophée" class="iconStat">
+                        <img src="./public/assets/img/icon/trophy.webp" alt="icône de trophée" class="iconStat">
                         <div>Nombre de victoires</div>
                         <div id="victoriesNumber"></div>
                         <hr>
                     </div>
 
                     <div>
-                        <img src="./public/assets/img/icon/surrounded-shield.png"
+                        <img src="./public/assets/img/icon/surrounded-shield.webp"
                             alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
                         <div>Nombre de matchs nuls</div>
                         <div id="equalitiessNumber"></div>
@@ -141,7 +147,7 @@
                     </div>
 
                     <div>
-                        <img src="./public/assets/img/icon/grave-flowers.png" alt="icône de pierre tombale"
+                        <img src="./public/assets/img/icon/grave-flowers.webp" alt="icône de pierre tombale"
                             class="iconStat">
                         <div>Nombre de défaites</div>
                         <div id="defeatsNumber"></div>
@@ -152,21 +158,21 @@
                 <button type="button" class="statButton" id="yourGameStat">Partie en cours</button>
                 <div class="userGameStat hide" id="userGameStat">
                     <div>
-                        <img src="./public/assets/img/icon/sun-priest.png" alt="icône de magicien triomphant"
+                        <img src="./public/assets/img/icon/sun-priest.webp" alt="icône de magicien triomphant"
                             class="iconStat">
                         <div>Manches gagnées</div>
                         <div id="sucessNumber"></div>
                         <hr>
                     </div>
                     <div>
-                        <img src="./public/assets/img/icon/shield-bash.png"
+                        <img src="./public/assets/img/icon/shield-bash.webp"
                             alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
                         <div>Manches égalités</div>
                         <div id="equalNumber"></div>
                         <hr>
                     </div>
                     <div>
-                        <img src="./public/assets/img/icon/arrowed.png" alt="icône de personnage percé de flèches"
+                        <img src="./public/assets/img/icon/arrowed.webp" alt="icône de personnage percé de flèches"
                             class="iconStat">
                         <div>Manches perdues</div>
                         <div id="failNumber"></div>
@@ -220,7 +226,7 @@
                         </p>
                         <div class="presentation">
                             <a href="https://www.atelierdesauteurs.com/text/494804679/les-honteux-de-barbegarde"
-                                target="_blank"><img src="./public/assets/img/others/Les Honteux de Barbegarde.jpg"
+                                target="_blank"><img src="./public/assets/img/others/Les Honteux de Barbegarde.webp"
                                     alt="Les Honteux de Barbegarde" class="rewardImg"></a>
                             <div class="presentationText">
                                 <h3>Les Honteux de Barbegarde</h3>
@@ -283,27 +289,27 @@
                                 <!-- PERSONNAGES NORMAUX -->
                                 <div class="normalCharacters">
                                     <div class="character" title="Yvette la crevette">
-                                        <input type="image" src="./public/assets/img/userCharacters/yvette.jpg" value="0"
+                                        <input type="image" src="./public/assets/img/userCharacters/yvette.webp" value="0"
                                             id="yvette" alt="Petite crevette rouge orangé sur son rocher.">
                                     </div>
                                     <div class="character" title="Jean-Hardi l'emphatique">
-                                        <input type="image" src="./public/assets/img/userCharacters/jeanhardi.jpg" value="1"
+                                        <input type="image" src="./public/assets/img/userCharacters/jeanhardi.webp" value="1"
                                             id="jeanHardi" alt="Chevalier en armure complète noir et or.">
                                     </div>
                                     <div class="character" title="Hutin le lutin">
-                                        <input type="image" src="./public/assets/img/userCharacters/hutin.jpg" value="2" id="hutin"
+                                        <input type="image" src="./public/assets/img/userCharacters/hutin.webp" value="2" id="hutin"
                                             alt="Lutin mi-korrigan au regard furieux.">
                                     </div>
                                     <div class="character" title="Alavare l'opportuniste">
-                                        <input type="image" src="./public/assets/img/userCharacters/alavare.jpg" value="3"
+                                        <input type="image" src="./public/assets/img/userCharacters/alavare.webp" value="3"
                                             id="alavare" alt="Vieux magicien à l’air sévère dans un château.">
                                     </div>
                                     <div class="character" title="Yvres le soit-disant Druide">
-                                        <input type="image" src="./public/assets/img/userCharacters/yvres.jpg" value="4"
+                                        <input type="image" src="./public/assets/img/userCharacters/yvres.webp" value="4"
                                             id="yvres" alt="Vieux druide dans une forêt.">
                                     </div>
                                     <div class="character" title="Géhonte le magicien de la honte">
-                                        <input type="image" src="./public/assets/img/userCharacters/gehonte.jpg" value="5"
+                                        <input type="image" src="./public/assets/img/userCharacters/gehonte.webp" value="5"
                                             id="gehonte" alt="Vieux magicien barbu à lunette dans une cave.">
                                     </div>
                                 </div>
@@ -312,22 +318,22 @@
                                 <div class="specialCharacters">
                                     <div class="character" title="Austère le drastique">
                                         <input type="image" class="inactive"
-                                            src="./public/assets/img/userCharacters/austere.jpg" value="0" id="austere"
+                                            src="./public/assets/img/userCharacters/austere.webp" value="0" id="austere"
                                             alt="Vieux magicien barbu à lunette en tenue académique.">
                                     </div>
                                     <div class="character" title="Charmignon l'illusionniste">
                                         <input type="image" class="inactive"
-                                            src="./public/assets/img/userCharacters/charmignon.jpg" value="1"
+                                            src="./public/assets/img/userCharacters/charmignon.webp" value="1"
                                             id="charmignon" alt="Bel homme brun souriant aux cheveux longs.">
                                     </div>
                                     <div class="character" title="Devine la voyante">
                                         <input type="image" class="inactive"
-                                            src="./public/assets/img/userCharacters/devine.jpg" value="2" id="devine"
+                                            src="./public/assets/img/userCharacters/devine.webp" value="2" id="devine"
                                             alt="Vieille dame avec un chapeau de sorcière.">
                                     </div>
                                     <div class="character" title="Hontoscope">
                                         <input type="image" class="inactive"
-                                            src="./public/assets/img/userCharacters/hontoscope.jpg" value="3"
+                                            src="./public/assets/img/userCharacters/hontoscope.webp" value="3"
                                             id="hontoscope" alt="Petite grenouille rose poilue.">
                                     </div>
                                 </div>
@@ -337,7 +343,7 @@
                             <div class="cheating">
                                 <div class="choosingCheat hide" id="choosingCheat">
                                     <div class="closeCheat">
-                                        <button type="button" id="closeCheat"><img src="./public/assets/img/icon/fermer.png"
+                                        <button type="button" id="closeCheat"><img src="./public/assets/img/icon/fermer.webp"
                                                 title="Fermer la zone de triche" alt="Fermer"></button>
                                     </div>
                                     <!-- MORCEAU POUR CHOISIR UNE CARTE DE TRICHE -->
@@ -398,14 +404,14 @@
                 <!-- CARTES NORMALES DE L'ORDINATEUR -->
                 <div class="iaGlobalStat hide" id="iaGlobalStat">
                     <div>
-                        <img src="./public/assets/img/icon/trophy.png" alt="icône de trophée" class="iconStat">
+                        <img src="./public/assets/img/icon/trophy.webp" alt="icône de trophée" class="iconStat">
                         <div>Nombre de victoires</div>
                         <div id="iaVictories"></div>
                         <hr>
                     </div>
 
                     <div>
-                        <img src="./public/assets/img/icon/surrounded-shield.png"
+                        <img src="./public/assets/img/icon/surrounded-shield.webp"
                             alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
                         <div>Nombre de matchs nuls</div>
                         <div id="iaEqualities"></div>
@@ -413,7 +419,7 @@
                     </div>
 
                     <div>
-                        <img src="./public/assets/img/icon/grave-flowers.png" alt="icône de pierre tombale"
+                        <img src="./public/assets/img/icon/grave-flowers.webp" alt="icône de pierre tombale"
                             class="iconStat">
                         <div>Nombre de défaites</div>
                         <div id="iaDefeats"></div>
@@ -424,21 +430,21 @@
                 <button type="button" class="statButton" id="showIaGameStat">Partie en cours</button>
                 <div class="iaGameStat hide" id="iaGameStat">
                     <div>
-                        <img src="./public/assets/img/icon/sun-priest.png" alt="icône de magicien triomphant"
+                        <img src="./public/assets/img/icon/sun-priest.webp" alt="icône de magicien triomphant"
                             class="iconStat">
                         <div>Manches gagnées</div>
                         <div id="iaSuccess"></div>
                         <hr>
                     </div>
                     <div>
-                        <img src="./public/assets/img/icon/shield-bash.png"
+                        <img src="./public/assets/img/icon/shield-bash.webp"
                             alt="icône de personnage encaissant les coups avec un bouclier" class="iconStat">
                         <div>Manches égalités</div>
                         <div id="iaEqual"></div>
                         <hr>
                     </div>
                     <div>
-                        <img src="./public/assets/img/icon/arrowed.png" alt="icône de personnage percé de flèches"
+                        <img src="./public/assets/img/icon/arrowed.webp" alt="icône de personnage percé de flèches"
                             class="iconStat">
                         <div>Manches perdues</div>
                         <div id="iaFail"></div>

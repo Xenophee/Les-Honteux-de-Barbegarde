@@ -14,15 +14,15 @@
 }
 
 .fail {
-    background-image: url(../img/background/fail.jpg);
+    background-image: url(../img/background/fail.webp);
 }
 
 .success {
-    background-image: url(../img/background/success.jpg);
+    background-image: url(../img/background/success.webp);
 }
 
 .equal {
-    background-image: url(../img/background/equal.jpg);
+    background-image: url(../img/background/equal.webp);
 }
 
 .eventGameDisplay.event {

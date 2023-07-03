@@ -4,63 +4,63 @@
             "name": "Abomine",
             "nickname": "L'empoisonneuse",
             "biography": "Répudiée de l’académie de Sagemine pour s’être amourachée de Sarcophage le cérébromancien, elle témoigne désormais à la moindre occasion que le patriarcat oppressif des mages et la misogynie systémique qui lui est attachée ne tolèrent pas la polymagie des sorcières. Malgré le ridicule du discours, certains mages s’en font le relais en espérant sans doute attirer ses faveurs ou pour des raisons plus obscures.",
-            "image": "./public/assets/img/characters/ia/abomine.jpg",
+            "image": "./public/assets/img/characters/ia/abomine.webp",
             "alt": "Belle magicienne aux cheveux rouges dans son laboratoire."
         },
         {
             "name": "Boulb",
             "nickname": "Le Homard Therminator",
             "biography": "Notoirement célèbre pour avoir mis un terme à la cinquième République très démocratique des crustacés très constitutionnels afin de contrer le complot des langoustines, lesquelles, selon les rumeurs, entendaient remplacer les pauvres petites crevettes par d’ignobles écrevisses. Il s’est toutefois fait avoir comme un bleu en tombant dans un piège artisanal tendu par Géhonte.",
-            "image": "./public/assets/img/characters/ia/homard.jpg",
+            "image": "./public/assets/img/characters/ia/homard.webp",
             "alt": "Homard bleu dans son environnement naturel."
         },
         {
             "name": "Furoncle",
             "nickname": "Le Pesteux",
             "biography": "Binôme infâme de Pétroncle ; sa petite taille lui permet de s'infiltrer n'importe où et d'espionner les habitants de Barbegarde pour constituer des dossiers bien croustillants sur leurs secrets les plus honteux. C’est également lui qui transmet les notes à leur complice de Sagemine en toute discrétion.",
-            "image": "./public/assets/img/characters/ia/furoncle.jpg",
+            "image": "./public/assets/img/characters/ia/furoncle.webp",
             "alt": "Petit troll malicieux à cornes dans la forêt."
         },
         {
             "name": "Inclusive",
             "nickname": "La Licorne Arc-en-Ciel",
             "biography": "Une licorne non binaire qui se sent cheval, mais qui ne se prive pas d’encorner tout ce qui bouge malgré tout..",
-            "image": "./public/assets/img/characters/ia/inclusive.jpg",
+            "image": "./public/assets/img/characters/ia/inclusive.webp",
             "alt": "Licorne arc-en-ciel au regard noir."
         },
         {
             "name": "Jean-Fonce",
             "nickname": "Le Sophistique",
             "biography": "Jean-fonce est particulièrement réputé pour jouer sur les mots et ainsi ne pas accomplir ses devoirs de chevaliers tout en restant dans les clous pour ne pas se faire remercier par l’ordre qu’il représente. Bien que cette prédisposition ait le don d’en agacer plus d’un, une partie de ses supérieurs se montrent toutefois admiratifs de ses raisonnements intellectuels et estiment qu’il devrait être le prochain penseur officiel de la doctrine chevaleresque.",
-            "image": "./public/assets/img/characters/ia/jeanfonce.jpg",
+            "image": "./public/assets/img/characters/ia/jeanfonce.webp",
             "alt": "Chevalier brun, tête découverte, en armure verte."
         },
         {
             "name": "Pétroncle",
             "nickname": "Le Barbeux",
             "biography": "Avec son ignoble petit frère Furoncle, Pétroncle voue son existence à collecter les inavouables secrets de tous ceux qu’il croise et prends bien soin de stocker toutes ces informations sensationnelles dans son immense bibliothèque. Elles serviront à faire du chantage dans les cas les plus intéressants ou à coller une énorme honte à ses victimes simplement pour s’amuser.",
-            "image": "./public/assets/img/characters/ia/petroncle.jpg",
+            "image": "./public/assets/img/characters/ia/petroncle.webp",
             "alt": "Grand troll vert barbu."
         },
         {
             "name": "Toupille",
             "nickname": "Le Koala kleptomane",
             "biography": "Même s’il ne peut pas s’empêcher de voler tout ce qu’il estime intéressant pour le revendre plus tard, il n’est heureusement pas très habile et se fait prendre la main dans le sac la plupart du temps. Afin d‘échapper à toutes représailles sur ses tentatives de larcins, il exécute alors sa botte secrète qui consiste à attendrir sa victime en déployant son plus irrésistible visage. Et ça marche !",
-            "image": "./public/assets/img/characters/ia/toupille.jpg",
+            "image": "./public/assets/img/characters/ia/toupille.webp",
             "alt": "Koala mignon en habit de voleur."
         },
         {
             "name": "Vertuose VI",
             "nickname": "Le roi des fées",
             "biography": "Comme tous les autres rois fées avant lui, Vertuose, sixième du nom, s’évertue à défendre ce qui est reconnu comme bon dans la doctrine féerique et souhaite imposer cette dernière à tous en raison, selon lui, de sa vocation universelle. Tous ceux qui ne valide pas cette façon de pensée se voit ostracisé par la société féerique dans le meilleur des cas, voir déporté dans les « camps de redressement de la vertu égarée » pour les pires récalcitrants.",
-            "image": "./public/assets/img/characters/ia/vertuose.jpg",
+            "image": "./public/assets/img/characters/ia/vertuose.webp",
             "alt": "Homme fée avec une couronne et des ailes de papillons"
         },
         {
             "name": "Veulerine",
             "nickname": "L'alchimiste pétochard",
             "biography": "À défaut de transformer le plomb en or, il s’est illustré pour opérer un échange de matière entre des fluides de toute nature en fromage coulant avec un taux de réussite de 3%. Autant dire que peu de monde se risque à gouter sa production dès lors que la plupart des échecs connus contiennent un résidu mystérieux de crottin de licorne. Les mauvaises langues racontent qu’il s’agit là de son tempérament de capon qui ressort dans ses créations.",
-            "image": "./public/assets/img/characters/ia/veulerine.jpg",
+            "image": "./public/assets/img/characters/ia/veulerine.webp",
             "alt": "Vieil alchimiste à lunette dans son laboratoire."
         }
     ],
@@ -69,63 +69,63 @@
             "name": "Alavare",
             "nickname": "L'opportuniste",
             "biography": "Pourtant compétent dans son domaine, le mystère reste entier sur ses motivations à s’associer régulièrement avec des demeurés. Certains supposent qu’il est ainsi plus simple pour lui de se vêtir de tout les mérites en cas de succès lors d’une entreprise ou de faire porter le poids de la responsabilité sur les autres en cas d’échec. Ce qui ne fait pas secret en revanche, c’est l’étendue de son avidité et de sa vanité.",
-            "image": "./public/assets/img/characters/user/alavare.jpg",
+            "image": "./public/assets/img/characters/user/alavare.webp",
             "alt": "Vieux magicien à l’air sévère dans un château."
         },
         {
             "name": "Austère",
             "nickname": "Le Drastique",
             "biography": "Devenu Archimage de l’académie de Sagemine suite à la disparition de Barbegarde, Austère essaye tant bien que mal de dissimuler la guignolerie de l’institut qu’il dirige auprès des autres aréopages de magiciens à l’étranger. Il n’hésite pas à recourir à des méthodes peu conventionnelles pour se faire ; l’important est de conserver les apparences et un semblant de dignité dans cet immense bourbier à crétins.",
-            "image": "./public/assets/img/characters/user/austere.jpg",
+            "image": "./public/assets/img/characters/user/austere.webp",
             "alt": "Vieux magicien barbu à lunette en tenue académique."
         },
         {
             "name": "Charmignon",
             "nickname": "L'enchanteur",
             "biography": "Véritable tombeur, Charmignon n’est pas seulement le plus bel adonis de Sagemine, il est également passé maitre dans l’art des illusions. Cette caractéristique fait d’ailleurs constamment douter les autres magiciens sur l’authenticité de sa beauté. Toutefois, l’inquiétude la plus grave nourrit par les habitants de la région est l’existence ou non de sa barbe. Tantôt avec, tantôt sans… Où se trouve le réel ? Le jeune enchanteur semble se jouer des conventions au grand dam des dragons-barbiers.",
-            "image": "./public/assets/img/characters/user/charmignon.jpg",
+            "image": "./public/assets/img/characters/user/charmignon.webp",
             "alt": "Bel homme brun souriant aux cheveux longs."
         },
         {
             "name": "Devine",
             "nickname": "La Voyante",
             "biography": "Bien qu’elle ait cette irritante habitude de discourir pendant une heure sur quelque chose qui ne nécessite que 5 min de son temps, Devine est reconnu malgré tout pour la pertinence de ses dons de voyance par Austère lui-même. Autant dire qu’elle est abondamment sollicitée aussi bien par l’intelligentsia de Sagemine comme par le moindre péquenaud du coin sur des rocamboles. Prévoir donc un délai de 5 ans pour obtenir un rendez-vous et surtout, prévoyez votre journée !",
-            "image": "./public/assets/img/characters/user/devine.jpg",
+            "image": "./public/assets/img/characters/user/devine.webp",
             "alt": "Vieille dame avec un chapeau de sorcière."
         },
         {
             "name": "Géhonte",
             "nickname": "Le magicien de la honte",
             "biography": "Incompétent notoire, incapable d'allumer une lanterne, Géhonte est tout simplement la risée ultime de Sagemine et sert d’attraction humoristique pour les autres membres de l’académie quand ils ont besoin de se rassurer sur leurs propres aptitudes. Heureusement pour lui, il se montre néanmoins utile pour le nettoyage des latrines et autres tâches ingrates auxquelles chacun préfère se soustraire. ",
-            "image": "./public/assets/img/characters/user/gehonte.jpg",
+            "image": "./public/assets/img/characters/user/gehonte.webp",
             "alt": "Vieux magicien barbu à lunette dans une cave."
         },
         {
             "name": "Hutin",
             "nickname": "Le Korrigano-lutin",
             "biography": "Demi-paria de la communauté de lutins de Bois-Luron en raison de ses comportements outrancier et d'une mauvaise foi gargantuesque. Il proclame maintenant à qui veut l’entendre que son exclusion est motivée par du racisme anti-korrigan décomplexé, véritable fléau de la société lutine.",
-            "image": "./public/assets/img/characters/user/hutin.jpg",
+            "image": "./public/assets/img/characters/user/hutin.webp",
             "alt": "Lutin mi-korrigan au regard furieux."
         },
         {
             "name": "Jean-Hardi",
             "nickname": "L'Emphatique",
             "biography": "D’une éminente maladresse en raison de sa grande difficulté à se mouvoir dans son armure trop lourde, Jean-Hardi fait partie des chevaliers ridiculisés de son ordre, et ce d’autant plus qu’il respecte les codes de chevaleries à la lettre jusqu'à la bouffonnerie. En bref, il n’est jamais avare de majestueux principes, mais souvent mis au tapis par le réel, et plus encore par la gent féminine qui ne se prive pas de réflexions sardoniques en sa présence.",
-            "image": "./public/assets/img/characters/user/jean-hardi.jpg",
+            "image": "./public/assets/img/characters/user/jean-hardi.webp",
             "alt": "Chevalier en armure complète noir et or."
         },
         {
             "name": "Yvette",
             "nickname": "La Crevette Atomique",
             "biography": "Quoique l’exploit est à mettre plutôt au crédit de Géhonte, l’histoire retiendra qu’Yvette est une grande héroïne parmi les crustacés atomiques pour avoir sauvé les habitants du lac du terrible joug du homard therminator qui nourrissait de sombres projets à l’encontre des langoustines. ",
-            "image": "./public/assets/img/characters/user/yvette.jpg",
+            "image": "./public/assets/img/characters/user/yvette.webp",
             "alt": "Petite crevette rouge orangé sur son rocher."
         },
         {
             "name": "Yvres",
             "nickname": "Le soit-disant druide",
             "biography": "Souvent en train de vider les stocks de la cave, on n'a jamais vraiment su quand il était sobre. On n’a jamais vraiment su non plus s’il est bien ce qu’il prétend être étant donné la difficulté de juger les capacités en druidisme d’un alcoolique invétéré. Ceci d’autant plus que l’individu semble particulièrement lunatique ; tantôt adorateur absolu de la faune et la flore, tantôt coupable de maltraitance envers eux.",
-            "image": "./public/assets/img/characters/user/yvres.jpg",
+            "image": "./public/assets/img/characters/user/yvres.webp",
             "alt": "Vieux druide dans une forêt."
         }
     ],
@@ -134,28 +134,28 @@
             "name": "Barbegarde",
             "nickname": "Le bâtisseur désabusé",
             "biography": "Fondateur légendaire de la région qui porte désormais son nom, il a néanmoins quitté Sagemine il y a fort longtemps en disparaissant sans mot dire, laissant la fonction d’Archimage à son bras droit Austère. Personne n’est au courant, mais il sirote maintenant des cocktails à la plage tout en riant des incapables qu’il a laissés avec soulagement derrière lui.",
-            "image": "./public/assets/img/characters/others/barbegarde.jpg",
+            "image": "./public/assets/img/characters/others/barbegarde.webp",
             "alt": "Vieux magicien vêtu de doré."
         },
         {
             "name": "Hontoscope",
             "nickname": "Le thermomètre de la honte",
             "biography": "Petite créature malfaisante aux allures de grenouille, elle possède la fâcheuse habitude de se coller aux bottines des individus particulièrement honteux en s’exclamant « Oh la honte ! » d’une voix stridente et insupportable à la moindre action ratée de sa victime. En résumé, se faire suivre par un hontoscope, c’est vraiment trop la honte !",
-            "image": "./public/assets/img/characters/others/hontoscope.jpg",
+            "image": "./public/assets/img/characters/others/hontoscope.webp",
             "alt": "Petite grenouille rose poilue."
         },
         {
             "name": "L'Entité",
             "nickname": "Le créateur psychotique",
             "biography": "La légende raconte qu’après avoir conçu l’univers en 13 jours, l’Entité contempla longuement sa création branquignole. Elle fut tellement horrifiée par la médiocrité de sa réalisation qu’elle décida de se suicider en se jetant dans la fournaise d’une étoile flamboyante avant de se précipiter dans un trou noir titanesque, mais elle ne parvint qu’à altérer son intelligence et devenir finalement complètement toquée.",
-            "image": "./public/assets/img/characters/others/createur.jpg",
+            "image": "./public/assets/img/characters/others/createur.webp",
             "alt": "Cosmos aux mille couleurs."
         },
         {
             "name": "Sarcophage",
             "nickname": "Le cérébromancien",
             "biography": "Véritable aspirateur à QI, Sarcophage possède la terrible réputation de s’emparer de l’intelligence de tous ceux qui l’approchent d’un peu trop prêt. De fait, personne ne sait s’il s’agit d’un homme ou d’une femme, mais tout le monde sait qu’il vaut mieux garder ses distances avec ce sinistre individu si l’on ne veut pas finir dans son armée d’abrutis !",
-            "image": "./public/assets/img/characters/others/sarcophage.jpg",
+            "image": "./public/assets/img/characters/others/sarcophage.webp",
             "alt": "Personnage androgyne vêtu en femme."
         }
     ]

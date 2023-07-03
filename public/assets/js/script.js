@@ -18,8 +18,8 @@ const scream = new Audio("./public/assets/audio/bahhhhh.mp3");
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 // VERIFICATION DE LA PRISE EN CHARGE DU LOCAL STORAGE
+
 if (!window.localStorage) {
     alert("Votre navigateur ne permet pas de faire fonctionner ce jeu correctement. Veuillez quitter la navigation privée ou changer de navigateur.");
 };
@@ -27,8 +27,8 @@ if (!window.localStorage) {
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 // AFFICHE LES BANNIÈRES DE STATISTIQUES DIRECTEMENT POUR LES GRANDS ÉCRANS
+
 if (window.innerWidth >= 1024) {
     userGlobalStat.classList.remove('hide');
     userGameStat.classList.remove('hide');
@@ -39,27 +39,57 @@ if (window.innerWidth >= 1024) {
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 // GÈRE L'AFFICHAGE DES DONNÉES DE MISES À JOUR
-    fetch('./public/assets/json/updates.json')
-    .then((response) => {
-        return response.json();
-    })
-    .then((data) => {
 
-        data.updates.map(function(updates, key) {
+const arrowsUpdates = document.querySelectorAll('.fa-sharp');
+let indexUpdate = 0;
 
-            date.innerHTML = `${updates.date}`;
-            content.innerHTML = `${updates.content}`;
-        });
+const dataUpdates = async () => {
+    const response = await fetch('./public/assets/json/updates.json')
+    const dataResult = await response.json();
+    return dataResult;
+}
 
+const updatesDisplay = (data) => {
+
+    dataUpdates().then((dataResult) => {
+
+        const updates = dataResult.updates;
+        next.textContent = `${dataResult.next}`;
+
+        switch (data) {
+            case 0:
+                indexUpdate = (indexUpdate - 1 + updates.length) % updates.length;
+                break;
+            case 1:
+                indexUpdate = (indexUpdate + 1) % updates.length;
+                break;
+        }
+
+        date.textContent = `${updates[indexUpdate].date}`;
+        versionNumber.textContent = `${updates[indexUpdate].version}`;
+        content.textContent = `${updates[indexUpdate].content}`;
     });
+};
+
+updatesDisplay();
+
+
+arrowsUpdates.forEach(element => {
+    element.addEventListener('click', () => {
+        if (element.classList.contains('fa-chevron-left')) {
+            updatesDisplay(0);
+        } else {
+            updatesDisplay(1);
+        }
+    });
+});
 
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 // OUVERTURE DES RÈGLES DU JEU
+
 openRules.addEventListener('click', () => {
     rules.showModal();
 });
@@ -71,8 +101,8 @@ openUpdates.addEventListener('click', () => {
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 // FERMETURE DES RÈGLES DU JEU
+
 closeRules.addEventListener('click', () => {
     rules.close();
 });
@@ -85,8 +115,8 @@ closeUpdates.addEventListener('click', () => {
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 // GÈRE L'AFFICHAGE DES STATISTIQUES
+
 yourStat.addEventListener('click', () => {
     userGlobalStat.classList.toggle('hide');
 });
@@ -106,8 +136,8 @@ showIaGameStat.addEventListener('click', () => {
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 // AFFICHAGE DE L'ARÈNE POUR DÉMARRER UNE PARTIE
+
 startGame.addEventListener('click', () => {
     noGameStart.classList.add('hide');
     fightZone.classList.remove('hide');
@@ -116,8 +146,8 @@ startGame.addEventListener('click', () => {
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 // RETOUR DE L'AFFICHAGE APRÈS UN ÉVÉNEMENT EN CLIQUANT SUR LE BOUTON "CONTINUER"
+
 following.addEventListener('click', () => {
     eventGameDisplay.classList.add('hide');
     fightZone.classList.remove('hide');
@@ -127,8 +157,8 @@ following.addEventListener('click', () => {
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 // AFFICHE LA RÉCOMPENSE EN CAS DE VICTOIRE
+
 takeReward.addEventListener('click', () => {
     takeReward.classList.add('hide');
     resultSentence.classList.add('hide');
@@ -139,8 +169,8 @@ takeReward.addEventListener('click', () => {
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 // AFFICHE L'INPUT POUR LE MOT DE PASSE
+
 cheat.addEventListener('click', () => {
     passwordSection.classList.toggle('hide');
 });
@@ -148,8 +178,8 @@ cheat.addEventListener('click', () => {
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 // FERME L'ONGLET DE TRICHE
+
 closeCheat.addEventListener('click', () => {
     choosingCheat.classList.add('hide');
     cheatingEnter.classList.remove('hide');
@@ -158,8 +188,8 @@ closeCheat.addEventListener('click', () => {
 
 // =======================================================================================================================================================
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
-
 // AFFICHE LA SECTION DE TRICHE EN CAS DE BON MOT DE PASSE
+
 password.addEventListener("keydown", function(event) {
     if (event.key === "Enter" && password.value == 'honteux') {
         scream.play();
