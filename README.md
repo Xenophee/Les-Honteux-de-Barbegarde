@@ -7,6 +7,8 @@ Mini-jeu inspiré initialement du chifoumi dans un univers de fantasy absurde.
 
 Le but du projet était de réaliser un mini-jeu basé initialement sur le chifoumi, mais en proposant un thème bien spécifique autre du classique pierre / feuille / ciseaux et allant plus loin dans les mécaniques du jeu.
 
+Outre le jeu en lui-même, une partie du site est consacrée au LORE des personnages.
+
 
 ## Mises à jour
 
