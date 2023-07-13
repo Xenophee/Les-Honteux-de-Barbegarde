@@ -1,0 +1,20 @@
+# Mini-Jeu--Les-Honteux-de-Barbegarde
+Mini-jeu inspiré initialement du chifoumi dans un univers de fantasy absurde.
+
+
+
+## Description du projet
+
+Le but du projet était de réaliser un mini-jeu basé initialement sur le chifoumi, mais en proposant un thème bien spécifique autre du classique pierre / feuille / ciseaux et allant plus loin dans les mécaniques du jeu.
+
+
+## Mises à jour
+
+Des mises à jour seront encore déployées dans le futur. Parmi celles-ci, sont notamment prévus :
+
+- [x] Optimisation des performances
+- [ ] Réécriture des règles du jeu
+- [ ] Améliorations visuelles grâce à des animations
+- [ ] Ajout de la paralysation d’un personnage de base en cas d’échec
+- [ ] Ajout de capacités passives aux personnages de base
+- [ ] Remplacer la riposte de la machine basée actuellement sur de l’aléatoire pur par une réaction plus encadrée
