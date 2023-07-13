@@ -1,5 +1,4 @@
 # Mini-Jeu--Les-Honteux-de-Barbegarde
-Mini-jeu inspiré initialement du chifoumi dans un univers de fantasy absurde.
 
 Le site est en ligne : [ici](https://xenophee.github.io/Mini-Jeu--Les-Honteux-de-Barbegarde/)
 
