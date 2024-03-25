@@ -1,0 +1,673 @@
+@import url('variables.css');
+
+* {
+    font-family: var(--main-font);
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--special-font);
+}
+
+i {
+    font-size: var(--font-tall-size);
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background-image: url(../img/background/background.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Couleur de fond de la scrollbar */
+::-webkit-scrollbar-track {
+    background-color: var(--brown-color);
+}
+
+/* Couleur de remplissage de la scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: var(--green-color);
+}
+
+/* Couleur de remplissage de la scrollbar au survol */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #394d44;
+}
+
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* ACCUEIL */
+
+#openRules, #cleanScores, #openUpdates {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+    box-shadow: var(--box-shadow);
+    text-shadow: var(--text-shadow);
+    padding: 15px 0 15px;
+    transition: 2s;
+}
+
+#openRules:hover, #cleanScores:hover, #openUpdates:hover {
+    background-color: var(--green-color);
+    box-shadow: var(--box-shadow);
+}
+
+#closeRules, #closeUpdates {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+    box-shadow: var(--box-shadow);
+    text-shadow: var(--text-shadow);
+    padding: 5px 0 5px;
+    transition: 2s;
+}
+
+#closeRules:hover, #closeUpdates:hover {
+    background-color: var(--dark-brown-color);
+}
+
+#rules, #updates {
+    background-color: var(--beige-color);
+    color: var(--dark-brown-color);
+    font-size: var(--font-ideal-size);
+    box-shadow: var(--box-shadow);
+}
+
+#rules h2 {
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    padding: 10px 0 10px;
+    margin-bottom: 100px;
+}
+
+#rules::backdrop, #updates::backdrop {
+    background-color: #516d619c;
+}
+
+.headerUpdates {
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#previousUpdate, #nextUpdate {
+    background-color: transparent;
+    color: var(--light-beige-color);
+    padding: 5px 10px;
+    border: none;
+}
+
+#previousUpdate:hover, #nextUpdate:hover {
+    color: var(--beige-color);
+    border: var(--border-beige-double);
+}
+
+.version, #versionNumber {
+    font-size: 1rem;
+}
+
+dialog ul {
+    margin: 30px 0 30px;
+    padding: 0;
+    list-style: none;
+}
+
+dialog hr {
+    width: 70%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: var(--border-brown-double);
+}
+
+.context {
+    background-color: var(--green-filter-color);
+    color: var(--light-beige-color);
+    box-shadow: var(--box-shadow);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.context p {
+    font-size: var(--font-medium-size);
+}
+
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* STATISTIQUES */
+
+.userGlobalStat, .iaGlobalStat {
+    background-color: var(--green-filter-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-dotted);
+    box-shadow: var(--box-shadow);
+    font-weight: bold;
+}
+
+.userGlobalStat hr, .iaGlobalStat hr {
+    border: var(--border-beige-dotted);
+}
+
+.userGameStat, .iaGameStat {
+    background-color: var(--beige-filter-color);
+    color: var(--dark-brown-color);
+    border: var(--border-green-dotted);
+    box-shadow: var(--box-shadow);
+    font-weight: bold;
+}
+
+.userGameStat hr, .iaGameStat hr {
+    border: var(--border-green-dotted);
+}
+
+.userGameStat, .iaGameStat, .userGlobalStat, .iaGlobalStat {
+    padding: 20px 0;
+}
+
+.statButton {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
+    font-weight: bold;
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+    text-shadow: var(--text-shadow);
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0 20px;
+    transition: 2s;
+}
+
+.statButton:hover {
+    background-color: var(--dark-brown-color);
+}
+
+.iconStat {
+    width: 15%;
+}
+
+.moreInfo {
+    margin-top: 20px;
+}
+
+.more {
+    font-family: var(--special-font);
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+    box-shadow: var(--box-shadow);
+    text-shadow: var(--text-shadow);
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 15px;
+    transition: 2s;
+}
+
+.more:hover {
+    background-color: var(--green-color);
+}
+
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* DÉPART */
+
+.noGameStart {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    min-height: 85vh;
+    border: var(--border-brown-double);
+    background-image: url(../img/background/success.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+}
+
+#startGame {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+    box-shadow: var(--box-shadow);
+    text-shadow: var(--text-shadow);
+    padding: 20px 0 20px;
+    transition: 2s;
+}
+
+#startGame:hover {
+    background-color: var(--green-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+}
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* COMBAT */
+
+.gamesNumber {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--beige-filter-color);
+    color: var(--dark-brown-color);
+    box-shadow: var(--box-shadow);
+    padding: 30px 0 20px;
+    margin-bottom: 30px;
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+}
+
+.gamesNumber h2 {
+    font-size: var(--font-medium-size);
+    margin-top: 0;
+}
+
+#gamesNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-medium-size);
+    background-color: var(--brown-color);
+    color: var(--beige-color);
+    /* padding: 3px 10px 3px; */
+    border-radius: 50%;
+}
+
+.fight {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.platform {
+    background-image: url(../img/background/success.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: var(--dark-brown-color);
+    box-shadow: var(--box-shadow);
+    border: 3px solid #805b2d;
+    margin-bottom: 20px;
+    z-index: -2;
+}
+
+.show {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: auto;
+}
+
+.fight h2, #roundResult {
+    font-size: var(--font-tall-size);
+}
+
+#roundNumber, .score {
+    font-size: var(--font-medium-size);
+}
+
+.frameImg {
+    margin: 20px 0 20px;
+    border-radius: 50%;
+}
+
+#explainEvent {
+    font-size: 1.2rem;
+}
+
+#specialText {
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#roundResult {
+    margin: 0px 0px 30px;
+}
+
+.gameStuff {
+    border: var(--border-brown-double);
+    box-shadow: var(--box-shadow);
+}
+
+.userCharacters {
+    margin-top: auto;
+}
+
+.normalCharacters {
+    background-color: var(--green-filter-color);
+}
+
+.specialCharacters {
+    background-color: var(--brown-filter-color);
+    border-top: var(--border-brown-double);
+}
+
+.normalCharacters, .specialCharacters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px 0 10px;
+}
+
+.character {
+    display: flex;
+}
+
+.character input {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: var(--border-beige-double);
+    box-shadow: var(--box-shadow);
+}
+
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* TRICHE */
+
+.cheating {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--beige-filter-color);
+    border-top: var(--border-brown-double);
+    padding: 20px 0 20px;
+}
+
+.cheatingEnter {
+    width: 100%;
+}
+
+.choosingCheat {
+    width: 100%;
+}
+
+.closeCheat {
+display: flex;
+justify-content: end;
+padding-bottom: 20px;
+}
+
+#closeCheat {
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
+}
+
+h5 {
+    font-size: var(--font-ideal-size);
+    color: var(--dark-brown-color);
+    border-top: var(--border-beige-double);
+    padding: 10px 0 0;
+    margin: 0;
+}
+
+.chooseEvent,.chooseCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px 0 20px;
+}
+
+.chooseResult {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 20px 0 20px;
+}
+
+.chooseResult button, .chooseEvent button, .chooseCard button {
+    font-family: var(--special-font);
+    font-size: var(--font-normal-size);
+    background-color: var(--dark-brown-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+    box-shadow: var(--box-shadow);
+    text-shadow: var(--text-shadow);
+    padding: 9px 0 9px;
+}
+
+.chooseResult button:hover, .chooseEvent button:hover, .chooseCard button:hover {
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+}
+
+#cheat {
+    font-family: var(--special-font);
+    font-size: var(--font-normal-size);
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+    box-shadow: var(--box-shadow);
+    text-shadow: var(--text-shadow);
+    padding: 5px 0 5px;
+}
+
+#passwordSection {
+    color: var(--dark-brown-color);
+    font-weight: bold;
+}
+
+#password {
+    height: 30px;
+    color: var(--dark-brown-color);
+    border: var(--border-beige-dotted);
+}
+
+#password:focus {
+    outline: none;
+}
+
+#surrend {
+    font-family: var(--special-font);
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+    box-shadow: var(--box-shadow);
+    text-shadow: var(--text-shadow);
+    font-size: 1.5rem;
+    height: 60px;
+    margin: 30px 0 30px;
+    transition: 2s;
+}
+
+#surrend:hover {
+    background-color: var(--green-color);
+}
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* SCÈNE ÉVÉNEMENT */
+
+.eventGameDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 60%;
+    padding: 30px 0 0;
+    border: var(--border-brown-double);
+    background-color: var(--green-filter-color);
+    color: var(--light-beige-color);
+}
+
+#eventText {
+    font-size: var(--font-ideal-size);
+}
+
+#eventEffect {
+    font-weight: bold;
+}
+
+#following, #finished {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+    box-shadow: var(--box-shadow);
+    text-shadow: var(--text-shadow);
+    padding: 10px 0px 10px;
+    transition: 2s;
+}
+
+#following {
+    background-color: var(--brown-color);
+}
+
+#finished {
+    background-color: var(--green-color);
+}
+
+#following:hover, #finished:hover {
+    background-color: var(--dark-brown-color);
+}
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* SCÈNE FINALE */
+
+.resultGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#resultSentence {
+    background-color: var(--brown-filter-color);
+    font-size: var(--font-ideal-size);
+    color: var(--light-beige-color);
+    box-shadow: var(--box-shadow);
+    padding: 10px 30px 10px;
+}
+
+.banner {
+    position: relative;
+}
+
+.resultGame h4 {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    color: var(--dark-brown-color);
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.takeReward, #restart {
+    font-family: var(--special-font);
+    font-size: var(--font-medium-size);
+    box-shadow: var(--box-shadow);
+    text-shadow: var(--text-shadow);
+    transition: 2s;
+}
+
+.takeReward {
+    background-color: var(--green-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+}
+
+.takeReward:hover {
+    background-color: var(--beige-color);
+    color: var(--dark-brown-color);
+    border: var(--border-brown-double);
+}
+
+#restart {
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-double);
+}
+
+#restart:hover {
+    background-color: var(--green-color);
+}
+
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* RECOMPENSE */
+
+.presentation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.reward {
+    font-size: 1.2rem;
+    background-color: var(--brown-filter-color);
+    color: var(--light-beige-color);
+    border: var(--border-beige-dotted);
+}
+
+.rewardImg {
+    border: var(--border-beige-double);
+}
+
+span {
+    font-weight: bold;
+}
+
+#postNote {
+    font-style: italic;
+}
+
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* KEYFRAMES */
+
+@keyframes shadowPulseNormal {
+    /* 50% {
+        box-shadow: 0px 0px 20px green;
+    } */
+    0% {
+		box-shadow: 0 0 0 0 rgb(178, 149, 106, 0.7);
+	}
+
+	70% {
+		box-shadow: 0 0 0 10px rgb(178, 149, 106, 0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 rgb(178, 149, 106, 0);
+	}
+}
