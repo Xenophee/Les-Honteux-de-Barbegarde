@@ -1,2 +1,41 @@
 @use "variables" as *;
 @use 'media' as *;
+
+
+body {
+    background-image: url(../img/background/cards_background.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Couleur de fond de la scrollbar */
+::-webkit-scrollbar-track {
+    background-color: var(--brown-color);
+}
+
+/* Couleur de remplissage de la scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: var(--green-color);
+}
+
+/* Couleur de remplissage de la scrollbar au survol */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #394d44;
+}
+
+
+/* ================================================================================================================================= */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* HEADER */
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
