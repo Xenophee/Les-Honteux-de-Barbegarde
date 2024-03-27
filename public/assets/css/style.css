@@ -2,6 +2,7 @@
   --brown-color: #805b2d;
   --dark-brown-color: #473217;
   --green-color: #516d61;
+  --light-green-color: #809549;
   --beige-color: #c1a677;
   --light-beige-color: #d1c4ac;
   --green-filter-color: #516d619c;
@@ -21,6 +22,39 @@
   --border-beige-dotted: dotted 1px var(--beige-color);
   --border-brown-dotted: dotted 1px var(--brown-color);
   --border-green-dotted: dotted 1px var(--green-color);
+}
+
+* {
+  font-family: var(--main-font);
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--special-font);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--brown-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--green-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #394d44;
+}
+
+body {
+  background-image: url(../img/background/background.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

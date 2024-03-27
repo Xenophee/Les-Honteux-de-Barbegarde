@@ -1,0 +1,43 @@
+* {
+    font-family: var(--main-font);
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--special-font);
+}
+
+
+// Largeur de la scrollbar
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+// Couleur de fond de la scrollbar
+::-webkit-scrollbar-track {
+    background-color: var(--brown-color);
+}
+
+// Couleur de remplissage de la scrollbar
+::-webkit-scrollbar-thumb {
+    background-color: var(--green-color);
+}
+
+// Couleur de remplissage de la scrollbar au survol
+::-webkit-scrollbar-thumb:hover {
+    background-color: #394d44;
+}
+
+
+@mixin body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+@mixin center-everything {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

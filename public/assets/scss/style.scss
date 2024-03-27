@@ -1,2 +1,9 @@
 @use "variables" as *;
 @use 'media' as *;
+@use 'global' as *;
+
+
+body {
+    background-image: url(../img/background/background.webp);
+    @include body;
+}
