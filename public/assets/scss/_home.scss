@@ -1,0 +1,79 @@
+// =================================================================================================================================
+// ---------------------------------------------------------------------------------------------------------------------------------
+// ACCUEIL
+
+
+#rules, #updates {
+    background-color: var(--beige-color);
+    color: var(--dark-brown-color);
+    font-size: var(--font-ideal-size);
+    box-shadow: var(--box-shadow);
+
+    &::backdrop {
+        background-color: #516d619c;
+    }
+}
+
+#rules h2 {
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    padding: 10px 0 10px;
+    margin-bottom: 100px;
+}
+
+.headerUpdates {
+    background-color: var(--brown-color);
+    color: var(--light-beige-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#previousUpdate, #nextUpdate {
+    background-color: transparent;
+    color: var(--light-beige-color);
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+
+    &:hover {
+        color: var(--beige-color);
+        border: var(--border-beige-double);
+    }
+}
+
+.version, #versionNumber {
+    font-size: 1rem;
+}
+
+dialog {
+
+    ul {
+    margin: 30px 0 30px;
+    padding: 0;
+    list-style: none;
+    }
+
+    hr {
+        width: 70%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border: var(--border-brown-double);
+    }
+    
+}
+
+.context {
+    background-color: var(--green-filter-color);
+    color: var(--light-beige-color);
+    box-shadow: var(--box-shadow);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.context p {
+    font-size: var(--font-medium-size);
+}

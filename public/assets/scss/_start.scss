@@ -1,0 +1,35 @@
+// =================================================================================================================================
+// ---------------------------------------------------------------------------------------------------------------------------------
+// DÉPART
+
+@use 'media' as *;
+@use 'mixins' as *;
+
+.noGameStart {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    min-height: 85vh;
+    border: var(--border-brown-double);
+    background-image: url(../img/background/success.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+}
+
+#startGame {
+    @include button(--font-medium-size, --brown-color, --light-beige-color, --green-color);
+    padding: 20px 0 20px;
+}
+
+#openRules, #cleanScores, #openUpdates {
+    @include button(--font-medium-size, --brown-color, --light-beige-color, --green-color);
+    padding: 15px 0 15px;
+}
+
+#closeRules, #closeUpdates {
+    @include button(--font-medium-size, --brown-color, --light-beige-color, --dark-brown-color);
+    padding: 5px 0 5px;
+}

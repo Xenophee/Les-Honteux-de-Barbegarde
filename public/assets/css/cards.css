@@ -33,6 +33,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--special-font);
 }
 
+i {
+  font-size: var(--font-tall-size);
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -50,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background-image: url(../img/background/cards_background.webp);
+  background-image: url("../img/background/cards_background.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

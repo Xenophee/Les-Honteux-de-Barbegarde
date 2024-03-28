@@ -4,8 +4,7 @@
 
 
 body {
-    background-image: url(../img/background/cards_background.webp);
-    @include body;
+    @include body('../img/background/cards_background.webp');
 }
 
 

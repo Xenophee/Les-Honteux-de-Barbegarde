@@ -1,0 +1,55 @@
+// =================================================================================================================================
+// ---------------------------------------------------------------------------------------------------------------------------------
+// SCÈNE ÉVÉNEMENT
+
+@use 'media' as *;
+@use 'mixins' as *;
+
+
+.eventGameDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 60%;
+    padding: 30px 0 0;
+    border: var(--border-brown-double);
+    background-color: var(--green-filter-color);
+    color: var(--light-beige-color);
+}
+
+#eventText {
+    font-size: var(--font-ideal-size);
+
+    @include xl {
+        padding: 50px 150px 20px;
+    } 
+}
+
+#eventEffect {
+    font-weight: bold;
+
+    @include xl {
+        padding: 50px 150px 50px;
+    } 
+}
+
+#following {
+    @include button(--font-medium-size, --brown-color, --light-beige-color, --dark-brown-color);
+    padding: 10px 0px 10px;
+
+    @include xl {
+        min-width: 25%;
+        margin-bottom: 50px;
+    }
+}
+
+#finished {
+    @include button(--font-medium-size, --green-color, --light-beige-color, --dark-brown-color);
+    padding: 10px 0px 10px;
+
+    @include xl {
+        min-width: 25%;
+        margin-bottom: 50px;
+    }
+}
