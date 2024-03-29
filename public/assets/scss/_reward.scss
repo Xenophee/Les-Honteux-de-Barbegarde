@@ -12,12 +12,20 @@
     justify-content: space-evenly;
     align-items: center;
 
-    @include xl {
+    margin: 50px 0 20px;
+
+    @include md {
         margin: 50px 0 50px;
     }
 }
 
 .presentationText {
+
+    width: 90%;
+
+    @include md {
+        width: 50%;
+    }
 
     @include xl {
         width: 60%;
@@ -41,4 +49,31 @@ span {
 
 #postNote {
     font-style: italic;
+}
+
+#banner {
+
+    @include md {
+        width: 100%;
+    } 
+}
+
+.takeReward, #restart {
+
+    width: 90%;
+    padding: 10px 0 10px;
+    margin: 20px 0 10px;
+
+    @include md {
+        width: 60%;
+        padding: 20px 50px 20px;
+        margin: 30px 0 30px;
+    } 
+
+    @include xl {
+        min-width: 30%;
+        padding: 20px 50px 20px;    
+        margin: 30px 0 30px;
+    } 
+    
 }

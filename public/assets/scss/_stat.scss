@@ -16,6 +16,14 @@
 
 .iaStat, .userStat {
 
+    width: 100%;
+
+    @include md {
+        width: 35%;
+        // order: -1;
+        margin-bottom: 50px;
+    } 
+
     @include xl {
         width: 15%;
     } 
@@ -34,6 +42,7 @@
 }
 
 .moreInfo {
+    margin-bottom: 20px;
     margin-top: 20px;
 }
 

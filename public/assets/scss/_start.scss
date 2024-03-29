@@ -17,11 +17,27 @@
     background-position: center;
     box-shadow: var(--box-shadow);
     margin-bottom: 20px;
+    height: 80vh;
+
+    @include md {
+        height: 80vh;
+    } 
+
+    @include xl {
+        height: 80%;
+    } 
 }
 
 #startGame {
     @include button(--font-medium-size, --brown-color, --light-beige-color, --green-color);
     padding: 20px 0 20px;
+    min-width: 90%;
+    margin-bottom: 30px;
+
+    @include md {
+        min-width: 30%;
+        margin-bottom: 80px;
+    }
 }
 
 #openRules, #cleanScores, #openUpdates {

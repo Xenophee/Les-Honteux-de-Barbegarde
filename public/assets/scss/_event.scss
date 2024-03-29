@@ -18,25 +18,49 @@
     color: var(--light-beige-color);
 }
 
-#eventText {
-    font-size: var(--font-ideal-size);
+#eventImg {
+
+    width: 100%;
+
+    @include md {
+        width: 55%;
+    }
 
     @include xl {
+        width: 40%;
+    }
+}
+
+#eventText {
+    font-size: var(--font-ideal-size);
+    padding: 20px 20px 20px;
+
+    @include md {
         padding: 50px 150px 20px;
-    } 
+    }
 }
 
 #eventEffect {
     font-weight: bold;
+    padding: 50px 20px 50px;
 
-    @include xl {
+    @include md {
         padding: 50px 150px 50px;
     } 
 }
 
+
 #following {
     @include button(--font-medium-size, --brown-color, --light-beige-color, --dark-brown-color);
     padding: 10px 0px 10px;
+
+    width: 90%;
+    margin-bottom: 20px;
+
+    @include md {
+        width: 40%;
+        margin-bottom: 50px;
+    } 
 
     @include xl {
         min-width: 25%;
@@ -44,9 +68,18 @@
     }
 }
 
+
 #finished {
     @include button(--font-medium-size, --green-color, --light-beige-color, --dark-brown-color);
     padding: 10px 0px 10px;
+
+    width: 90%;
+    margin-bottom: 20px;
+
+    @include md {
+        width: 40%;
+        margin-bottom: 50px;
+    } 
 
     @include xl {
         min-width: 25%;

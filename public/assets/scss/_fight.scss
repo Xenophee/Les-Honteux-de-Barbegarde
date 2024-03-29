@@ -2,6 +2,19 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // COMBAT
 
+@use 'media' as *;
+@use 'mixins' as *;
+
+
+#mainPart {
+
+    width: 100%;
+    
+    @include xl {
+        width: 60%;
+    } 
+}
+
 .gamesNumber {
     display: flex;
     flex-direction: column;
@@ -28,7 +41,6 @@
     font-size: var(--font-medium-size);
     background-color: var(--brown-color);
     color: var(--beige-color);
-    /* padding: 3px 10px 3px; */
     border-radius: 50%;
 }
 
@@ -69,6 +81,32 @@
 .frameImg {
     margin: 20px 0 20px;
     border-radius: 50%;
+    width: 90%;
+
+    @include md {
+        width: 100%;
+    } 
+
+    @include xl {
+        width: 90%;
+    } 
+}
+
+h3 {
+
+    font-size: var(--font-medium-size);
+    margin-bottom: 0;
+    
+    @include md {
+        margin-bottom: 10px;
+    } 
+}
+
+
+#vs p {
+    
+    font-family: var(--special-font);
+    font-size: var(--font-tall-size);
 }
 
 #explainEvent {
@@ -108,10 +146,16 @@
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px 0 10px;
+    // padding: 10px 10px 10px;
 }
 
 .character {
     display: flex;
+    margin: 5px;
+
+    @include md {
+        position: relative;
+    } 
 
     & input {
         width: 70px;
@@ -120,5 +164,22 @@
         object-fit: cover;
         border: var(--border-beige-double);
         box-shadow: var(--box-shadow);
+
+        @include md {
+
+            &:hover {
+                border-color: green;
+            }
+        }
+
+        @include xl {
+            transform: scale(1);
+            transition: 1.5s;
+
+            &:hover {
+                transform: scale(1.2);
+                animation: shadowPulseNormal 1.5s infinite;
+            }
+        }
     }
 }

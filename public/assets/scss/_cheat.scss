@@ -34,6 +34,17 @@
     margin-right: 10px;
     background-color: transparent;
     border: none;
+
+    img {
+
+        @include md {
+            width: 80%;
+        } 
+
+        @include xl {
+            width: 70%;
+        } 
+    }
 }
 
 h5 {
@@ -44,7 +55,19 @@ h5 {
     margin: 0;
 }
 
-.chooseEvent,.chooseCard {
+.cheatCharacter input {
+
+    width: 100px;
+    height: 140px;
+
+    @include md {
+        width: 130px;
+        height: 180px;
+    }
+    
+}
+
+.chooseEvent, .chooseCard {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -63,6 +86,12 @@ h5 {
 .chooseResult button, .chooseEvent button, .chooseCard button {
     @include button(--font-normal-size, --dark-brown-color, --light-beige-color, --brown-color);
     padding: 9px 0 9px;
+    width: 90%;
+    margin: 4px 0px 4px;
+
+    @include md {
+        width: 20%;
+    } 
 
     @include xl {
         width: 15%;
@@ -72,6 +101,11 @@ h5 {
 #cheat {
     @include button(--font-normal-size, --dark-brown-color, --light-beige-color, --brown-color);
     padding: 5px 0 5px;
+    width: 80%;
+
+    @include md {
+        width: 25%;
+    } 
 
     @include xl {
         width: 15%;
@@ -98,6 +132,11 @@ h5 {
     font-size: 1.5rem;
     height: 60px;
     margin: 30px 0 30px;
+    width: 100%;
+
+    @include md {
+        width: 40%;
+    } 
 
     @include xl {
         width: 25%;
