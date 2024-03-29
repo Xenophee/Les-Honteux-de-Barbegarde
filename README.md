@@ -13,9 +13,12 @@ Outre le jeu en lui-même, une partie du site est consacrée au LORE des personn
 
 Des mises à jour seront encore déployées dans le futur. Parmi celles-ci, sont notamment prévus :
 
-- [x] Optimisation des performances
+- [ ] Optimisation des performances
 - [ ] Réécriture des règles du jeu
 - [ ] Améliorations visuelles grâce à des animations
 - [ ] Ajout de la paralysation d’un personnage de base en cas d’échec
 - [ ] Ajout de capacités passives aux personnages de base
 - [ ] Remplacer la riposte de la machine basée actuellement sur de l’aléatoire pur par une réaction plus encadrée
+
+
+**Une refonte du jeu va être réalisée avec de nouvelles technologies (Tailwind, React) d'une part, la structure du code JS sera mieux pensé et un meilleur responsive design sera mis en place**
