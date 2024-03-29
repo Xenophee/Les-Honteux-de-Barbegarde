@@ -21,4 +21,4 @@ Des mises à jour seront encore déployées dans le futur. Parmi celles-ci, sont
 - [ ] Remplacer la riposte de la machine basée actuellement sur de l’aléatoire pur par une réaction plus encadrée
 
 
-**Une refonte du jeu va être réalisée avec de nouvelles technologies (Tailwind, React) d'une part, la structure du code JS sera mieux pensé et un meilleur responsive design sera mis en place**
+_**Une refonte du jeu va être réalisée avec de nouvelles technologies (Tailwind, React) d'une part, la structure du code JS sera mieux pensé et un meilleur responsive design sera mis en place**_
