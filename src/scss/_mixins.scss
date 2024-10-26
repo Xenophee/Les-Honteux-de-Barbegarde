@@ -1,0 +1,29 @@
+@mixin button($font-size, $bg-color, $color, $bg-hover-color) {
+    font-size: var($font-size);
+    background-color: var($bg-color);
+    color: var($color);
+    font-family: var(--special-font);
+    border: var(--border-beige-double);
+    box-shadow: var(--box-shadow);
+    text-shadow: var(--text-shadow);
+    cursor: pointer;
+    transition: 1s;
+
+    &:hover {
+        background-color: var($bg-hover-color);
+        box-shadow: var(--box-shadow);
+    }
+}
+
+@mixin style-stat($bg-color, $color, $border, $border-hr) {
+    background-color: var($bg-color);
+    color: var($color);
+    border: var($border);
+    box-shadow: var(--box-shadow);
+    font-weight: bold;
+    padding: 20px 0;
+
+    & hr {
+        border: var($border-hr);
+    }
+}

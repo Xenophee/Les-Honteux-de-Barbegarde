@@ -33,7 +33,7 @@ const cheatCharacter = document.querySelectorAll('.chooseCard button');
 
 // LANCEMENT DU SON AU SURVOL D'UN PERSONNAGE SPÉCIAL
 const specialSound = () => {
-    let sound = new Audio("./public/assets/audio/boing.mp3");
+    let sound = new Audio("/assets/audio/boing.mp3");
         sound.play();
         sound.volume = 0.5;
 };
@@ -132,7 +132,7 @@ const specialObtain = () => {
     // ----------------------------------------------------
     // Lance un son d'avertissement en cas d'obtention de spécial par l'utilisateur
     if (resultUser == true) {
-        const specialSound = new Audio("./public/assets/audio/special_obtain.mp3")
+        const specialSound = new Audio("/assets/audio/special_obtain.mp3")
         specialSound.play();
     }
     // ----------------------------------------------------

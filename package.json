@@ -1,0 +1,21 @@
+{
+  "name": "mini-jeu--honteux-de-barbegarde",
+  "version": "1.0.0",
+  "description": "Le site est en ligne : [ici](https://xenophee.github.io/Mini-Jeu--Les-Honteux-de-Barbegarde/)",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.72.0"
+  },
+  "devDependencies": {
+    "vite": "^5.2.7"
+  }
+}

@@ -12,8 +12,9 @@ Fichier gérant les affichages classiques du jeu, ne nécessitant pas de faire a
 ================================================================================================================================================================================
 */
 
+import '../scss/style.scss';
 
-const scream = new Audio("./public/assets/audio/bahhhhh.mp3");
+const scream = new Audio("/assets/audio/bahhhhh.mp3");
 
 
 // =======================================================================================================================================================
@@ -45,7 +46,7 @@ const arrowsUpdates = document.querySelectorAll('.fa-sharp');
 let indexUpdate = 0;
 
 const dataUpdates = async () => {
-    const response = await fetch('./public/assets/json/updates.json')
+    const response = await fetch('/assets/json/updates.json')
     const dataResult = await response.json();
     return dataResult;
 }

@@ -1,0 +1,64 @@
+// =================================================================================================================================
+// ---------------------------------------------------------------------------------------------------------------------------------
+// SCÈNE FINALE
+
+@use 'mixins' as *;
+@use 'media' as *;
+
+.resultGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px 0 50px;
+
+    @include md {
+        padding: 80px 0 0px;
+    }
+}
+
+#resultSentence {
+    background-color: var(--brown-filter-color);
+    font-size: var(--font-ideal-size);
+    color: var(--light-beige-color);
+    box-shadow: var(--box-shadow);
+    padding: 10px 30px 10px;
+
+    @include md {
+        font-size: 1.2rem;
+    }
+}
+
+.banner {
+    position: relative;
+
+    margin: 50px 0 50px;
+
+    @include md {
+        margin: 80px 0 60px;
+    }
+}
+
+.resultGame h4 {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    color: var(--dark-brown-color);
+    transform: translate(-50%, -50%);
+    margin: 0;
+
+    font-size: 4rem;
+
+    @include md {
+        font-size: 5rem;
+    }
+}
+
+.takeReward {
+    @include button(--font-medium-size, --green-color, --light-beige-color, --beige-color);
+}
+
+#restart {
+    @include button(--font-medium-size, --brown-color, --light-beige-color, --green-color);
+}

@@ -11,7 +11,7 @@ Fichier contenant l'affichage des données des personnages du jeu sous forme de 
 
 ================================================================================================================================================================================
 */
-
+import '../scss/cards.scss';
 
 /* ================================================================================================================================= */
 /* --------------------------------------------------------------------------------------------------------------------------------- */
@@ -35,7 +35,7 @@ const urlId = (urlParams.get('id')) ? urlParams.get('id') : 2;
 // GÈRE L'AFFICHAGE DES DONNÉES DU JSON
 const dataDisplay = (key) => {
 
-    fetch('./public/assets/json/characters.json')
+    fetch('/assets/json/characters.json')
     .then((response) => {
         return response.json();
     })
@@ -127,7 +127,7 @@ characters[urlId].classList.add('active');
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
 // MUSIQUE DE LA PAGE
-const mainMusic = new Audio("./public/assets/audio/carte.mp3");
+const mainMusic = new Audio("/assets/audio/carte.mp3");
 
 mainMusic.play();
 mainMusic.volume = 0.5;

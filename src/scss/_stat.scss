@@ -1,0 +1,54 @@
+// =================================================================================================================================
+// ---------------------------------------------------------------------------------------------------------------------------------
+// STATISTIQUES
+
+@use 'media' as *;
+@use 'mixins' as *;
+
+
+.userGlobalStat, .iaGlobalStat {
+    @include style-stat(--green-filter-color, --light-beige-color, --border-beige-dotted, --border-beige-dotted);
+}
+
+.userGameStat, .iaGameStat {
+    @include style-stat(--beige-filter-color, --dark-brown-color, --border-green-dotted, --border-green-dotted);
+}
+
+.iaStat, .userStat {
+
+    width: 100%;
+
+    @include md {
+        width: 35%;
+        // order: -1;
+        margin-bottom: 50px;
+    } 
+
+    @include xl {
+        width: 15%;
+    } 
+    
+}
+
+.statButton {
+    @include button(--font-medium-size, --brown-color, --light-beige-color, --dark-brown-color);
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0 20px;
+}
+
+.iconStat {
+    width: 15%;
+}
+
+.moreInfo {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.more {
+    @include button(--font-medium-size, --brown-color, --light-beige-color, --green-color);
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 15px;
+}

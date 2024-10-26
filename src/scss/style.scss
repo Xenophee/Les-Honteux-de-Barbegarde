@@ -1,0 +1,47 @@
+
+
+
+
+@use "variables" as *;
+@use 'media' as *;
+@use 'mixins' as *;
+@use 'global' as *;
+
+@use 'home';
+@use 'start';
+@use 'stat';
+@use 'fight';
+@use 'event';
+@use 'cheat';
+@use 'final';
+@use 'reward';
+@use 'special';
+
+body {
+    @include body('/assets/img/background/background.webp');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
