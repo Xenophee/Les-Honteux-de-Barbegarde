@@ -12,7 +12,7 @@ Outre le jeu en lui-même, une partie du site est consacrée au LORE des personn
 
 Pour en savoir plus, vous pouvez consulter la page de mon [portfolio](https://perrine-dassonville.dev/portfolio/projet/les-honteux-de-barbegarde) dédiée au projet.
 
-Le site est en ligne : [ici](https://xenophee.github.io/Mini-Jeu--Les-Honteux-de-Barbegarde/)
+Le site est en ligne : [ici](https://les-honteux-de-barbegarde.vercel.app)
 
 > [!CAUTION]
 > Attention, le projet est ancien et n'est pas forcément conforme aux bonnes pratiques. Il sera prochainement revu avec du TypeScript et en exploitant pleinement le langage via les classes, les interfaces, etc.
