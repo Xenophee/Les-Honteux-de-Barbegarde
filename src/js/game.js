@@ -27,7 +27,7 @@ import { eventGame } from './event.js';
 // -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // MUSIQUE PRINCIPALE DU JEU
-const mainMusic = new Audio("./public/assets/audio/jeu.mp3");
+const mainMusic = new Audio("/assets/audio/jeu.mp3");
 
 const activeMainMusic = () => {
 
@@ -358,7 +358,7 @@ normalSelect.forEach(element => {
     element.addEventListener('click', battle);
 
     element.addEventListener('mouseover', () => {
-        let sound = new Audio("./public/assets/audio/sound.mp3");
+        let sound = new Audio("/assets/audio/sound.mp3");
         sound.play();
     });
 });

@@ -18,7 +18,7 @@
 @use 'special';
 
 body {
-    @include body('../img/background/background.webp');
+    @include body('/assets/img/background/background.webp');
 }
 
 

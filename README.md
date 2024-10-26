@@ -1,6 +1,8 @@
-# Mini-Jeu--Les-Honteux-de-Barbegarde
 
-Le site est en ligne : [ici](https://xenophee.github.io/Mini-Jeu--Les-Honteux-de-Barbegarde/)
+<h1 align="center">Les Honteux de Barbegarde</h1>
+
+<img src="/preview.png" alt="Illustration du projet">
+
 
 ## Description du projet
 
@@ -8,17 +10,29 @@ Le but du projet était de réaliser un mini-jeu basé initialement sur le chifo
 
 Outre le jeu en lui-même, une partie du site est consacrée au LORE des personnages.
 
+Pour en savoir plus, vous pouvez consulter la page de mon [portfolio](https://perrine-dassonville.dev/portfolio/projet/les-honteux-de-barbegarde) dédiée au projet.
 
-## Mises à jour
+Le site est en ligne : [ici](https://xenophee.github.io/Mini-Jeu--Les-Honteux-de-Barbegarde/)
 
-Des mises à jour seront encore déployées dans le futur. Parmi celles-ci, sont notamment prévus :
-
-- [ ] Optimisation des performances
-- [ ] Réécriture des règles du jeu
-- [ ] Améliorations visuelles grâce à des animations
-- [ ] Ajout de la paralysation d’un personnage de base en cas d’échec
-- [ ] Ajout de capacités passives aux personnages de base
-- [ ] Remplacer la riposte de la machine basée actuellement sur de l’aléatoire pur par une réaction plus encadrée
+> [!CAUTION]
+> Attention, le projet est ancien et n'est pas forcément conforme aux bonnes pratiques. Il sera prochainement revu avec du TypeScript et en exploitant pleinement le langage via les classes, les interfaces, etc.
 
 
-_**Une refonte du jeu va être réalisée avec de nouvelles technologies (Tailwind, React) d'une part, la structure du code JS sera mieux pensé et un meilleur responsive design sera mis en place**_
+## Installation
+
+Pour installer et exécuter ce projet localement, suivez les étapes ci-dessous :
+
+1. Clonez le dépôt :
+    ```bash
+    git clone https://github.com/Xenophee/Les-Honteux-de-Barbegarde.git
+    ```
+
+2. Installez les dépendances :
+    ```bash
+    npm install
+    ```
+
+3. Lancez le projet :
+    ```bash
+    npm start
+    ```
