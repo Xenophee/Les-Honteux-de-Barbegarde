@@ -1,21 +1,18 @@
 {
-  "name": "mini-jeu--honteux-de-barbegarde",
+  "name": "les-honteux-de-barbegarde",
   "version": "1.0.0",
-  "description": "Le site est en ligne : [ici](https://xenophee.github.io/Mini-Jeu--Les-Honteux-de-Barbegarde/)",
+  "description": "Mini-jeu basé initialement sur le chifoumi, mais en proposant un thème bien spécifique autre du classique pierre / feuille / ciseaux et allant plus loin dans les mécaniques du jeu.",
   "type": "module",
-  "main": "index.js",
   "scripts": {
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "keywords": [],
-  "author": "",
+  "author": "Perrine Dassonville",
   "license": "ISC",
-  "dependencies": {
-    "sass": "^1.72.0"
-  },
   "devDependencies": {
+    "sass": "^1.72.0",
     "vite": "^5.2.7"
   }
 }
